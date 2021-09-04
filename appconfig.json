@@ -1,0 +1,12 @@
+{
+    "appName": "BarrowsLogger",
+    "description": "A Free, Open-source Barrows logger",
+    "appUrl": "./index.html",
+    "configUrl": "./appconfig.json",
+    "iconUrl": "./images/Torag's_helm.png",
+    "defaultWidth": 500,
+    "defaultHeight": 500,
+    "requestHandlers": [],
+    "activators": [],
+    "permissions": "pixel,gamestate,overlay"
+}
