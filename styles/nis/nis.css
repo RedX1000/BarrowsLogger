@@ -367,7 +367,7 @@ header {
 
 .header_box {
   display: grid;
-  width: 600px;
+  width: 500px;
 }
 
 .title {
@@ -397,6 +397,10 @@ header {
 mainsection {
   display: block;
   width: 100%;
+}
+
+#docapturebutton {
+  margin-top: 20px;
 }
 
 .general,

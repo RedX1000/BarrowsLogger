@@ -132,16 +132,7 @@
 		//My own functions for this project
 
 		function start(){
-			span.number_of_clues = 50
-		}
-
-		console.log(localStorage)
-		localStorage.setItem("item", 4323432423,)
-		console.log(localStorage.getItem("item"))
-
-		names = []
-		for(let i = 0; i < names.length; i++) {
-
+			
 		}
 		
         function refresh(){
@@ -162,16 +153,15 @@
         <div id="clear_button" class="nisbutton" onclick="refresh();"><strike>Clear Database</strike></div>
 		<div id="docapturebutton" class="nisbutton" onclick="docapture();">Capture Rewards</div>
 		<div class="math_box">
-			<div class="math_box_elements" id="math_box_count">Barrows chests logged:&nbsp;<span id="number_of_clues">999</span></div>
-			<div class="math_box_elements" id="math_box_total">Total value of logged chests:&nbsp;<span id="value_of_clues">999</span></div>
-			<div class="math_box_elements" id="math_box_average">Average value of logged chests:&nbsp;<span id="average_of_clues">999</span></div>
+			<div class="math_box_elements" id="math_box_count">Barrows chests logged:&nbsp;<span id="number_of_chests">999</span></div>
+			<div class="math_box_elements" id="math_box_total">Total value of logged chests:&nbsp;<span id="value_of_chests">999</span></div>
+			<div class="math_box_elements" id="math_box_average">Average value of logged chests:&nbsp;<span id="average_of_chests">999</span></div>
 		</div>
 		<div class="loot_container">
 			<div class="general">
 				<div class="general_title"><span id="general_rewards">General Rewards</span></div>
 				<div class="bottom_border"></div>
 				<div class="loot_display" id="general_loot">
-
 				</div>
         	</div>
         	<div class="equipment">
