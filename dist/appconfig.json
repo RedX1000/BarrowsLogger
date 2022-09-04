@@ -1,0 +1,16 @@
+{
+    "appName": "BarrowsLogger",
+    "description": "A free, open-source Barrows logger",
+    "appUrl": "./index.html",
+    "configUrl": "./appconfig.json",
+    "iconUrl": "",
+    "defaultWidth": 530,
+    "defaultHeight": 490,
+	"minWidth": 530,
+	"minHeight": 475,
+	"maxWidth": 1000,
+	"maxHeight": 1000,
+	"requestHandlers": [ ],
+	"activators": [	],
+    "permissions": "pixel,gamestate,overlay"
+}

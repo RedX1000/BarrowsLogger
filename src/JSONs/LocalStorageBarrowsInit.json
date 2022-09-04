@@ -1,0 +1,292 @@
+{
+    "Linza's helm": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 1
+    },
+    "Linza's cuirass": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 2
+    },
+    "Linza's greaves": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 3
+    },
+    "Linza's hammer": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 4
+    },
+    "Linza's shield": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 5
+    },
+    "Ahrim's hood": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 6
+    },
+    "Ahrim's robe top": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 7
+    },
+    "Ahrim's robe skirt": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 8
+    },
+    "Ahrim's staff": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 9
+    },
+    "Ahrim's wand": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 10
+    },
+    "Ahrim's book of magic": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 11
+    },
+    "Dharok's helm": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 12
+    },
+    "Dharok's platebody": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 13
+    },
+    "Dharok's platelegs": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 14
+    },
+    "Dharok's greataxe": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 15
+    },
+    "Torag's helm": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 16
+    },
+    "Torag's platebody": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 17
+    },
+    "Torag's platelegs": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 18
+    },
+    "Torag's hammer": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 19
+    },
+    "Verac's helm": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 20
+    },
+    "Verac's brassard": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 21
+    },
+    "Verac's plateskirt": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 22
+    },
+    "Verac's flail": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 23
+    },
+    "Guthan's helm": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 24
+    },
+    "Guthan's platebody": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 25
+    },
+    "Guthan's chainskirt": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 26
+    },
+    "Guthan's warspear": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 27
+    },
+    "Karil's coif": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 28
+    },
+    "Karil's top": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 29
+    },
+    "Karil's skirt": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 30
+    },
+    "Karil's crossbow": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 31
+    },
+    "Karil's pistol crossbow": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 32
+    },
+    "Karil's off-hand pistol crossbow": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 33
+    },
+    "Akrisae's hood": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 34
+    },
+    "Akrisae's robe top": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 35
+    },
+    "Akrisae's robe skirt": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 36
+    },
+    "Akrisae's war mace": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 37
+    },
+    "Corruption sigil": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 38
+    },
+    "Barrows totem": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 39
+    },
+    "Amulet of the forsaken": {
+        "tab": "equipment",
+        "quantity": 0,
+        "order": 40
+    },
+    "Coins": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 41
+    },
+    "Mind rune": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 42
+    },
+    "Chaos rune": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 43
+    },
+    "Death rune": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 44
+    },
+    "Blood rune": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 45
+    },
+    "Bolt rack": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 46
+    },
+    "Loop half of a key": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 47
+    },
+    "Tooth half of a key": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 48
+    },
+    "Dragon helm": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 49
+    },
+    "Shark": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 50
+    },
+    "Prayer potion (2)": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 51
+    },
+    "Restore potion (2)": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 52
+    },
+    "Super defence (2)": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 53
+    },
+    "Barrows icon": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 54
+    },
+    "Sealed clue scroll (elite)": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 55
+    },
+    "Crystal triskelion fragment 1": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 56
+    },
+    "Crystal triskelion fragment 2": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 57
+    },
+    "Crystal triskelion fragment 3": {
+        "tab": "general",
+        "quantity": 0,
+        "order": 58
+    }
+}
