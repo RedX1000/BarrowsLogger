@@ -466,10 +466,6 @@ header {
   user-select: none;
 }
 
-.title_div{
-  height: auto;
-}
-
 .title {
   position: relative;
   text-align: center;
@@ -510,6 +506,11 @@ header {
 
 #settings_cog{
   width:85%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .header_box {
