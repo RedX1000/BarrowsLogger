@@ -70,6 +70,9 @@ var lagCounter = 0;
 
 var insertVerif = [];
 
+// Adjust this for larger windows. I want 12 cause barrows.
+var cap = 12
+
 var imgs = a1lib.ImageDetect.webpackImages({
 	barrowsChest: require("./images/barrowsChest.data.png"),
 	barrowsChestLegacy: require("./images/barrowsChestLegacy.data.png")
@@ -397,60 +400,6 @@ export async function capture(autobool: boolean) {
 }
 
 
-// export function testCapture() {
-// 	if (!window.alt1) {
-// 		return;
-// 	}
-// 	if (!alt1.permissionPixel) {
-// 		return;
-// 	}
-// 	var img = a1lib.captureHoldFullRs();
-// 	testCut(img);
-// }
-
-
-// function testCut(img: ImgRef){
-// 	var loc = img.findSubimage(imgs.barrowsChest);
-
-// 	//overlay the result on screen if running in alt1
-// 	if (window.alt1) {
-// 		if (loc.length != 0) {
-// 			//alt1.overLayRect(a1lib.mixColor(255, 255, 255), loc[0].x, loc[0].y, imgs.barrowsChest.width, imgs.barrowsChest.height, 2000, 3);
-// 		} else {
-// 			alt1.overLayTextEx("Couldn't find chest", a1lib.mixColor(255, 255, 255), 20, Math.round(alt1.rsWidth / 2), 200, 2000, "", true, true);
-// 		}
-// 	}
-
-// 	//get raw pixels of image and show on screen (used mostly for debug)
-// 	let x = loc[0].x + 163
-// 	let y = loc[0].y + 174
-// 	for(let i = 0; i < 4; i++){
-// 		for(let j = 0; j < 8; j++){
-// 			console.log(i,j)
-// 			alt1.overLayRect(a1lib.mixColor(255, 255, 255), x, y, 32, 32, 200000, 1);
-// 			var buf = img.toData(x, y, 32, 32);
-// 			x += 32 + 23
-// 		}
-// 		x = loc[0].x + 163
-// 		y += 32 + 14
-// 	}
-
-// 	// Adjust this for Barrows.
-// 	console.log("Testing reward reader")
-// 	let rewardreader = new ClueRewardReader();  // Thanks Skillbert
-// 	console.log(rewardreader)
-// 	console.log("testing modal ui reader")
-// 	rewardreader.pos = ModalUIReader.find()[0]; // For these two functions
-// 	if(rewardreader.read(img) == null)
-// 		console.log("it is",null)
-// 	else
-// 		console.log(rewardreader.read(img))
-// 	//let value = rewardreader.read(img).value;
-// 	//let valueStr = value.toString();
-// 	//console.log(valueStr)
-// }
-
-
 async function findtrailComplete(img: ImgRef, autobool: boolean) {
 	// If 3 rerolls..., default
 	// Adjust this if you want to add more rerolls.
@@ -493,16 +442,26 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 		// y1, +1 = up, -1 = down
 		// Adjust top crops as well, for the x1 and y1 values for it
 		// Consider making this an option in the settings.
-		let x1;
-		let y1;
+
+		let xdefault: number
+		let ydefault: number
+		let xRect: number
+		let yRect: number
 		if (!legacy) {
-			x1 = loc[0].x + 163;
-			y1 = loc[0].y + 175;
+			xdefault = loc[0].x - 10;
+			ydefault = loc[0].y + 30;
+			xRect = loc[0].x - 27
+			yRect = loc[0].y - 13
 		}
-		else { // TODO: Get legacy working
-			x1 = loc[0].x - 112;
-			y1 = loc[0].y + 39;
+		else {
+			xdefault = loc[0].x - 154;
+			ydefault = loc[0].y + 30;
+			xRect = loc[0].x - 172
+			yRect = loc[0].y - 13
 		}
+
+		let x1 = xdefault
+		let y1 = ydefault
 
 		let crops = []
 		let topCrops = []
@@ -516,8 +475,8 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 			}
 			crops.push(croptemp);
 			topCrops.push(toptemp);
-			x1 = loc[0].x + 163;
-			y1 += 32 + 14;
+			x1 = xdefault;
+			y1 += 32 + 14
 		}
 			
 		// Give me the total value!
@@ -561,12 +520,7 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 
 		alt1.overLayClearGroup("overlays");
 		alt1.overLaySetGroup("rect");
-		if (!legacy) {
-			alt1.overLayRect(a1lib.mixColor(255, 144, 0), loc[0].x + 145, loc[0].y + 131, await imgs.barrowsChest.width, await imgs.barrowsChest.height + 2, 60000, 2);
-		}
-		else {   
-			alt1.overLayRect(a1lib.mixColor(255, 144, 0), loc[0].x - 138, loc[0].y - 13, await imgs.barrowsChestLegacy.width + 278, await imgs.barrowsChestLegacy.height + 213, 60000, 2);
-		}
+		alt1.overLayRect(a1lib.mixColor(255, 144, 0), xRect, yRect, imgs.barrowsChest.width + 345, imgs.barrowsChest.height + 291, 60000, 2);
 
 		let prevValue = lastValue;
 		lastValue = value;
@@ -578,14 +532,9 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 		}
 		let itemResults = [];
 		let promises = [];
-		if (!legacy) {
-			x1 = loc[0].x + 163;
-			y1 = loc[0].y + 174;
-		}
-		else { // TODO: Get legacy working
-			x1 = loc[0].x - 112;
-			y1 = loc[0].y + 39;
-		}   
+
+		x1 = xdefault
+		y1 = ydefault
 
 		let notBlank = false; 
 		for(let i = 0; i < 4; i++){
@@ -598,17 +547,18 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 				if (displaybox) {
 					// Keep an eye on this in case it incorrectly gives numbers...
 					if (window.alt1) {
-						alt1.overLayRect(a1lib.mixColor(255, 144, 0), x1, y1, 32, 32, 2000, 1);
+						alt1.overLayRect(a1lib.mixColor(255, 144, 0), x1, y1, 32, 32, 1000, 1);
 						if(((i * 8) + j + 1) >= 20)
-							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 - 1, y1, 2000)
+							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 - 1, y1, 1000)
 						else if(((i * 8) + j + 1) >= 10)
-							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 - 3, y1, 2000)
+							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 - 3, y1, 1000)
 						else if(((i * 8) + j + 1) < 10)
-							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 + 5, y1, 2000)
+							alt1.overLayText(((i * 8) + j + 1).toString(), a1lib.mixColor(255, 144, 0, 255), 18, x1 + 5, y1, 1000)
 					}
 				}
 				x1 += 32 + 23
 				promises.push(itemtemp.push(await compareItems(crops[i][j])));
+				console.log(itemtemp[j])
 				if (localStorage.getItem("lagDetect") == "true") {
 					if (itemtemp[j] == "Blank") {
 						notBlank = true;
@@ -623,13 +573,14 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 						}
 						lagDetected = true;
 						lastValue = 0;
+						lagCounter++;
 						capture(autobool);
 						return;
 					}
 				}
 			}
 			itemResults.push(itemtemp)
-			x1 = loc[0].x + 163
+			x1 = xdefault
 			y1 += 32 + 14
 		}
 
@@ -645,31 +596,24 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 					if (seeConsoleLogs) console.log(itemResults[i]);
 
 					let newImg = a1lib.captureHoldFullRs();
-					let loc2;
+					let loc2: any;
 					let x = 0
 					let y = 0
 
 					if (!legacy) {
-						if (seeConsoleLogs) console.log("is not legacy")
 						loc2 = newImg.findSubimage(imgs.barrowsChest);
-						//x = loc2[0].x + (40 * (i));
-
-						x = loc2[0].x + 163;
-						y = loc2[0].y + 174;
-
-						let row = i / 4
-						let col = i % 8
-						console.log(row, col)
-						
-						console.log("i in reroll is",i)
-
-						x += (32 + 23) * col;
-						y += (32 + 14) * row;
 					}
 					else {
 						loc2 = newImg.findSubimage(imgs.barrowsChestLegacy);
-						x = loc[0].x - 112 + (40 * (i));
 					}
+
+					x = xdefault
+					y = ydefault
+
+					let row = i / 4
+					let col = i % 8
+					x += (32 + 23) * col;
+					y += (32 + 14) * row;
 
 					if (window.alt1) {
 						alt1.overLayClearGroup("overlays");
@@ -854,12 +798,7 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 			alt1.overLaySetGroup("overlays");
 			alt1.overLayTextEx("Barrows rewards captured successfully!",
 				a1lib.mixColor(100, 255, 100), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
-			if (!legacy) {
-				alt1.overLayRect(a1lib.mixColor(0, 255, 0), loc[0].x + 145, loc[0].y + 131, imgs.barrowsChest.width, imgs.barrowsChest.height + 2, 1000, 2);
-			}
-			else {
-				alt1.overLayRect(a1lib.mixColor(0, 255, 0), loc[0].x - 138, loc[0].y - 13, await imgs.barrowsChestLegacy.width + 278, await imgs.barrowsChestLegacy.height + 213, 1000, 2);
-			}
+			alt1.overLayRect(a1lib.mixColor(0, 255, 0), xRect, yRect, imgs.barrowsChest.width + 345, imgs.barrowsChest.height + 291, 1000, 2);
 		}
 		lagDetected = false;
 	} catch (e) {
@@ -903,7 +842,6 @@ async function compareItems(item: ImageData) {
 	if (!legacy) {
 		matches = listOfItemsAllArray.slice();
 	}
-
 	else { // Legacy works. But I don't test with it often. I think its okay...
 		matches = listOfItemsLegacyAllArray.slice();
 	}
@@ -1027,6 +965,7 @@ async function readQuantities(item: ImageData) {
 
 		for (let j = 0; j < pixarr.length; j++) {
 			if (pixarr[j][i].r == 255 && pixarr[j][i].g == 255 && pixarr[j][i].b == 0 ||   // Yellow, Every screen has this
+				pixarr[j][i].r == 255 && pixarr[j][i].g == 254 && pixarr[j][i].b == 0 ||   // Very slightly darker yellow, a screenie had this...
 				pixarr[j][i].r == 254 && pixarr[j][i].g == 254 && pixarr[j][i].b == 0 ||   // Very slightly darker yellow, a screenie had this...
 				pixarr[j][i].r == 253 && pixarr[j][i].g == 253 && pixarr[j][i].b == 0 ||   // Slightly darker yellow, for safety
 				pixarr[j][i].r == 255 && pixarr[j][i].g == 255 && pixarr[j][i].b == 255) { // White, elites and masters only
@@ -1240,33 +1179,6 @@ async function historyClear() {
 }
 
 
-function rollbackFunc(valueClear: boolean) { // TODO: Edit this once you get the interface up and running... Consider sending in an index value...
-	let lsHistory = JSON.parse(localStorage.getItem("History"));
-	let lastRoll = lsHistory[lsHistory.length - 1];
-	//	Index 0 = Items
-	//	Index 1 = Quantities
-	//	Index 2 = Value of reward
-	// 	Index 3 = "Reward" or "Reward [C] "
-
-	if (seeConsoleLogs) console.log("Rolling back:", lastRoll[0], lastRoll[1], lastRoll[2], lastRoll[3]);
-	for (let i = 0; i < lastRoll[0].length; i++) {
-		items[lastRoll[0][i]].quantity = items[lastRoll[0][i]].quantity - lastRoll[1][i];
-		updateItems();
-	}
-
-	// Decrease value and count
-	localStorage.setItem("Value", JSON.stringify(JSON.parse(localStorage.getItem("Value")) - lastRoll[2]));
-	localStorage.setItem("Count", JSON.stringify(JSON.parse(localStorage.getItem("Count")) - 1));
-
-	lsHistory.pop();
-	localStorage.setItem("History", JSON.stringify(lsHistory));
-	
-	if (valueClear) {
-		lastValue = 0;
-	}
-}
-
-
 function historyInit() {
 	let lsHistory = JSON.parse(localStorage.getItem("History"))
 
@@ -1284,7 +1196,7 @@ function historyInit() {
 		let index = parseInt(localStorage.getItem("Count"));
 		let limit = 0;
 		for (let i = lsHistory.length - 1; i >= 0 ; i--) { //Navigating lsHistory
-			if (limit <= parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
+			if (limit < parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
 				let temp = lsHistory[i];
 
 				let ele = document.getElementById("history_body") as HTMLDivElement;
@@ -1317,18 +1229,14 @@ function historyInit() {
 				value.setAttribute('class','historyValue');
 				container.append(value);
 				
-				// Adjust this for larger windows. I want 12 cause barrows.
-				let cap = 12
 				let TPcheck = false
 				for (let j = 0; j < 4; j++) { // Navigating temp
 					for(let k = 0; k < 8; k++){
 						if(temp[0][(j * 8) + k] == "Blank" || temp[0][(j * 8) + k] == undefined){
-							console.log("(j * 8) + k is",(j * 8) + k)
 							if(TPcheck){
 								break;
 							}
 							for(let l = (j * 8) + k; l < cap; l++){
-								console.log("transparency")
 								let nodevar = document.createElement("itembox") as HTMLDivElement;
 								let imgvar = document.createElement("img") as HTMLImageElement;
 								let quantvar = document.createElement("span") as HTMLSpanElement;
@@ -1770,12 +1678,23 @@ export function insertToDB() {
 		alt1.overLayTextEx("Submitting custom clue to Database...",
 			a1lib.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 40000, "", true, true);
 	}
-	
+
 	let items = insertVerif[0];
+	for(let i = 0; i < 4; i++){
+		for(let j = items[i].length; j < 8; j++){
+			items[i].push("Blank")
+		}
+	}
+	console.log(items)
+
 	let quants = [];
 	for (let i = 0; i < insertVerif[1].length; i++) {
 		quants.push(insertVerif[1][i].toString());
 	}
+	for (let i = quants.length; i < cap; i++) {
+		quants.push("0");
+	}
+
 	let value = insertVerif[2];
 	let tier = insertVerif[3];
 	
@@ -1980,8 +1899,8 @@ function noMenuCheck() {
 			if (window.alt1) {
 				alt1.overLayClearGroup("nomenu");
 				alt1.overLaySetGroup("nomenu");
-				alt1.overLayRect(a1lib.mixColor(255, 50, 50), loc[0].x + 246 - (5 * length) + (1 * comma), loc[0].y + 94, 0 + (8 * length) + (4 * comma), await imgs.barrowsChest.height + 6, 60000, 2);
-				alt1.overLayTextEx("NO MENUS HERE", a1lib.mixColor(255, 50, 50), 10, loc[0].x + 245, loc[0].y + 118, 50000, "", true, true);
+				alt1.overLayRect(a1lib.mixColor(255, 50, 50), loc[0].x + 301 - (5 * length) + (1 * comma), loc[0].y + 218, 2 + (8 * length) + (4 * comma), imgs.barrowsChest.height + 6, 60000, 2);
+				alt1.overLayTextEx("NO MENUS HERE", a1lib.mixColor(255, 50, 50), 10, loc[0].x + 301, loc[0].y + 242, 50000, "", true, true);
 			}
 			
 		}, 1000);
@@ -2004,7 +1923,7 @@ export function exporttocsv() {
 	}
 
 	let csvinfo = [];
-	csvinfo.push(["Item", "Easy", "Medium", "Hard", "Elite", "Master"]);
+	csvinfo.push(["Item", "Quantities"]);
 	
 	let lsHistory = JSON.parse(localStorage.getItem("History"))
 	let keys = Object.keys(items);
@@ -2012,59 +1931,24 @@ export function exporttocsv() {
 	if (seeConsoleLogs) console.log("Generating CSV...");
 	if (seeConsoleLogs) console.log("Getting values and counts...");
 
-	let eCount = localStorage.getItem("ECount")
-	let eValue = localStorage.getItem("EValue")
-	let mCount = localStorage.getItem("MCount")
-	let mValue = localStorage.getItem("MValue")
-	let hCount = localStorage.getItem("HCount")
-	let hValue = localStorage.getItem("HValue")
-	let elCount = localStorage.getItem("ElCount")
-	let elValue = localStorage.getItem("ElValue")
-	let maCount = localStorage.getItem("MaCount")
-	let maValue = localStorage.getItem("MaValue")
-	csvinfo.push(["Total Count", eCount, mCount, hCount, elCount, maCount]);
-	csvinfo.push(["Total Value", eValue, mValue, hValue, elValue, maValue]);
+	let count = localStorage.getItem("Count")
+	let value = localStorage.getItem("Value")
+	csvinfo.push(["Total Count", "\"" + count + "\""]);
+	csvinfo.push(["Total Value", "\"" + value + "\""]);
 
 	if (seeConsoleLogs) console.log("Getting item quantities...")
 	for (let i = 0; i < keys.length; i++) {
 		for (let j = 0; j < keys.length; j++) {
 			if (items[keys[j]].order == currOrder.toString()) {
 				let val = items[keys[j]];
-				let one = val.quantity.easy;
-				let two = val.quantity.medium;
-				let three = val.quantity.hard;
-				let four = val.quantity.elite;
-				let five = val.quantity.master;
-				if (one == undefined || one == "0") { // .toLocaleString("en-US")
-					one = "";
+				let quant = val.quantity;
+				if (quant == undefined || quant == "0") { // .toLocaleString("en-US")
+					quant = "";
 				} 
 				else { 
-					one = one.toLocaleString("en-US")
+					quant = "\"" + quant.toLocaleString("en-US") + "\""
 				}
-				if (two == undefined || two == "0") {
-					two = "";
-				} 
-				else { 
-					two = two.toLocaleString("en-US")
-				}
-				if (three == undefined || three == "0") {
-					three = "";
-				} 
-				else { 
-					three = three.toLocaleString("en-US")
-				}
-				if (four == undefined || four == "0") {
-					four = "";
-				} else { 
-					four = four.toLocaleString("en-US")
-				}
-				if (five == undefined || five == "0") {
-					five = "";
-				} 
-				else { 
-					five = five.toLocaleString("en-US")
-				}
-				csvinfo.push([keys[j], one, two, three, four, five]);
+				csvinfo.push([keys[j], quant]);
 				currOrder++;
 				break;
 			}
@@ -2072,19 +1956,19 @@ export function exporttocsv() {
 	}
 	csvinfo.push([])
 	csvinfo.push([])
-	csvinfo.push(["Captured Clue History", 'Parse tier at " : " and " [C] "','Parse items at " x "'])
-	csvinfo.push(["Clue Tier & Count", "Clue Value", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9"])
-
+	csvinfo.push(["Captured Rewards History", 'Parse tier at " : " and " [C] "','Parse items at " x "'])
+	csvinfo.push(["Rewards Tier & Count", "Reward Value", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12"])
+	console.log(lsHistory)
 	if (seeConsoleLogs) console.log("Setting history in csv...")
 	for (let i = 0; i < lsHistory.length; i++) {
-		let temp = [lsHistory[i][3][0] + " : " + lsHistory[i][4], lsHistory[i][2]]
+		let temp = [lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2]]
 		for (let j = 0; j < 4; j++) {
 			for(let k = 0; k < 8; k++){
-				if (lsHistory[i][0][(j * 8) + k] != undefined) {
-					temp.push(lsHistory[i][1][(j * 8) + k] + " x " + lsHistory[i][0][(j * 8) + k])
+				if(lsHistory[i][0][(j * 8) + k] == undefined || lsHistory[i][0][(j * 8) + k] === "Blank"){
+					temp.push("")
 				}
 				else {
-					temp.push("")
+					temp.push(lsHistory[i][1][(j * 8) + k] + " x " + lsHistory[i][0][(j * 8) + k])
 				}
 			}
 		}

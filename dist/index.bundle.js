@@ -2075,7 +2075,7 @@ function captureStream(x, y, width, height, fps, framecb, errorcb) {
   \**************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/base/dist/index.js").ImageDetect.imageDataFromBase64)("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")
+module.exports=(__webpack_require__(/*! @alt1/base */ "../node_modules/@alt1/base/dist/index.js").ImageDetect.imageDataFromBase64)("iVBORw0KGgoAAAANSUhEUgAAAHUAAAAJCAYAAAAM5GMGAAABhW5vUEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKojDQ0AAAAGbm9QRQAAAAAAAOxru9gAAAAJbm9QRQAAAAAAAAAAAKGKctUAAAAHbm9QRQAAAAAAAABa5t7QAAAAGW5vUEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM1pa8AAACs9JREFUWMNdlnmUVdWVxn/nzu/Ve1XvIVBVYNIMoii2UExhcIhaykwBpYS2FRMp0yENaRMTp3SInaSD2p1eZiXCSrAlRLNWC2LSvUhiN4NSWiggk7SooElbUabI9F7Ve/eee+45/cctq4rsv+7da69zvv3tvb99xKaH68xtiyp0dQlOnrKpqdE8tSbL63stsoGPjiShMRSyPgB/s6TEobcDdu02ZDwLExtCY7j3noglt0cAnDhpkc8ZXutw2fBcLeWSoio12cDn7ru6uW1RBYBTPfftaHfY/HwdH52WZDwLgAhBjadYsljy+etitIHavGFnh8e6pz0SFVAJI5a3RdzWGtHVJfj6N4sc70wIjWF5W8TufTZHDrpI1+JzY2MefKCbQ4cc1v28jjPnFddOj5k5QwLQ0KB5YXOG32yx8B2LSBkynksiY2KgNuNRU6OZP7+LcU0JNTUaQWrHT1g88O0sX1nWh+XJNVne6PAQls3dd5Z7/U+tzdH+is09yyStPTwcP2lRmzMcPWaz6tEcBpgyLWbOrSmfQxo1z270+J/tGR7/XheN9QlCCBrqEwBOnrLBGBoaNOvXB1i/2OAB8MYRzVV3hLz3J803v9VFV6yohBHCFQQihZ9YITNmSWbOK3M2jvnUMp7Fc89lANi2xzBkXsTDP9XMnCEZe+1ZYm2wPBvPgrXrnN64hrkhD/1UM392zJVTz5I4FlWpMbFhYK3NEz+s0NCombRYcNlCxcyVCdOmRWx4pkyuUCEb+Kx92qfzuCCXM/znsdNUkoSMZzFzhmRBa8gnMsbH8L/vCPI5Q+t3Q1764AxXj5E89EA33/k3mxuXx8xZkXDKlPlYSsoywQOqUmI5Al8IsjWax584x/CRCV/4hs0VCxNGLlA0/71CZBQHS2V+vK6Py+9tvsCJaojRivW/zPT6/3HTOTqrIWue7uNh6LyI+uaEzbskr//5POOuVnznwW6+/SObW1YmzFqhKdlVTlciOtodrl6kGdES8/JeA0Dj3JARCxRDbtG8caIby8Smtzh52+HY4XQi95dKRMYQIZCuRWe5m5bZaSGnT9AUP1ulKjXStYgQVKXuPWeA6/LH14sATGxK+EMlBOB8JaK/DfR93tlZl8aNT/io3E0g0vtuvqWby0cl/MOTEqk1N9UPwD9Z4IknferycPP8MhWVkA18dnWkZI4dDVoIrhwjyeUM0ydokgEpzhuui9l3wOb0Bc3oXI7LRqd5h7kurirmyZbz7NleQ6wSXCEIjUnzF4KqDbfOKdHYoFn6A0nnmZimulqmDCjQqC7hxV9nkInGE6I3tzrXpWC7VGONpM9f6zo05DPYrt3Hl+dyY8Ngdm8pMMj3GH5FOoGqrpsr6/JcUqnlUHue7jjmN79zGeR7TCwWKHp+7xlTBxQYk7mEd9sLWKdVfBHRTU2Kf/25jRAQ6YTActAyodZ2mDlLsuK7KZgl8zRn4hgtE3zSSexvnxZ52x7N2UiiZQo0G/QB0Vr3/m/bozmnFKFJyZ5za8SfTgje+lAxppCjKjWRMRx+M+361pst3iuVCLVi56tp19/ebNGFZu6smM2/7fHNSagmCeObEv5rh2CA7+EIwb43U5nf+pRD211VPCGIqw6DfB8ECNci1hpf2BBrmm9IuFCGI50J1xQL5AIfqQ0mTtj/hs+wfA12Pw607hsW+n1awsLDYC7yCapSki9aDM0E7D/o9sNWwXcsukoWgwOfwLP4TL4GV4Dud7AxEMYKz3OwfCsFMmG0YPsz6WR5Wc1nM1lqbYdQKyzP5q/HKbq6BZs6JLsP2Hx5oYX0JJExVKWmGqm+hIAZsyQHD3k8vkFTHwQAlBLFuWrYPxtuurHM/gMOj2/QFB2HbODjY2hs0ChtyNg2Ikk73ReCiHT3F2vhdBgRWA6Hj1p8dELQPFkQOhHjmxRfXZ3w1nvw5YUWJTdkfJPiP7YlDHZTwo4es3lkdYZzJfjSEsWj3y8j44SsbSEcCykTamybyCQI16KxQXO2BI4Q2JZBAK4QRDrNv862ewvVPFmw7wX41S+6efaZLp5dV+pNWWlNFGs8YXpj9240/PLfy7TdVcF1HT78wOKRHwacK8EXlygeXnUBAWQsixiBb9vYro3VTwFkvy6xCn5a1H3vGiYtVaxaY1i13LB4brqbtEyoVEKWLpY01GuObLa4alQ6hfNnSz7tzWIm6AV58AV44Gshv96mKbguI2p8ImMoZHxETzc3Txbs22j4+tdCXtyRSnZDEBBqhZet5eQpm+FDoZCHyKRKUMj6BJZDTVZz4F2ItSbUCl8IXnvNY8RQwf1tMdvbHc7KmJf+O6BYC/e1xRx93+YPZ2IG+6kyWJ7N7naXpSsDtu8xXDfRMGpKN5E2hDJBCAgciyRShFXJiZMWw4fCwDpBNVJUpcR2bTwhsISgrp8CbdtjGN4SM6IlZuSCmJEt8UWNLBybaqwvip20NOH3h0LevlDGy+R5a2+Ov12ZYfsew7UTDcMmlqnL+LjYnC9X0bG+SAJ8SxC4DkmcYPXfhTnHYe+OPAA3Xa/orIRYns3QSy1GjUq4ptVw+SLF4GbFuXI6BR/2TF6oVS/IYS0xm7cb/ul+xeLrg1Q6dSq/3l8k8+J2ww/uV7RMc/BFStip05/wSnsqn/NuNNhAYDmUlKI4WJLPGzZt0+Rcp1fWt7anzXLPAsHPXkwY7Pu83O5QKkPbQouNWzU1to0jBJExTJmc4u4+7fHPq2sAqG9IOCMlgWtjlAaRFh/bZkcPnrtbQBkDBpI4QRpDQ0NCqBSVfm+GWtdhQj7PzQ31TC7W9dXUGIwxyDjp9RVclyudAm+9UoeP4Ooxp6lEkq6zPk88lmIbVK94v9xNpBXGGKoqTnH0WKQNYax6JvgvzK9Jenfch91VtExonZuwe7/Nx+cVU4tFphWL7NrlM2KoYMw1EVH/BdED8um1edrfhMceCblinKSQ8S+S6E/jnn2mSPubgh+tUlwxTiI8G+HabHjepfM4PLbCZshIxcnubkJjWHZnhb37bVZvSGjIBL1T/H/vO3x8QrDvHcNLhyIGujay22Lnq6ncrnspYqDvI10LXwi+uixCZyQGw6VD+hqtSymqcUIoDJ9UY4zSBJ7NrzZ5HD4qeGyFzaLWKlbPQ8cA962sUk2Si/ckAtexuRBFOJ5z0X41iSbIpLiKebAsAQIWzk+4vDHD8raYLjdER5LLhjkXYTNKE/gO2YyPJfrVTQg8BFol2KuWuY+OG6sYMVQwazrMucmwZavDt9ZKLs0EtN2haW2RnC0ZXtllUxQpMfWXGKZMipk6Fk6dgWmTFJOaEop5gQDeOeyza7fL4Etj7r9XkatTHDviMr9F9sZZQnD4gEtHh6DxrxTfaFMU6hRvH/MpfZLwckeWczpkxdKYO1o1sz4vOXDY5aE1AilhTCGPSjQq0Xi+g2Vrnt8Z09lp85lsDQnwx06LoE6xfkvC5fkcljY4QjD1c4rlyyQtsxXN1yd8/0mXFzokowt5bASusAgsC4lB2xYkFltftnn/jGTmDZqvfClk/uyYe+6UdHba/GRLlQeXOYwfp3o5OPZe+iq/94tVrhmT5gxw7IMMSxZWmdiUMGSQ4O9uh5bZMVMmxfzLemieZrivLWbB3IQbpktW/yRg46sRw7IZ8pmAbDbPhEkV5s+M8D0YMkigKj7H/5w22f8DaIEm1Oi4wqoAAAAASUVORK5CYII=")
 
 /***/ }),
 
@@ -4836,6 +4836,8 @@ var lagDetected = false;
 var buttonDisabletoggle = true;
 var lagCounter = 0;
 var insertVerif = [];
+// Adjust this for larger windows. I want 12 cause barrows.
+var cap = 12;
 var imgs = _alt1_base__WEBPACK_IMPORTED_MODULE_0__.ImageDetect.webpackImages({
     barrowsChest: __webpack_require__(/*! ./images/barrowsChest.data.png */ "./images/barrowsChest.data.png"),
     barrowsChestLegacy: __webpack_require__(/*! ./images/barrowsChestLegacy.data.png */ "./images/barrowsChestLegacy.data.png")
@@ -5116,53 +5118,6 @@ async function capture(autobool) {
         }
     }
 }
-// export function testCapture() {
-// 	if (!window.alt1) {
-// 		return;
-// 	}
-// 	if (!alt1.permissionPixel) {
-// 		return;
-// 	}
-// 	var img = a1lib.captureHoldFullRs();
-// 	testCut(img);
-// }
-// function testCut(img: ImgRef){
-// 	var loc = img.findSubimage(imgs.barrowsChest);
-// 	//overlay the result on screen if running in alt1
-// 	if (window.alt1) {
-// 		if (loc.length != 0) {
-// 			//alt1.overLayRect(a1lib.mixColor(255, 255, 255), loc[0].x, loc[0].y, imgs.barrowsChest.width, imgs.barrowsChest.height, 2000, 3);
-// 		} else {
-// 			alt1.overLayTextEx("Couldn't find chest", a1lib.mixColor(255, 255, 255), 20, Math.round(alt1.rsWidth / 2), 200, 2000, "", true, true);
-// 		}
-// 	}
-// 	//get raw pixels of image and show on screen (used mostly for debug)
-// 	let x = loc[0].x + 163
-// 	let y = loc[0].y + 174
-// 	for(let i = 0; i < 4; i++){
-// 		for(let j = 0; j < 8; j++){
-// 			console.log(i,j)
-// 			alt1.overLayRect(a1lib.mixColor(255, 255, 255), x, y, 32, 32, 200000, 1);
-// 			var buf = img.toData(x, y, 32, 32);
-// 			x += 32 + 23
-// 		}
-// 		x = loc[0].x + 163
-// 		y += 32 + 14
-// 	}
-// 	// Adjust this for Barrows.
-// 	console.log("Testing reward reader")
-// 	let rewardreader = new ClueRewardReader();  // Thanks Skillbert
-// 	console.log(rewardreader)
-// 	console.log("testing modal ui reader")
-// 	rewardreader.pos = ModalUIReader.find()[0]; // For these two functions
-// 	if(rewardreader.read(img) == null)
-// 		console.log("it is",null)
-// 	else
-// 		console.log(rewardreader.read(img))
-// 	//let value = rewardreader.read(img).value;
-// 	//let valueStr = value.toString();
-// 	//console.log(valueStr)
-// }
 async function findtrailComplete(img, autobool) {
     // If 3 rerolls..., default
     // Adjust this if you want to add more rerolls.
@@ -5204,16 +5159,24 @@ async function findtrailComplete(img, autobool) {
         // y1, +1 = up, -1 = down
         // Adjust top crops as well, for the x1 and y1 values for it
         // Consider making this an option in the settings.
-        let x1;
-        let y1;
+        let xdefault;
+        let ydefault;
+        let xRect;
+        let yRect;
         if (!legacy) {
-            x1 = loc[0].x + 163;
-            y1 = loc[0].y + 175;
+            xdefault = loc[0].x - 10;
+            ydefault = loc[0].y + 30;
+            xRect = loc[0].x - 27;
+            yRect = loc[0].y - 13;
         }
-        else { // TODO: Get legacy working
-            x1 = loc[0].x - 112;
-            y1 = loc[0].y + 39;
+        else {
+            xdefault = loc[0].x - 154;
+            ydefault = loc[0].y + 30;
+            xRect = loc[0].x - 172;
+            yRect = loc[0].y - 13;
         }
+        let x1 = xdefault;
+        let y1 = ydefault;
         let crops = [];
         let topCrops = [];
         for (let i = 0; i < 4; i++) {
@@ -5226,7 +5189,7 @@ async function findtrailComplete(img, autobool) {
             }
             crops.push(croptemp);
             topCrops.push(toptemp);
-            x1 = loc[0].x + 163;
+            x1 = xdefault;
             y1 += 32 + 14;
         }
         // Give me the total value!
@@ -5267,12 +5230,7 @@ async function findtrailComplete(img, autobool) {
         }
         alt1.overLayClearGroup("overlays");
         alt1.overLaySetGroup("rect");
-        if (!legacy) {
-            alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), loc[0].x + 145, loc[0].y + 131, await imgs.barrowsChest.width, await imgs.barrowsChest.height + 2, 60000, 2);
-        }
-        else {
-            alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), loc[0].x - 138, loc[0].y - 13, await imgs.barrowsChestLegacy.width + 278, await imgs.barrowsChestLegacy.height + 213, 60000, 2);
-        }
+        alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), xRect, yRect, imgs.barrowsChest.width + 345, imgs.barrowsChest.height + 291, 60000, 2);
         let prevValue = lastValue;
         lastValue = value;
         if (!lagDetected) {
@@ -5283,14 +5241,8 @@ async function findtrailComplete(img, autobool) {
         }
         let itemResults = [];
         let promises = [];
-        if (!legacy) {
-            x1 = loc[0].x + 163;
-            y1 = loc[0].y + 174;
-        }
-        else { // TODO: Get legacy working
-            x1 = loc[0].x - 112;
-            y1 = loc[0].y + 39;
-        }
+        x1 = xdefault;
+        y1 = ydefault;
         let notBlank = false;
         for (let i = 0; i < 4; i++) {
             let itemtemp = [];
@@ -5302,17 +5254,18 @@ async function findtrailComplete(img, autobool) {
                 if (displaybox) {
                     // Keep an eye on this in case it incorrectly gives numbers...
                     if (window.alt1) {
-                        alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), x1, y1, 32, 32, 2000, 1);
+                        alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), x1, y1, 32, 32, 1000, 1);
                         if (((i * 8) + j + 1) >= 20)
-                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 - 1, y1, 2000);
+                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 - 1, y1, 1000);
                         else if (((i * 8) + j + 1) >= 10)
-                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 - 3, y1, 2000);
+                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 - 3, y1, 1000);
                         else if (((i * 8) + j + 1) < 10)
-                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 + 5, y1, 2000);
+                            alt1.overLayText(((i * 8) + j + 1).toString(), _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0, 255), 18, x1 + 5, y1, 1000);
                     }
                 }
                 x1 += 32 + 23;
                 promises.push(itemtemp.push(await compareItems(crops[i][j])));
+                console.log(itemtemp[j]);
                 if (localStorage.getItem("lagDetect") == "true") {
                     if (itemtemp[j] == "Blank") {
                         notBlank = true;
@@ -5327,13 +5280,14 @@ async function findtrailComplete(img, autobool) {
                         }
                         lagDetected = true;
                         lastValue = 0;
+                        lagCounter++;
                         capture(autobool);
                         return;
                     }
                 }
             }
             itemResults.push(itemtemp);
-            x1 = loc[0].x + 163;
+            x1 = xdefault;
             y1 += 32 + 14;
         }
         if (localStorage.getItem("lagDetect") == "true") {
@@ -5352,23 +5306,17 @@ async function findtrailComplete(img, autobool) {
                     let x = 0;
                     let y = 0;
                     if (!legacy) {
-                        if (seeConsoleLogs)
-                            console.log("is not legacy");
                         loc2 = newImg.findSubimage(imgs.barrowsChest);
-                        //x = loc2[0].x + (40 * (i));
-                        x = loc2[0].x + 163;
-                        y = loc2[0].y + 174;
-                        let row = i / 4;
-                        let col = i % 8;
-                        console.log(row, col);
-                        console.log("i in reroll is", i);
-                        x += (32 + 23) * col;
-                        y += (32 + 14) * row;
                     }
                     else {
                         loc2 = newImg.findSubimage(imgs.barrowsChestLegacy);
-                        x = loc[0].x - 112 + (40 * (i));
                     }
+                    x = xdefault;
+                    y = ydefault;
+                    let row = i / 4;
+                    let col = i % 8;
+                    x += (32 + 23) * col;
+                    y += (32 + 14) * row;
                     if (window.alt1) {
                         alt1.overLayClearGroup("overlays");
                         alt1.overLaySetGroup("overlays");
@@ -5543,12 +5491,7 @@ async function findtrailComplete(img, autobool) {
             alt1.overLayClearGroup("lag");
             alt1.overLaySetGroup("overlays");
             alt1.overLayTextEx("Barrows rewards captured successfully!", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(100, 255, 100), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
-            if (!legacy) {
-                alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(0, 255, 0), loc[0].x + 145, loc[0].y + 131, imgs.barrowsChest.width, imgs.barrowsChest.height + 2, 1000, 2);
-            }
-            else {
-                alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(0, 255, 0), loc[0].x - 138, loc[0].y - 13, await imgs.barrowsChestLegacy.width + 278, await imgs.barrowsChestLegacy.height + 213, 1000, 2);
-            }
+            alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(0, 255, 0), xRect, yRect, imgs.barrowsChest.width + 345, imgs.barrowsChest.height + 291, 1000, 2);
         }
         lagDetected = false;
     }
@@ -5694,6 +5637,7 @@ async function readQuantities(item) {
         }
         for (let j = 0; j < pixarr.length; j++) {
             if (pixarr[j][i].r == 255 && pixarr[j][i].g == 255 && pixarr[j][i].b == 0 || // Yellow, Every screen has this
+                pixarr[j][i].r == 255 && pixarr[j][i].g == 254 && pixarr[j][i].b == 0 || // Very slightly darker yellow, a screenie had this...
                 pixarr[j][i].r == 254 && pixarr[j][i].g == 254 && pixarr[j][i].b == 0 || // Very slightly darker yellow, a screenie had this...
                 pixarr[j][i].r == 253 && pixarr[j][i].g == 253 && pixarr[j][i].b == 0 || // Slightly darker yellow, for safety
                 pixarr[j][i].r == 255 && pixarr[j][i].g == 255 && pixarr[j][i].b == 255) { // White, elites and masters only
@@ -5880,28 +5824,6 @@ function tabDisplay() {
 async function historyClear() {
     removeChildNodes(document.getElementById("history_body"));
 }
-function rollbackFunc(valueClear) {
-    let lsHistory = JSON.parse(localStorage.getItem("History"));
-    let lastRoll = lsHistory[lsHistory.length - 1];
-    //	Index 0 = Items
-    //	Index 1 = Quantities
-    //	Index 2 = Value of reward
-    // 	Index 3 = "Reward" or "Reward [C] "
-    if (seeConsoleLogs)
-        console.log("Rolling back:", lastRoll[0], lastRoll[1], lastRoll[2], lastRoll[3]);
-    for (let i = 0; i < lastRoll[0].length; i++) {
-        items[lastRoll[0][i]].quantity = items[lastRoll[0][i]].quantity - lastRoll[1][i];
-        updateItems();
-    }
-    // Decrease value and count
-    localStorage.setItem("Value", JSON.stringify(JSON.parse(localStorage.getItem("Value")) - lastRoll[2]));
-    localStorage.setItem("Count", JSON.stringify(JSON.parse(localStorage.getItem("Count")) - 1));
-    lsHistory.pop();
-    localStorage.setItem("History", JSON.stringify(lsHistory));
-    if (valueClear) {
-        lastValue = 0;
-    }
-}
 function historyInit() {
     let lsHistory = JSON.parse(localStorage.getItem("History"));
     let quantity = document.getElementById("history_quantity");
@@ -5917,7 +5839,7 @@ function historyInit() {
         let index = parseInt(localStorage.getItem("Count"));
         let limit = 0;
         for (let i = lsHistory.length - 1; i >= 0; i--) { //Navigating lsHistory
-            if (limit <= parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
+            if (limit < parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
                 let temp = lsHistory[i];
                 let ele = document.getElementById("history_body");
                 let container = document.createElement("div");
@@ -5945,18 +5867,14 @@ function historyInit() {
                 value.textContent = "Reward Value: " + temp[2].toLocaleString("en-US");
                 value.setAttribute('class', 'historyValue');
                 container.append(value);
-                // Adjust this for larger windows. I want 12 cause barrows.
-                let cap = 12;
                 let TPcheck = false;
                 for (let j = 0; j < 4; j++) { // Navigating temp
                     for (let k = 0; k < 8; k++) {
                         if (temp[0][(j * 8) + k] == "Blank" || temp[0][(j * 8) + k] == undefined) {
-                            console.log("(j * 8) + k is", (j * 8) + k);
                             if (TPcheck) {
                                 break;
                             }
                             for (let l = (j * 8) + k; l < cap; l++) {
-                                console.log("transparency");
                                 let nodevar = document.createElement("itembox");
                                 let imgvar = document.createElement("img");
                                 let quantvar = document.createElement("span");
@@ -6336,9 +6254,18 @@ function insertToDB() {
         alt1.overLayTextEx("Submitting custom clue to Database...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 40000, "", true, true);
     }
     let items = insertVerif[0];
+    for (let i = 0; i < 4; i++) {
+        for (let j = items[i].length; j < 8; j++) {
+            items[i].push("Blank");
+        }
+    }
+    console.log(items);
     let quants = [];
     for (let i = 0; i < insertVerif[1].length; i++) {
         quants.push(insertVerif[1][i].toString());
+    }
+    for (let i = quants.length; i < cap; i++) {
+        quants.push("0");
     }
     let value = insertVerif[2];
     let tier = insertVerif[3];
@@ -6525,8 +6452,8 @@ function noMenuCheck() {
             if (window.alt1) {
                 alt1.overLayClearGroup("nomenu");
                 alt1.overLaySetGroup("nomenu");
-                alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 50, 50), loc[0].x + 246 - (5 * length) + (1 * comma), loc[0].y + 94, 0 + (8 * length) + (4 * comma), await imgs.barrowsChest.height + 6, 60000, 2);
-                alt1.overLayTextEx("NO MENUS HERE", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 50, 50), 10, loc[0].x + 245, loc[0].y + 118, 50000, "", true, true);
+                alt1.overLayRect(_alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 50, 50), loc[0].x + 301 - (5 * length) + (1 * comma), loc[0].y + 218, 2 + (8 * length) + (4 * comma), imgs.barrowsChest.height + 6, 60000, 2);
+                alt1.overLayTextEx("NO MENUS HERE", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 50, 50), 10, loc[0].x + 301, loc[0].y + 242, 50000, "", true, true);
             }
         }, 1000);
     }
@@ -6545,7 +6472,7 @@ function exporttocsv() {
         alt1.overLayTextEx("Generating CSV...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 2000, "", true, true);
     }
     let csvinfo = [];
-    csvinfo.push(["Item", "Easy", "Medium", "Hard", "Elite", "Master"]);
+    csvinfo.push(["Item", "Quantities"]);
     let lsHistory = JSON.parse(localStorage.getItem("History"));
     let keys = Object.keys(items);
     let currOrder = 1;
@@ -6553,60 +6480,24 @@ function exporttocsv() {
         console.log("Generating CSV...");
     if (seeConsoleLogs)
         console.log("Getting values and counts...");
-    let eCount = localStorage.getItem("ECount");
-    let eValue = localStorage.getItem("EValue");
-    let mCount = localStorage.getItem("MCount");
-    let mValue = localStorage.getItem("MValue");
-    let hCount = localStorage.getItem("HCount");
-    let hValue = localStorage.getItem("HValue");
-    let elCount = localStorage.getItem("ElCount");
-    let elValue = localStorage.getItem("ElValue");
-    let maCount = localStorage.getItem("MaCount");
-    let maValue = localStorage.getItem("MaValue");
-    csvinfo.push(["Total Count", eCount, mCount, hCount, elCount, maCount]);
-    csvinfo.push(["Total Value", eValue, mValue, hValue, elValue, maValue]);
+    let count = localStorage.getItem("Count");
+    let value = localStorage.getItem("Value");
+    csvinfo.push(["Total Count", "\"" + count + "\""]);
+    csvinfo.push(["Total Value", "\"" + value + "\""]);
     if (seeConsoleLogs)
         console.log("Getting item quantities...");
     for (let i = 0; i < keys.length; i++) {
         for (let j = 0; j < keys.length; j++) {
             if (items[keys[j]].order == currOrder.toString()) {
                 let val = items[keys[j]];
-                let one = val.quantity.easy;
-                let two = val.quantity.medium;
-                let three = val.quantity.hard;
-                let four = val.quantity.elite;
-                let five = val.quantity.master;
-                if (one == undefined || one == "0") { // .toLocaleString("en-US")
-                    one = "";
+                let quant = val.quantity;
+                if (quant == undefined || quant == "0") { // .toLocaleString("en-US")
+                    quant = "";
                 }
                 else {
-                    one = one.toLocaleString("en-US");
+                    quant = "\"" + quant.toLocaleString("en-US") + "\"";
                 }
-                if (two == undefined || two == "0") {
-                    two = "";
-                }
-                else {
-                    two = two.toLocaleString("en-US");
-                }
-                if (three == undefined || three == "0") {
-                    three = "";
-                }
-                else {
-                    three = three.toLocaleString("en-US");
-                }
-                if (four == undefined || four == "0") {
-                    four = "";
-                }
-                else {
-                    four = four.toLocaleString("en-US");
-                }
-                if (five == undefined || five == "0") {
-                    five = "";
-                }
-                else {
-                    five = five.toLocaleString("en-US");
-                }
-                csvinfo.push([keys[j], one, two, three, four, five]);
+                csvinfo.push([keys[j], quant]);
                 currOrder++;
                 break;
             }
@@ -6614,19 +6505,20 @@ function exporttocsv() {
     }
     csvinfo.push([]);
     csvinfo.push([]);
-    csvinfo.push(["Captured Clue History", 'Parse tier at " : " and " [C] "', 'Parse items at " x "']);
-    csvinfo.push(["Clue Tier & Count", "Clue Value", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9"]);
+    csvinfo.push(["Captured Rewards History", 'Parse tier at " : " and " [C] "', 'Parse items at " x "']);
+    csvinfo.push(["Rewards Tier & Count", "Reward Value", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12"]);
+    console.log(lsHistory);
     if (seeConsoleLogs)
         console.log("Setting history in csv...");
     for (let i = 0; i < lsHistory.length; i++) {
-        let temp = [lsHistory[i][3][0] + " : " + lsHistory[i][4], lsHistory[i][2]];
+        let temp = [lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2]];
         for (let j = 0; j < 4; j++) {
             for (let k = 0; k < 8; k++) {
-                if (lsHistory[i][0][(j * 8) + k] != undefined) {
-                    temp.push(lsHistory[i][1][(j * 8) + k] + " x " + lsHistory[i][0][(j * 8) + k]);
+                if (lsHistory[i][0][(j * 8) + k] == undefined || lsHistory[i][0][(j * 8) + k] === "Blank") {
+                    temp.push("");
                 }
                 else {
-                    temp.push("");
+                    temp.push(lsHistory[i][1][(j * 8) + k] + " x " + lsHistory[i][0][(j * 8) + k]);
                 }
             }
         }
