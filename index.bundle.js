@@ -4813,9 +4813,10 @@ __webpack_require__(/*! !file-loader?name=[name].[ext]!./appconfig.json */ "../n
 // TODO: FOR THE PROGRAMMERS AND DEBUGGERS
 // Set this value to true or false to enable console log messages
 var seeConsoleLogs = true;
-var settingslist = ["Checked button", "Algorithm", "lagDetect",
-    "multiButtonPressDetect", "hybridPrecision", "noMenu", "RollbackDisplayLimit"];
-var valuesAndCounts = ["Value", "Count"];
+var settingslist = ["BarrowsLogger/Checked button", "BarrowsLogger/Algorithm", "BarrowsLogger/lagDetect",
+    "BarrowsLogger/multiButtonPressDetect", "BarrowsLogger/hybridPrecision",
+    "BarrowsLogger/noMenu", "BarrowsLogger/RollbackDisplayLimit"];
+var valuesAndCounts = ["BarrowsLogger/Value", "BarrowsLogger/Count"];
 var rewardSlots = ["first_item", "second_item", "third_item", "fourth_item", "fifth_item",
     "sixth_item", "seventh_item", "eigth_item", "ninth_item", "tenth_item",
     "eleventh_item", "twelfth_item"];
@@ -4873,85 +4874,71 @@ async function init() {
     // Initializing LocalStorage items
     if (seeConsoleLogs)
         console.log("Initializing LocalStorage items...");
-    if (localStorage.getItem("items") == null) {
-        localStorage.setItem("items", JSON.stringify(_JSONs_LocalStorageBarrowsInit_json__WEBPACK_IMPORTED_MODULE_5__));
+    if (localStorage.getItem("BarrowsLogger/items") == null) {
+        localStorage.setItem("BarrowsLogger/items", JSON.stringify(_JSONs_LocalStorageBarrowsInit_json__WEBPACK_IMPORTED_MODULE_5__));
     }
     for (let i = 0; i < valuesAndCounts.length; i++) {
         if (localStorage.getItem(valuesAndCounts[i]) == null) {
             localStorage.setItem(valuesAndCounts[i], "0");
         }
     }
-    items = JSON.parse(localStorage.getItem("items"));
-    // This code should be able to save your data after the optimization update.
-    // This snippet can be removed a few months in the future or for future projects with this code.
-    // ~ 08/10/2022
-    let keys = Object.keys(_JSONs_LocalStorageBarrowsInit_json__WEBPACK_IMPORTED_MODULE_5__);
-    for (let i = 0; i < keys.length; i++) {
-        if (localStorage.getItem(keys[i]) != null) {
-            for (let j = 0; j < items[keys[i]].tier.length; j++) {
-                let itemsQuant = parseInt(items[keys[i]].quantity[items[keys[i]].tier[j]]);
-                let lsItemQuant = parseInt(JSON.parse(localStorage.getItem(keys[i])).quantity[items[keys[i]].tier[j]]);
-                items[keys[i]].quantity[items[keys[i]].tier[j]] = itemsQuant + lsItemQuant;
-            }
-            localStorage.removeItem(keys[i]);
-        }
-    }
+    items = JSON.parse(localStorage.getItem("BarrowsLogger/items"));
     if (seeConsoleLogs)
         console.log("LocalStorage items initialized.");
-    if (localStorage.getItem("Algorithm") == null) { // Algorithim init check
+    if (localStorage.getItem("BarrowsLogger/Algorithm") == null) { // Algorithim init check
         if (seeConsoleLogs)
             console.log("Defaulting Algorithm button to Hybrid...");
-        localStorage.setItem("Algorithm", "hybrid");
+        localStorage.setItem("BarrowsLogger/Algorithm", "hybrid");
     }
-    if (localStorage.getItem("ItemList") == null) { // Item Referense list init check
+    if (localStorage.getItem("BarrowsLogger/ItemList") == null) { // Item Referense list init check
         if (seeConsoleLogs)
             console.log("Defaulting ItemList to Organized List...");
-        localStorage.setItem("ItemList", "orglist");
+        localStorage.setItem("BarrowsLogger/ItemList", "orglist");
     }
-    if (localStorage.getItem("autoCapture") == null) { // Autocapture check
+    if (localStorage.getItem("BarrowsLogger/autoCapture") == null) { // Autocapture check
         if (seeConsoleLogs)
             console.log("Defaulting autocapture to off...");
-        localStorage.setItem("autoCapture", "false");
+        localStorage.setItem("BarrowsLogger/autoCapture", "false");
     }
-    if (localStorage.getItem("lagDetect") == null) { // Lag Detection toggle check
+    if (localStorage.getItem("BarrowsLogger/lagDetect") == null) { // Lag Detection toggle check
         if (seeConsoleLogs)
             console.log("Defaulting lag detect to true...");
-        localStorage.setItem("lagDetect", "true");
+        localStorage.setItem("BarrowsLogger/lagDetect", "true");
     }
-    if (localStorage.getItem("multiButtonPressDetect") == null) { // Button double press detection
+    if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == null) { // Button double press detection
         if (seeConsoleLogs)
             console.log("Defaulting multi button press detect to true...");
-        localStorage.setItem("multiButtonPressDetect", "true");
+        localStorage.setItem("BarrowsLogger/multiButtonPressDetect", "true");
     }
-    if (localStorage.getItem("noMenu") == null) { // No hover display box
+    if (localStorage.getItem("BarrowsLogger/noMenu") == null) { // No hover display box
         if (seeConsoleLogs)
             console.log("Defaulting no menu box to true");
-        localStorage.setItem("noMenu", "false");
+        localStorage.setItem("BarrowsLogger/noMenu", "false");
     }
-    else if (localStorage.getItem("noMenu") == "true") {
+    else if (localStorage.getItem("BarrowsLogger/noMenu") == "true") {
         if (seeConsoleLogs)
             console.log("Enabling no menu box");
         noMenuCheck();
     }
-    if (localStorage.getItem("hybridPrecision") == null) { // Hybrid precision value
+    if (localStorage.getItem("BarrowsLogger/hybridPrecision") == null) { // Hybrid precision value
         if (seeConsoleLogs)
             console.log("Defaulting hybridPrecision to 0.7...");
-        localStorage.setItem("hybridPrecision", "0.7");
+        localStorage.setItem("BarrowsLogger/hybridPrecision", "0.7");
     }
-    if (localStorage.getItem("History") == null) { // History initializer
+    if (localStorage.getItem("BarrowsLogger/History") == null) { // History initializer
         if (seeConsoleLogs)
             console.log("Creating history");
-        localStorage.setItem("History", JSON.stringify([]));
+        localStorage.setItem("BarrowsLogger/History", JSON.stringify([]));
     }
-    if (localStorage.getItem("PrimaryKeyHistory") == null) { // Initialize primary key for history
+    if (localStorage.getItem("BarrowsLogger/PrimaryKeyHistory") == null) { // Initialize primary key for history
         if (seeConsoleLogs)
             console.log("Defaulting PrimaryKeyHistory to 1");
-        localStorage.setItem("PrimaryKeyHistory", "1");
+        localStorage.setItem("BarrowsLogger/PrimaryKeyHistory", "1");
     }
-    if (localStorage.getItem("HistoryDisplayLimit") == null) { // Initialize history display limit
+    if (localStorage.getItem("BarrowsLogger/HistoryDisplayLimit") == null) { // Initialize history display limit
         if (seeConsoleLogs)
             console.log("Defaulting history display limit to 25");
-        localStorage.setItem("HistoryDisplayLimit", "25");
+        localStorage.setItem("BarrowsLogger/HistoryDisplayLimit", "25");
     }
     updateItems();
     if (seeConsoleLogs)
@@ -4981,13 +4968,19 @@ async function cleardb(choice) {
             alt1.overLaySetGroup("overlays");
             alt1.overLayTextEx("Resetting BarrowsLogger...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
         }
-        localStorage.clear();
+        let ls = Object.keys(localStorage);
+        for (const i of ls) {
+            if (i.includes("BarrowsLogger")) {
+                console.log("Removing all Barrows Logger stuff...");
+                localStorage.removeItem(i);
+            }
+        }
         if (window.alt1) {
             alt1.overLayClearGroup("overlays");
             alt1.overLaySetGroup("overlays");
             alt1.overLayTextEx("BarrowsLogger successfully reset! Restarting...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(100, 255, 100), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
         }
-        await new Promise(resolve => setTimeout(resolve, 750));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         location.reload();
     }
     else if (choice == 2) { // Full item db clear
@@ -4996,8 +4989,8 @@ async function cleardb(choice) {
             alt1.overLaySetGroup("overlays");
             alt1.overLayTextEx("Clearing all items from reward database...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
         }
-        localStorage.removeItem("items");
-        localStorage.removeItem("History");
+        localStorage.removeItem("BarrowsLogger/items");
+        localStorage.removeItem("BarrowsLogger/History");
         for (let i = 0; i < valuesAndCounts.length; i++) {
             localStorage.removeItem(valuesAndCounts[i]);
         }
@@ -5014,8 +5007,8 @@ async function cleardb(choice) {
             alt1.overLaySetGroup("overlays");
             alt1.overLayTextEx("Reseting settings to default...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
         }
-        if (localStorage.getItem("noMenu") === "true") {
-            localStorage.setItem("noMenu", "false");
+        if (localStorage.getItem("BarrowsLogger/noMenu") === "true") {
+            localStorage.setItem("BarrowsLogger/noMenu", "false");
             noMenuCheck();
         }
         for (let i = 0; i < settingslist.length; i++) {
@@ -5094,7 +5087,7 @@ async function capture(autobool) {
     if (!alt1.permissionPixel) {
         return;
     }
-    if (localStorage.getItem("multiButtonPressDetect") === "true") {
+    if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
         if (!autobool) {
             document.getElementById("docapturebutton").setAttribute("onclick", "");
             document.getElementById("docapturebutton").setAttribute("title", "Disabled while scanning. Please wait...");
@@ -5108,7 +5101,7 @@ async function capture(autobool) {
     await Promise.all(promises);
     if (seeConsoleLogs)
         console.log("Finished checking clue scroll");
-    if (localStorage.getItem("multiButtonPressDetect") === "true") {
+    if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
         if (!autobool) {
             await new Promise(resolve => setTimeout(function () {
                 document.getElementById("docapturebutton").setAttribute("onclick", "TEST.capture(false)");
@@ -5266,7 +5259,7 @@ async function findtrailComplete(img, autobool) {
                 x1 += 32 + 23;
                 promises.push(itemtemp.push(await compareItems(crops[i][j])));
                 console.log(itemtemp[j]);
-                if (localStorage.getItem("lagDetect") == "true") {
+                if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
                     if (itemtemp[j] == "Blank") {
                         notBlank = true;
                     }
@@ -5290,7 +5283,7 @@ async function findtrailComplete(img, autobool) {
             x1 = xdefault;
             y1 += 32 + 14;
         }
-        if (localStorage.getItem("lagDetect") == "true") {
+        if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
             for (let i = 0; i < itemResults.length; i++) {
                 if (itemResults[itemResults.length - 1] !== "Blank") {
                     break;
@@ -5349,9 +5342,9 @@ async function findtrailComplete(img, autobool) {
                                     break;
                                 }
                             }
-                            let lsHistory = JSON.parse(localStorage.getItem("History"))[JSON.parse(localStorage.getItem("History")).length - 1][0];
+                            let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"))[JSON.parse(localStorage.getItem("BarrowsLogger/History")).length - 1][0];
                             if (seeConsoleLogs)
-                                console.log("Checking arrays for equivalence:", JSON.parse(localStorage.getItem("History"))[JSON.parse(localStorage.getItem("History")).length - 1][0], itemResultsNoBlanks);
+                                console.log("Checking arrays for equivalence:", JSON.parse(localStorage.getItem("BarrowsLogger/History"))[JSON.parse(localStorage.getItem("BarrowsLogger/History")).length - 1][0], itemResultsNoBlanks);
                             if (lsHistory.join(',') === itemResultsNoBlanks.join(',')) { // https://stackoverflow.com/a/6230314
                                 if (seeConsoleLogs)
                                     console.log(lsHistory.join(','), "and", itemResultsNoBlanks.join(','), "are the same...");
@@ -5540,7 +5533,7 @@ async function compareItems(item) {
     }
     matches.shift(); // Remove blank from the list
     let found = [];
-    if (localStorage.getItem("Algorithm") == "resemblejs") {
+    if (localStorage.getItem("BarrowsLogger/Algorithm") == "resemblejs") {
         found = matches[0];
         const promises = [];
         for (let i = 0; i < matches.length; i++) {
@@ -5553,7 +5546,7 @@ async function compareItems(item) {
         }
         await Promise.all(promises);
     }
-    else if (localStorage.getItem("Algorithm") == "pixelmatch") {
+    else if (localStorage.getItem("BarrowsLogger/Algorithm") == "pixelmatch") {
         /* List of items that do not identify in pure PixelMatch
             - Huge Plated Adamant Salvage identifies as Huge Plated Rune Salvage when using TwoPlus or All
         */
@@ -5567,7 +5560,7 @@ async function compareItems(item) {
         }
         await Promise.all(promises);
     }
-    else if (localStorage.getItem("Algorithm") == "hybrid") {
+    else if (localStorage.getItem("BarrowsLogger/Algorithm") == "hybrid") {
         // First we check with Pixelmatch and get the comparison of everything to the item
         let promises = [];
         let total = 0;
@@ -5577,7 +5570,7 @@ async function compareItems(item) {
         }
         // Then we get the average so we can remove half of the items that don't match
         let average = total / matches.length;
-        let precision = parseFloat(localStorage.getItem("hybridPrecision")); //1 does nothing
+        let precision = parseFloat(localStorage.getItem("BarrowsLogger/hybridPrecision")); //1 does nothing
         await Promise.all(promises);
         for (let i = matches.length - 1; i >= 0; i--) {
             if (matches[i][2] > (average * precision)) {
@@ -5740,8 +5733,8 @@ async function submitToLS(item, quant, value) {
         }
     }
     // Increase value and count
-    localStorage.setItem("Value", JSON.stringify((JSON.parse(localStorage.getItem("Value")) + value)));
-    localStorage.setItem("Count", JSON.stringify((JSON.parse(localStorage.getItem("Count")) + 1)));
+    localStorage.setItem("BarrowsLogger/Value", JSON.stringify((JSON.parse(localStorage.getItem("BarrowsLogger/Value")) + value)));
+    localStorage.setItem("BarrowsLogger/Count", JSON.stringify((JSON.parse(localStorage.getItem("BarrowsLogger/Count")) + 1)));
     return true;
 }
 async function addHistoryToLs(value, items, quants, reward) {
@@ -5767,20 +5760,20 @@ async function addHistoryToLs(value, items, quants, reward) {
             quants[i] += "000";
         }
     }
-    let previous = [itemsArr, quants, value, reward, localStorage.getItem("Count"), localStorage.getItem("PrimaryKeyHistory")];
-    let temp = JSON.parse(localStorage.getItem("History"));
+    let previous = [itemsArr, quants, value, reward, localStorage.getItem("BarrowsLogger/Count"), localStorage.getItem("BarrowsLogger/PrimaryKeyHistory")];
+    let temp = JSON.parse(localStorage.getItem("BarrowsLogger/History"));
     temp.push(previous);
-    localStorage.setItem("History", JSON.stringify(temp));
-    localStorage.setItem("PrimaryKeyHistory", JSON.stringify(parseInt(localStorage.getItem("PrimaryKeyHistory")) + 1));
+    localStorage.setItem("BarrowsLogger/History", JSON.stringify(temp));
+    localStorage.setItem("BarrowsLogger/PrimaryKeyHistory", JSON.stringify(parseInt(localStorage.getItem("BarrowsLogger/PrimaryKeyHistory")) + 1));
     await historyClear();
     historyInit();
 }
 function lootDisplay() {
     //Set Number of clues and Current and Average values
-    document.getElementById("number_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("Count"))).toLocaleString("en-US");
-    document.getElementById("value_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("Value"))).toLocaleString("en-US");
-    if (parseInt(JSON.parse(localStorage.getItem("Value"))) != 0) {
-        document.getElementById("average_of_chests").textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("Value"))) / parseInt(JSON.parse(localStorage.getItem("Count")))).toLocaleString("en-US");
+    document.getElementById("number_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count"))).toLocaleString("en-US");
+    document.getElementById("value_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))).toLocaleString("en-US");
+    if (parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) != 0) {
+        document.getElementById("average_of_chests").textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) / parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count")))).toLocaleString("en-US");
     }
     else {
         document.getElementById("average_of_chests").textContent = "0";
@@ -5825,9 +5818,9 @@ async function historyClear() {
     removeChildNodes(document.getElementById("history_body"));
 }
 function historyInit() {
-    let lsHistory = JSON.parse(localStorage.getItem("History"));
+    let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"));
     let quantity = document.getElementById("history_quantity");
-    quantity.textContent = localStorage.getItem("HistoryDisplayLimit");
+    quantity.textContent = localStorage.getItem("BarrowsLogger/HistoryDisplayLimit");
     if (lsHistory.length == 0) {
         let ele = document.getElementById("history_body");
         let container = document.createElement("div");
@@ -5836,10 +5829,10 @@ function historyInit() {
         ele.append(container);
     }
     else {
-        let index = parseInt(localStorage.getItem("Count"));
+        let index = parseInt(localStorage.getItem("BarrowsLogger/Count"));
         let limit = 0;
         for (let i = lsHistory.length - 1; i >= 0; i--) { //Navigating lsHistory
-            if (limit < parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
+            if (limit < parseInt(localStorage.getItem("BarrowsLogger/HistoryDisplayLimit"))) {
                 let temp = lsHistory[i];
                 let ele = document.getElementById("history_body");
                 let container = document.createElement("div");
@@ -5927,7 +5920,7 @@ function historyInit() {
                 break;
             }
         }
-        if (index == parseInt(localStorage.getItem("Count"))) {
+        if (index == parseInt(localStorage.getItem("BarrowsLogger/Count"))) {
             let ele = document.getElementById("history_body");
             let container = document.createElement("div");
             container.textContent = "There's nothing to display. Start scanning!";
@@ -5962,13 +5955,13 @@ function rollbackYes(id) {
     let container = document.getElementById(id.replace('button', ''));
     container.remove();
     let pKey = parseInt(id.replace('container', '').replace('button', ''));
-    let lsHistory = JSON.parse(localStorage.getItem("History"));
+    let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"));
     let temp = [];
     for (let i = 0; i < lsHistory.length; i++) {
         if (lsHistory[i][5] == pKey) {
             temp = lsHistory[i];
             lsHistory.splice(i, 1);
-            localStorage.setItem("History", JSON.stringify(lsHistory));
+            localStorage.setItem("BarrowsLogger/History", JSON.stringify(lsHistory));
             break;
         }
     }
@@ -5981,11 +5974,11 @@ function rollbackYes(id) {
         updateItems();
     }
     // Decrease value and count
-    localStorage.setItem("Value", JSON.stringify(JSON.parse(localStorage.getItem("Value")) - temp[2]));
-    localStorage.setItem("Count", JSON.stringify(JSON.parse(localStorage.getItem("Count")) - 1));
+    localStorage.setItem("BarrowsLogger/Value", JSON.stringify(JSON.parse(localStorage.getItem("BarrowsLogger/Value")) - temp[2]));
+    localStorage.setItem("BarrowsLogger/Count", JSON.stringify(JSON.parse(localStorage.getItem("BarrowsLogger/Count")) - 1));
     if (seeConsoleLogs)
         console.log("Removed", temp, ":", pKey, "from LS");
-    if (pKey == ((parseInt(localStorage.getItem("PrimaryKeyHistory"))) - 1)) {
+    if (pKey == ((parseInt(localStorage.getItem("BarrowsLogger/PrimaryKeyHistory"))) - 1)) {
         document.getElementById("rewards_value").textContent = "0";
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j < 8; j++) {
@@ -5997,9 +5990,9 @@ function rollbackYes(id) {
         }
     }
     let historyCount = document.getElementsByClassName('historyCount');
-    let index = parseInt(localStorage.getItem("Count"));
-    for (let i = 0; i < parseInt(localStorage.getItem("Count")); i++) {
-        if (i >= parseInt(localStorage.getItem("RollbackDisplayLimit"))) {
+    let index = parseInt(localStorage.getItem("BarrowsLogger/Count"));
+    for (let i = 0; i < parseInt(localStorage.getItem("BarrowsLogger/Count")); i++) {
+        if (i >= parseInt(localStorage.getItem("BarrowsLogger/RollbackDisplayLimit"))) {
             break;
         }
         if (historyCount[i] == undefined) {
@@ -6170,7 +6163,7 @@ function verifyInsert(event) {
         event.stopPropagation();
         return;
     }
-    let curr = (parseInt(localStorage.getItem("Count")) + 1).toString();
+    let curr = (parseInt(localStorage.getItem("BarrowsLogger/Count")) + 1).toString();
     let ele = document.getElementById("insertVerif_body");
     let container = document.createElement("div");
     container.setAttribute("class", 'historyDisplayContainer');
@@ -6283,48 +6276,48 @@ function settingsInit() {
     if (seeConsoleLogs)
         console.log("Initializing settings...");
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for Algorithm: " + localStorage.getItem("Algorithm") + "...");
-    let temp = localStorage.getItem("Algorithm");
+        console.log("Setting previously set radio button for Algorithm: " + localStorage.getItem("BarrowsLogger/Algorithm") + "...");
+    let temp = localStorage.getItem("BarrowsLogger/Algorithm");
     let ele = document.getElementById(temp);
     ele.checked = true;
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for lagDetect: " + localStorage.getItem("lagDetect") + "...");
-    if (localStorage.getItem("lagDetect") == "true") {
+        console.log("Setting previously set radio button for lagDetect: " + localStorage.getItem("BarrowsLogger/lagDetect") + "...");
+    if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
         ele = document.getElementById("lagon");
         ele.checked = true;
     }
-    else if (localStorage.getItem("lagDetect") == "false") {
+    else if (localStorage.getItem("BarrowsLogger/lagDetect") == "false") {
         ele = document.getElementById("lagoff");
         ele.checked = true;
     }
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for MultiButtonPressDetect: " + localStorage.getItem("multiButtonPressDetect") + "...");
-    if (localStorage.getItem("multiButtonPressDetect") == "true") {
+        console.log("Setting previously set radio button for MultiButtonPressDetect: " + localStorage.getItem("BarrowsLogger/multiButtonPressDetect") + "...");
+    if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == "true") {
         ele = document.getElementById("multion");
         ele.checked = true;
     }
-    else if (localStorage.getItem("multiButtonPressDetect") == "false") {
+    else if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == "false") {
         ele = document.getElementById("multioff");
         ele.checked = true;
     }
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for noMenu: " + localStorage.getItem("noMenu") + "...");
-    if (localStorage.getItem("noMenu") == "true") {
+        console.log("Setting previously set radio button for noMenu: " + localStorage.getItem("BarrowsLogger/noMenu") + "...");
+    if (localStorage.getItem("BarrowsLogger/noMenu") == "true") {
         ele = document.getElementById("menuon");
         ele.checked = true;
     }
-    else if (localStorage.getItem("noMenu") == "false") {
+    else if (localStorage.getItem("BarrowsLogger/noMenu") == "false") {
         ele = document.getElementById("menuoff");
         ele.checked = true;
     }
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for hybridPrecision: " + localStorage.getItem("hybridPrecision") + "...");
+        console.log("Setting previously set radio button for hybridPrecision: " + localStorage.getItem("BarrowsLogger/hybridPrecision") + "...");
     ele = document.getElementById("hybrid_precision");
-    ele.value = localStorage.getItem("hybridPrecision");
+    ele.value = localStorage.getItem("BarrowsLogger/hybridPrecision");
     if (seeConsoleLogs)
-        console.log("Setting previously set radio button for HistoryDisplayLimit: " + localStorage.getItem("HistoryDisplayLimit") + "...");
+        console.log("Setting previously set radio button for HistoryDisplayLimit: " + localStorage.getItem("BarrowsLogger/HistoryDisplayLimit") + "...");
     ele = document.getElementById("history_display_limit");
-    ele.value = localStorage.getItem("HistoryDisplayLimit");
+    ele.value = localStorage.getItem("BarrowsLogger/HistoryDisplayLimit");
     if (seeConsoleLogs)
         console.log("Settings initialized!");
 }
@@ -6337,23 +6330,23 @@ async function saveSettings(alg, lag, multi, menu, precision, limit) {
         alt1.overLaySetGroup("overlays");
         alt1.overLayTextEx("Saving settings...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 50000, "", true, true);
     }
-    localStorage.setItem("Algorithm", alg);
-    localStorage.setItem("lagDetect", lag);
-    localStorage.setItem("hybridPrecision", precision);
-    localStorage.setItem("HistoryDisplayLimit", limit);
-    if (localStorage.getItem("multiButtonPressDetect") !== multi) {
-        localStorage.setItem("multiButtonPressDetect", multi);
+    localStorage.setItem("BarrowsLogger/Algorithm", alg);
+    localStorage.setItem("BarrowsLogger/lagDetect", lag);
+    localStorage.setItem("BarrowsLogger/hybridPrecision", precision);
+    localStorage.setItem("BarrowsLogger/HistoryDisplayLimit", limit);
+    if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") !== multi) {
+        localStorage.setItem("BarrowsLogger/multiButtonPressDetect", multi);
         if (seeConsoleLogs)
             console.log("Adjusting saved values");
         if (multi === "true") {
-            if (localStorage.getItem("autoCapture") === "true") {
+            if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
                 document.getElementById("docapturebutton").setAttribute("onclick", "");
                 document.getElementById("docapturebutton").setAttribute("title", "Disable autocapture to use this button");
                 document.getElementById("docapturebuttonwords").style.setProperty("text-decoration", "line-through");
             }
         }
         else if (multi === "false") {
-            if (localStorage.getItem("autoCapture") === "true") {
+            if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
                 document.getElementById("docapturebutton").setAttribute("onclick", "TEST.capture(false)");
                 document.getElementById("docapturebutton").setAttribute("title", "");
                 document.getElementById("docapturebuttonwords").style.removeProperty("text-decoration");
@@ -6365,8 +6358,8 @@ async function saveSettings(alg, lag, multi, menu, precision, limit) {
             }
         }
     }
-    if (localStorage.getItem("noMenu") !== menu) {
-        localStorage.setItem("noMenu", menu);
+    if (localStorage.getItem("BarrowsLogger/noMenu") !== menu) {
+        localStorage.setItem("BarrowsLogger/noMenu", menu);
         noMenuCheck();
     }
     historyClear();
@@ -6390,7 +6383,7 @@ function autoDisableCheckAuto(event) {
 function toggleCapture(event) {
     if (document.getElementById("toggleunlocktrack").classList.contains("enabled")) {
         document.getElementById("toggleunlocktrack").classList.remove("enabled");
-        localStorage.setItem("autoCapture", "false");
+        localStorage.setItem("BarrowsLogger/autoCapture", "false");
         if (window.alt1) {
             alt1.overLayClearGroup("overlays");
             alt1.overLaySetGroup("overlays");
@@ -6399,7 +6392,7 @@ function toggleCapture(event) {
     }
     else {
         document.getElementById("toggleunlocktrack").classList.add("enabled");
-        localStorage.setItem("autoCapture", "true");
+        localStorage.setItem("BarrowsLogger/autoCapture", "true");
         if (window.alt1) {
             alt1.overLayClearGroup("overlays");
             alt1.overLaySetGroup("overlays");
@@ -6412,8 +6405,8 @@ function toggleCapture(event) {
     }
 }
 function autoCheck() {
-    if (localStorage.getItem("autoCapture") === "true") {
-        if (localStorage.getItem("multiButtonPressDetect") === "true") {
+    if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
+        if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
             document.getElementById("docapturebutton").setAttribute("onclick", "");
             document.getElementById("docapturebutton").setAttribute("title", "Disable autocapture to use this button");
             document.getElementById("docapturebuttonwords").style.setProperty("text-decoration", "line-through");
@@ -6425,7 +6418,7 @@ function autoCheck() {
         }, 1000);
     }
     else {
-        if (localStorage.getItem("multiButtonPressDetect") === "true") {
+        if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
             document.getElementById("docapturebutton").setAttribute("onclick", "TEST.capture(false)");
             document.getElementById("docapturebutton").setAttribute("title", "");
             document.getElementById("docapturebuttonwords").style.removeProperty("text-decoration");
@@ -6438,7 +6431,7 @@ function autoCallCapture() {
     capture(true);
 }
 function noMenuCheck() {
-    if (localStorage.getItem("noMenu") === "true") {
+    if (localStorage.getItem("BarrowsLogger/noMenu") === "true") {
         noMenuInterval = window.setInterval(async function () {
             let img = _alt1_base__WEBPACK_IMPORTED_MODULE_0__.captureHoldFullRs();
             let loc = img.findSubimage(imgs.barrowsChest);
@@ -6473,15 +6466,15 @@ function exporttocsv() {
     }
     let csvinfo = [];
     csvinfo.push(["Item", "Quantities"]);
-    let lsHistory = JSON.parse(localStorage.getItem("History"));
+    let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"));
     let keys = Object.keys(items);
     let currOrder = 1;
     if (seeConsoleLogs)
         console.log("Generating CSV...");
     if (seeConsoleLogs)
         console.log("Getting values and counts...");
-    let count = localStorage.getItem("Count");
-    let value = localStorage.getItem("Value");
+    let count = localStorage.getItem("BarrowsLogger/Count");
+    let value = localStorage.getItem("BarrowsLogger/Value");
     csvinfo.push(["Total Count", "\"" + count + "\""]);
     csvinfo.push(["Total Value", "\"" + value + "\""]);
     if (seeConsoleLogs)
@@ -6649,7 +6642,7 @@ function toggleLootDisplay(id) {
     }
 }
 function updateItems() {
-    localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("BarrowsLogger/items", JSON.stringify(items));
 }
 function orderChecker(order, item) {
     if (item == "Coins") {
@@ -6707,7 +6700,7 @@ function orderChecker(order, item) {
     return order;
 }
 function buttonDisabler() {
-    if (localStorage.getItem("autoCapture") !== "true") {
+    if (localStorage.getItem("BarrowsLogger/autoCapture") !== "true") {
         document.getElementById("docapturebutton").setAttribute("title", "Currently disabled to due initialization, settings being saved, or autocapture");
         document.getElementById("docapturebuttonwords").style.setProperty("text-decoration", "line-through");
         document.getElementById("docapturebutton").setAttribute("onclick", "");
@@ -6716,7 +6709,7 @@ function buttonDisabler() {
     buttonDisabletoggle = false;
 }
 function buttonEnabler() {
-    if (localStorage.getItem("autoCapture") !== "true") {
+    if (localStorage.getItem("BarrowsLogger/autoCapture") !== "true") {
         document.getElementById("docapturebutton").setAttribute("title", "");
         document.getElementById("docapturebuttonwords").style.removeProperty("text-decoration");
         document.getElementById("docapturebutton").setAttribute("onclick", "TEST.capture(false)");
