@@ -30,10 +30,11 @@ require("!file-loader?name=[name].[ext]!./appconfig.json");
 // Set this value to true or false to enable console log messages
 var seeConsoleLogs = true;
 
-var settingslist = ["Checked button", "Algorithm", "lagDetect", 
-					"multiButtonPressDetect",  "hybridPrecision", "noMenu", "RollbackDisplayLimit"]
+var settingslist = ["BarrowsLogger/Checked button", "BarrowsLogger/Algorithm", "BarrowsLogger/lagDetect", 
+					"BarrowsLogger/multiButtonPressDetect",  "BarrowsLogger/hybridPrecision", 
+					"BarrowsLogger/noMenu", "BarrowsLogger/RollbackDisplayLimit"]
 
-var valuesAndCounts = ["Value", "Count"]
+var valuesAndCounts = ["BarrowsLogger/Value", "BarrowsLogger/Count"]
 
 var rewardSlots = ["first_item", "second_item", "third_item", "fourth_item", "fifth_item", 
 					"sixth_item", "seventh_item", "eigth_item", "ninth_item", "tenth_item",
@@ -115,8 +116,8 @@ export async function init() {
 	// Initializing LocalStorage items
 	if (seeConsoleLogs) console.log("Initializing LocalStorage items...");
 
-	if (localStorage.getItem("items") == null) {
-		localStorage.setItem("items", JSON.stringify(lsdb))
+	if (localStorage.getItem("BarrowsLogger/items") == null) {
+		localStorage.setItem("BarrowsLogger/items", JSON.stringify(lsdb))
 	}
 
 	for (let i = 0; i < valuesAndCounts.length; i++) {
@@ -125,82 +126,66 @@ export async function init() {
 		}
 	}
 
-	items = JSON.parse(localStorage.getItem("items"));
-
-
-	// This code should be able to save your data after the optimization update.
-	// This snippet can be removed a few months in the future or for future projects with this code.
-	// ~ 08/10/2022
-	let keys = Object.keys(lsdb);
-	for (let i = 0; i < keys.length; i++) {
-		if (localStorage.getItem(keys[i]) != null) {
-			for (let j = 0; j < items[keys[i]].tier.length; j++) {
-				let itemsQuant = parseInt(items[keys[i]].quantity[items[keys[i]].tier[j]]);
-				let lsItemQuant = parseInt(JSON.parse(localStorage.getItem(keys[i])).quantity[items[keys[i]].tier[j]]);
-				items[keys[i]].quantity[items[keys[i]].tier[j]] = itemsQuant + lsItemQuant;
-			}
-			localStorage.removeItem(keys[i]);
-		}
-	}
+	items = JSON.parse(localStorage.getItem("BarrowsLogger/items"));
 
 
 	if (seeConsoleLogs) console.log("LocalStorage items initialized.");
 
 
-	if (localStorage.getItem("Algorithm") == null) { // Algorithim init check
+	if (localStorage.getItem("BarrowsLogger/Algorithm") == null) { // Algorithim init check
 		if (seeConsoleLogs) console.log("Defaulting Algorithm button to Hybrid...");
-		localStorage.setItem("Algorithm", "hybrid");
+		localStorage.setItem("BarrowsLogger/Algorithm", "hybrid");
 	}
 
-	if (localStorage.getItem("ItemList") == null) { // Item Referense list init check
+	if (localStorage.getItem("BarrowsLogger/ItemList") == null) { // Item Referense list init check
 		if (seeConsoleLogs) console.log("Defaulting ItemList to Organized List...");
-		localStorage.setItem("ItemList", "orglist");
+		localStorage.setItem("BarrowsLogger/ItemList", "orglist");
 	}
 
-	if (localStorage.getItem("autoCapture") == null) { // Autocapture check
+	if (localStorage.getItem("BarrowsLogger/autoCapture") == null) { // Autocapture check
 		if (seeConsoleLogs) console.log("Defaulting autocapture to off...");
-		localStorage.setItem("autoCapture", "false");
+		localStorage.setItem("BarrowsLogger/autoCapture", "false");
 	}
 
-	if (localStorage.getItem("lagDetect") == null) { // Lag Detection toggle check
+	if (localStorage.getItem("BarrowsLogger/lagDetect") == null) { // Lag Detection toggle check
 		if (seeConsoleLogs) console.log("Defaulting lag detect to true...");
-		localStorage.setItem("lagDetect", "true");
+		localStorage.setItem("BarrowsLogger/lagDetect", "true");
 	}
 
-	if (localStorage.getItem("multiButtonPressDetect") == null) { // Button double press detection
+	if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == null) { // Button double press detection
 		if (seeConsoleLogs) console.log("Defaulting multi button press detect to true...");
-		localStorage.setItem("multiButtonPressDetect", "true");
+		localStorage.setItem("BarrowsLogger/multiButtonPressDetect", "true");
 	}
 
-	if (localStorage.getItem("noMenu") == null) { // No hover display box
+	if (localStorage.getItem("BarrowsLogger/noMenu") == null) { // No hover display box
 		if (seeConsoleLogs) console.log("Defaulting no menu box to true");
-		localStorage.setItem("noMenu","false");
+		localStorage.setItem("BarrowsLogger/noMenu","false");
 	}
-	else if (localStorage.getItem("noMenu") == "true") {
+	else if (localStorage.getItem("BarrowsLogger/noMenu") == "true") {
 		if (seeConsoleLogs) console.log("Enabling no menu box");
 		noMenuCheck();
 	}
 
-	if (localStorage.getItem("hybridPrecision") == null) { // Hybrid precision value
+	if (localStorage.getItem("BarrowsLogger/hybridPrecision") == null) { // Hybrid precision value
 		if (seeConsoleLogs) console.log("Defaulting hybridPrecision to 0.7...");
-		localStorage.setItem("hybridPrecision", "0.7");
+		localStorage.setItem("BarrowsLogger/hybridPrecision", "0.7");
 	}
 
-	if (localStorage.getItem("History") == null) { // History initializer
+	if (localStorage.getItem("BarrowsLogger/History") == null) { // History initializer
 		if (seeConsoleLogs) console.log("Creating history");
-		localStorage.setItem("History",JSON.stringify([]));
+		localStorage.setItem("BarrowsLogger/History",JSON.stringify([]));
 	}
 
 	
-	if (localStorage.getItem("PrimaryKeyHistory") == null) { // Initialize primary key for history
+	if (localStorage.getItem("BarrowsLogger/PrimaryKeyHistory") == null) { // Initialize primary key for history
 		if (seeConsoleLogs) console.log("Defaulting PrimaryKeyHistory to 1");
-		localStorage.setItem("PrimaryKeyHistory", "1");
+		localStorage.setItem("BarrowsLogger/PrimaryKeyHistory", "1");
 	}
 
 	
-	if (localStorage.getItem("HistoryDisplayLimit") == null) { // Initialize history display limit
+	if (localStorage.getItem("BarrowsLogger/HistoryDisplayLimit") == null) { // Initialize history display limit
 		if (seeConsoleLogs) console.log("Defaulting history display limit to 25");
-		localStorage.setItem("HistoryDisplayLimit", "25");
+		localStorage.setItem("BarrowsLogger/HistoryDisplayLimit", "25");
 	}
 	updateItems();
 
@@ -241,14 +226,21 @@ export async function cleardb(choice: any) {
 			alt1.overLayTextEx("Resetting BarrowsLogger...", a1lib.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
 		}
 
-		localStorage.clear();
+		let ls = Object.keys(localStorage)
+		for(const i of ls){
+			if(i.includes("BarrowsLogger")){
+				console.log("Removing all Barrows Logger stuff...")
+				localStorage.removeItem(i)
+			}
+		}
+
 
 		if (window.alt1) {
 			alt1.overLayClearGroup("overlays");
 			alt1.overLaySetGroup("overlays");
 			alt1.overLayTextEx("BarrowsLogger successfully reset! Restarting...", a1lib.mixColor(100, 255, 100), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
 		}
-		await new Promise(resolve => setTimeout(resolve, 750));
+		await new Promise(resolve => setTimeout(resolve, 1000));
 		location.reload();
 	}
 	else if (choice == 2) { // Full item db clear
@@ -258,8 +250,8 @@ export async function cleardb(choice: any) {
 			alt1.overLayTextEx("Clearing all items from reward database...", a1lib.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
 		}
 
-		localStorage.removeItem("items");
-		localStorage.removeItem("History");
+		localStorage.removeItem("BarrowsLogger/items");
+		localStorage.removeItem("BarrowsLogger/History");
 		for (let i = 0; i < valuesAndCounts.length; i++) {
 			localStorage.removeItem(valuesAndCounts[i]);
 		}
@@ -278,8 +270,8 @@ export async function cleardb(choice: any) {
 			alt1.overLayTextEx("Reseting settings to default...", a1lib.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 4000, "", true, true);
 		}
 		
-		if (localStorage.getItem("noMenu") === "true") {
-			localStorage.setItem("noMenu", "false");
+		if (localStorage.getItem("BarrowsLogger/noMenu") === "true") {
+			localStorage.setItem("BarrowsLogger/noMenu", "false");
 			noMenuCheck();
 		}
 		for (let i = 0; i < settingslist.length; i++) {
@@ -372,7 +364,7 @@ export async function capture(autobool: boolean) {
 		return;
 	}
 
-	if (localStorage.getItem("multiButtonPressDetect") === "true") {
+	if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
 		if (!autobool) {
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "");
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "Disabled while scanning. Please wait...");
@@ -388,7 +380,7 @@ export async function capture(autobool: boolean) {
 	await Promise.all(promises);
 	if (seeConsoleLogs) console.log("Finished checking clue scroll");
 
-	if (localStorage.getItem("multiButtonPressDetect") === "true") {
+	if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
 		if (!autobool) {
 			await new Promise(resolve => setTimeout(function () {
 				(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "TEST.capture(false)");
@@ -559,7 +551,7 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 				x1 += 32 + 23
 				promises.push(itemtemp.push(await compareItems(crops[i][j])));
 				console.log(itemtemp[j])
-				if (localStorage.getItem("lagDetect") == "true") {
+				if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
 					if (itemtemp[j] == "Blank") {
 						notBlank = true;
 					}
@@ -584,7 +576,7 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 			y1 += 32 + 14
 		}
 
-		if (localStorage.getItem("lagDetect") == "true") {
+		if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
 			for (let i = 0; i < itemResults.length; i++) {
 				if (itemResults[itemResults.length - 1] !== "Blank") {
 					break;
@@ -648,8 +640,8 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 									break;
 								}
 							}
-							let lsHistory = JSON.parse(localStorage.getItem("History"))[JSON.parse(localStorage.getItem("History")).length-1][0];
-							if (seeConsoleLogs) console.log("Checking arrays for equivalence:",JSON.parse(localStorage.getItem("History"))[JSON.parse(localStorage.getItem("History")).length-1][0], itemResultsNoBlanks);
+							let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"))[JSON.parse(localStorage.getItem("BarrowsLogger/History")).length-1][0];
+							if (seeConsoleLogs) console.log("Checking arrays for equivalence:",JSON.parse(localStorage.getItem("BarrowsLogger/History"))[JSON.parse(localStorage.getItem("BarrowsLogger/History")).length-1][0], itemResultsNoBlanks);
 							if (lsHistory.join(',') === itemResultsNoBlanks.join(',')) { // https://stackoverflow.com/a/6230314
 								if (seeConsoleLogs) console.log(lsHistory.join(','),"and",itemResultsNoBlanks.join(','),"are the same...");
 								if (seeConsoleLogs) console.log("They're the same. make it false.");
@@ -855,7 +847,7 @@ async function compareItems(item: ImageData) {
 	matches.shift(); // Remove blank from the list
 
 	let found = [];
-	if (localStorage.getItem("Algorithm") == "resemblejs") {
+	if (localStorage.getItem("BarrowsLogger/Algorithm") == "resemblejs") {
 		found = matches[0];
 		const promises = [];
 
@@ -870,7 +862,7 @@ async function compareItems(item: ImageData) {
 		await Promise.all(promises);
 	}
 
-	else if (localStorage.getItem("Algorithm") == "pixelmatch") {
+	else if (localStorage.getItem("BarrowsLogger/Algorithm") == "pixelmatch") {
 		/* List of items that do not identify in pure PixelMatch
 			- Huge Plated Adamant Salvage identifies as Huge Plated Rune Salvage when using TwoPlus or All
 		*/
@@ -886,7 +878,7 @@ async function compareItems(item: ImageData) {
 		await Promise.all(promises);
 	}
 
-	else if (localStorage.getItem("Algorithm") == "hybrid") {
+	else if (localStorage.getItem("BarrowsLogger/Algorithm") == "hybrid") {
 		// First we check with Pixelmatch and get the comparison of everything to the item
 		let promises = [];
 		let total = 0;
@@ -897,7 +889,7 @@ async function compareItems(item: ImageData) {
 
 		// Then we get the average so we can remove half of the items that don't match
 		let average = total / matches.length;
-		let precision = parseFloat(localStorage.getItem("hybridPrecision")); //1 does nothing
+		let precision = parseFloat(localStorage.getItem("BarrowsLogger/hybridPrecision")); //1 does nothing
 		await Promise.all(promises);
 
 		for (let i = matches.length-1; i >= 0; i--) {
@@ -1076,8 +1068,8 @@ async function submitToLS(item: any[], quant: any[], value: any) {
 	}
 
 	// Increase value and count
-	localStorage.setItem("Value", JSON.stringify((JSON.parse(localStorage.getItem("Value")) + value)));
-	localStorage.setItem("Count", JSON.stringify((JSON.parse(localStorage.getItem("Count")) + 1)));
+	localStorage.setItem("BarrowsLogger/Value", JSON.stringify((JSON.parse(localStorage.getItem("BarrowsLogger/Value")) + value)));
+	localStorage.setItem("BarrowsLogger/Count", JSON.stringify((JSON.parse(localStorage.getItem("BarrowsLogger/Count")) + 1)));
 
 	return true;
 }
@@ -1108,12 +1100,12 @@ async function addHistoryToLs(value: number, items: any, quants: any, reward: an
 		}
 	}
 	
-	let previous = [itemsArr, quants, value, reward, localStorage.getItem("Count"), localStorage.getItem("PrimaryKeyHistory")];
-	let temp = JSON.parse(localStorage.getItem("History"))
+	let previous = [itemsArr, quants, value, reward, localStorage.getItem("BarrowsLogger/Count"), localStorage.getItem("BarrowsLogger/PrimaryKeyHistory")];
+	let temp = JSON.parse(localStorage.getItem("BarrowsLogger/History"))
 	temp.push(previous);
 
-	localStorage.setItem("History", JSON.stringify(temp));
-	localStorage.setItem("PrimaryKeyHistory", JSON.stringify(parseInt(localStorage.getItem("PrimaryKeyHistory")) + 1));
+	localStorage.setItem("BarrowsLogger/History", JSON.stringify(temp));
+	localStorage.setItem("BarrowsLogger/PrimaryKeyHistory", JSON.stringify(parseInt(localStorage.getItem("BarrowsLogger/PrimaryKeyHistory")) + 1));
 
 	await historyClear();
 	historyInit();
@@ -1122,10 +1114,10 @@ async function addHistoryToLs(value: number, items: any, quants: any, reward: an
 
 function lootDisplay() {
 	//Set Number of clues and Current and Average values
-	(document.getElementById("number_of_chests") as HTMLSpanElement).textContent = parseInt(JSON.parse(localStorage.getItem("Count"))).toLocaleString("en-US");
-	(document.getElementById("value_of_chests") as HTMLSpanElement).textContent = parseInt(JSON.parse(localStorage.getItem("Value"))).toLocaleString("en-US");
-	if (parseInt(JSON.parse(localStorage.getItem("Value"))) != 0) {
-		(document.getElementById("average_of_chests") as HTMLSpanElement).textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("Value"))) / parseInt(JSON.parse(localStorage.getItem("Count")))).toLocaleString("en-US");
+	(document.getElementById("number_of_chests") as HTMLSpanElement).textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count"))).toLocaleString("en-US");
+	(document.getElementById("value_of_chests") as HTMLSpanElement).textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))).toLocaleString("en-US");
+	if (parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) != 0) {
+		(document.getElementById("average_of_chests") as HTMLSpanElement).textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) / parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count")))).toLocaleString("en-US");
 	}
 	else {
 		(document.getElementById("average_of_chests") as HTMLSpanElement).textContent = "0";
@@ -1180,10 +1172,10 @@ async function historyClear() {
 
 
 function historyInit() {
-	let lsHistory = JSON.parse(localStorage.getItem("History"))
+	let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"))
 
 	let quantity = document.getElementById("history_quantity") as HTMLDivElement;
-	quantity.textContent = localStorage.getItem("HistoryDisplayLimit");
+	quantity.textContent = localStorage.getItem("BarrowsLogger/HistoryDisplayLimit");
 
 	if (lsHistory.length == 0) {
 		let ele = document.getElementById("history_body");
@@ -1193,10 +1185,10 @@ function historyInit() {
 		ele.append(container);
 	}
 	else {
-		let index = parseInt(localStorage.getItem("Count"));
+		let index = parseInt(localStorage.getItem("BarrowsLogger/Count"));
 		let limit = 0;
 		for (let i = lsHistory.length - 1; i >= 0 ; i--) { //Navigating lsHistory
-			if (limit < parseInt(localStorage.getItem("HistoryDisplayLimit"))) {
+			if (limit < parseInt(localStorage.getItem("BarrowsLogger/HistoryDisplayLimit"))) {
 				let temp = lsHistory[i];
 
 				let ele = document.getElementById("history_body") as HTMLDivElement;
@@ -1298,7 +1290,7 @@ function historyInit() {
 			}
 		}
 
-		if (index == parseInt(localStorage.getItem("Count"))) {
+		if (index == parseInt(localStorage.getItem("BarrowsLogger/Count"))) {
 			let ele = document.getElementById("history_body") as HTMLDivElement;
 			let container = document.createElement("div") as HTMLDivElement;
 			container.textContent = "There's nothing to display. Start scanning!";
@@ -1344,13 +1336,13 @@ export function rollbackYes(id: any) {
 
 	let pKey = parseInt(id.replace('container','').replace('button',''));
 
-	let lsHistory = JSON.parse(localStorage.getItem("History"));
+	let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"));
 	let temp = [];
 	for (let i = 0; i < lsHistory.length; i++) {
 		if (lsHistory[i][5] == pKey) {
 			temp = lsHistory[i];
 			lsHistory.splice(i, 1);
-			localStorage.setItem("History",JSON.stringify(lsHistory));
+			localStorage.setItem("BarrowsLogger/History",JSON.stringify(lsHistory));
 			break;
 		}
 	}
@@ -1365,11 +1357,11 @@ export function rollbackYes(id: any) {
 	}
 
 	// Decrease value and count
-	localStorage.setItem("Value", JSON.stringify(JSON.parse(localStorage.getItem("Value")) - temp[2]));
-	localStorage.setItem("Count", JSON.stringify(JSON.parse(localStorage.getItem("Count")) - 1));
+	localStorage.setItem("BarrowsLogger/Value", JSON.stringify(JSON.parse(localStorage.getItem("BarrowsLogger/Value")) - temp[2]));
+	localStorage.setItem("BarrowsLogger/Count", JSON.stringify(JSON.parse(localStorage.getItem("BarrowsLogger/Count")) - 1));
 
 	if (seeConsoleLogs) console.log("Removed",temp,":",pKey,"from LS");
-	if (pKey == ((parseInt(localStorage.getItem("PrimaryKeyHistory"))) - 1)) {
+	if (pKey == ((parseInt(localStorage.getItem("BarrowsLogger/PrimaryKeyHistory"))) - 1)) {
 		(document.getElementById("rewards_value") as HTMLDivElement).textContent = "0";
 		for (let i = 0; i < 4; i++) {
 			for(let j = 0; j < 8; j++){
@@ -1382,9 +1374,9 @@ export function rollbackYes(id: any) {
 	}
 
 	let historyCount = document.getElementsByClassName('historyCount') as HTMLCollectionOf<HTMLDivElement>;
-	let index = parseInt(localStorage.getItem("Count"));
-	for (let i = 0; i < parseInt(localStorage.getItem("Count")); i++) {
-		if (i >= parseInt(localStorage.getItem("RollbackDisplayLimit"))) {
+	let index = parseInt(localStorage.getItem("BarrowsLogger/Count"));
+	for (let i = 0; i < parseInt(localStorage.getItem("BarrowsLogger/Count")); i++) {
+		if (i >= parseInt(localStorage.getItem("BarrowsLogger/RollbackDisplayLimit"))) {
 			break;
 		}
 		if (historyCount[i] == undefined) {
@@ -1579,7 +1571,7 @@ export function verifyInsert(event: Event) {
 		return;
 	}
 
-	let curr = (parseInt(localStorage.getItem("Count")) + 1).toString();
+	let curr = (parseInt(localStorage.getItem("BarrowsLogger/Count")) + 1).toString();
 	let ele = document.getElementById("insertVerif_body") as HTMLDivElement;
 	let container = document.createElement("div") as HTMLDivElement;
 	container.setAttribute("class", 'historyDisplayContainer');
@@ -1715,48 +1707,48 @@ export function insertToDB() {
 export function settingsInit() {
 	if (seeConsoleLogs) console.log("Initializing settings...");
 
-	if (seeConsoleLogs) console.log("Setting previously set radio button for Algorithm: " + localStorage.getItem("Algorithm") + "...");
-	let temp = localStorage.getItem("Algorithm");
+	if (seeConsoleLogs) console.log("Setting previously set radio button for Algorithm: " + localStorage.getItem("BarrowsLogger/Algorithm") + "...");
+	let temp = localStorage.getItem("BarrowsLogger/Algorithm");
 	let ele = document.getElementById(temp) as HTMLInputElement;
 	ele.checked = true;
 
-	if (seeConsoleLogs) console.log("Setting previously set radio button for lagDetect: " + localStorage.getItem("lagDetect") + "...");
-	if (localStorage.getItem("lagDetect") == "true") {
+	if (seeConsoleLogs) console.log("Setting previously set radio button for lagDetect: " + localStorage.getItem("BarrowsLogger/lagDetect") + "...");
+	if (localStorage.getItem("BarrowsLogger/lagDetect") == "true") {
 		ele = document.getElementById("lagon") as HTMLInputElement;
 		ele.checked = true;
 	}
-	else if (localStorage.getItem("lagDetect") == "false") {
+	else if (localStorage.getItem("BarrowsLogger/lagDetect") == "false") {
 		ele = document.getElementById("lagoff") as HTMLInputElement;
 		ele.checked = true;
 	}
 
-	if (seeConsoleLogs) console.log("Setting previously set radio button for MultiButtonPressDetect: " + localStorage.getItem("multiButtonPressDetect") + "...");
-	if (localStorage.getItem("multiButtonPressDetect") == "true") {
+	if (seeConsoleLogs) console.log("Setting previously set radio button for MultiButtonPressDetect: " + localStorage.getItem("BarrowsLogger/multiButtonPressDetect") + "...");
+	if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == "true") {
 		ele = document.getElementById("multion") as HTMLInputElement;
 		ele.checked = true;
 	}
-	else if (localStorage.getItem("multiButtonPressDetect") == "false") {
+	else if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") == "false") {
 		ele = document.getElementById("multioff") as HTMLInputElement;
 		ele.checked = true;
 	}
 
-	if (seeConsoleLogs) console.log("Setting previously set radio button for noMenu: " + localStorage.getItem("noMenu") + "...");
-	if (localStorage.getItem("noMenu") == "true") {
+	if (seeConsoleLogs) console.log("Setting previously set radio button for noMenu: " + localStorage.getItem("BarrowsLogger/noMenu") + "...");
+	if (localStorage.getItem("BarrowsLogger/noMenu") == "true") {
 		ele = document.getElementById("menuon") as HTMLInputElement;
 		ele.checked = true;
 	}
-	else if (localStorage.getItem("noMenu") == "false") {
+	else if (localStorage.getItem("BarrowsLogger/noMenu") == "false") {
 		ele = document.getElementById("menuoff") as HTMLInputElement;
 		ele.checked = true;
 	}
 	
-	if (seeConsoleLogs) console.log("Setting previously set radio button for hybridPrecision: " + localStorage.getItem("hybridPrecision") + "...");
+	if (seeConsoleLogs) console.log("Setting previously set radio button for hybridPrecision: " + localStorage.getItem("BarrowsLogger/hybridPrecision") + "...");
 	ele = document.getElementById("hybrid_precision") as HTMLInputElement;
-	ele.value = localStorage.getItem("hybridPrecision");
+	ele.value = localStorage.getItem("BarrowsLogger/hybridPrecision");
 	
-	if (seeConsoleLogs) console.log("Setting previously set radio button for HistoryDisplayLimit: " + localStorage.getItem("HistoryDisplayLimit") + "...");
+	if (seeConsoleLogs) console.log("Setting previously set radio button for HistoryDisplayLimit: " + localStorage.getItem("BarrowsLogger/HistoryDisplayLimit") + "...");
 	ele = document.getElementById("history_display_limit") as HTMLInputElement;
-	ele.value = localStorage.getItem("HistoryDisplayLimit");
+	ele.value = localStorage.getItem("BarrowsLogger/HistoryDisplayLimit");
 
 	if (seeConsoleLogs) console.log("Settings initialized!");
 }
@@ -1770,23 +1762,23 @@ export async function saveSettings(alg: string, lag: string, multi: string, menu
 		alt1.overLaySetGroup("overlays");
 		alt1.overLayTextEx("Saving settings...", a1lib.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 50000, "", true, true);
 	}
-	localStorage.setItem("Algorithm", alg);
-	localStorage.setItem("lagDetect", lag);
-	localStorage.setItem("hybridPrecision", precision);
-	localStorage.setItem("HistoryDisplayLimit", limit);
+	localStorage.setItem("BarrowsLogger/Algorithm", alg);
+	localStorage.setItem("BarrowsLogger/lagDetect", lag);
+	localStorage.setItem("BarrowsLogger/hybridPrecision", precision);
+	localStorage.setItem("BarrowsLogger/HistoryDisplayLimit", limit);
 
-	if (localStorage.getItem("multiButtonPressDetect") !== multi) {
-		localStorage.setItem("multiButtonPressDetect", multi);
+	if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") !== multi) {
+		localStorage.setItem("BarrowsLogger/multiButtonPressDetect", multi);
 		if (seeConsoleLogs) console.log("Adjusting saved values")
 		if (multi === "true") {
-			if (localStorage.getItem("autoCapture") === "true") {
+			if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
 				(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "");
 				(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "Disable autocapture to use this button");
 				(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.setProperty("text-decoration", "line-through");
 			}
 		}
 		else if (multi === "false") {
-			if (localStorage.getItem("autoCapture") === "true") {
+			if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
 				(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "TEST.capture(false)");
 				(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "");
 				(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.removeProperty("text-decoration");
@@ -1799,8 +1791,8 @@ export async function saveSettings(alg: string, lag: string, multi: string, menu
 		}
 	}
 
-	if (localStorage.getItem("noMenu") !== menu) {
-		localStorage.setItem("noMenu", menu);
+	if (localStorage.getItem("BarrowsLogger/noMenu") !== menu) {
+		localStorage.setItem("BarrowsLogger/noMenu", menu);
 		noMenuCheck();
 	}
 
@@ -1829,7 +1821,7 @@ export function autoDisableCheckAuto(event: Event) {
 export function toggleCapture(event: Event) {
 	if ((document.getElementById("toggleunlocktrack") as HTMLDivElement).classList.contains("enabled")) {
 		(document.getElementById("toggleunlocktrack") as HTMLDivElement).classList.remove("enabled");
-		localStorage.setItem("autoCapture", "false");
+		localStorage.setItem("BarrowsLogger/autoCapture", "false");
 		if (window.alt1) {
 			alt1.overLayClearGroup("overlays");
 			alt1.overLaySetGroup("overlays");
@@ -1838,7 +1830,7 @@ export function toggleCapture(event: Event) {
 	}
 	else {
 		(document.getElementById("toggleunlocktrack") as HTMLDivElement).classList.add("enabled");
-		localStorage.setItem("autoCapture", "true");
+		localStorage.setItem("BarrowsLogger/autoCapture", "true");
 		if (window.alt1) {
 			alt1.overLayClearGroup("overlays");
 			alt1.overLaySetGroup("overlays");
@@ -1854,8 +1846,8 @@ export function toggleCapture(event: Event) {
 
 
 function autoCheck() {
-	if (localStorage.getItem("autoCapture") === "true") {
-		if (localStorage.getItem("multiButtonPressDetect") === "true") {
+	if (localStorage.getItem("BarrowsLogger/autoCapture") === "true") {
+		if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "");
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "Disable autocapture to use this button");
 			(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.setProperty("text-decoration", "line-through");
@@ -1867,7 +1859,7 @@ function autoCheck() {
 		}, 1000);
 	}
 	else {
-		if (localStorage.getItem("multiButtonPressDetect") === "true") {
+		if (localStorage.getItem("BarrowsLogger/multiButtonPressDetect") === "true") {
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "TEST.capture(false)");
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "");
 			(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.removeProperty("text-decoration");
@@ -1884,7 +1876,7 @@ function autoCallCapture() {
 
 
 function noMenuCheck() {
-	if (localStorage.getItem("noMenu") === "true") {
+	if (localStorage.getItem("BarrowsLogger/noMenu") === "true") {
 		noMenuInterval = window.setInterval(async function () {
 			let img = a1lib.captureHoldFullRs();
 			let loc = img.findSubimage(imgs.barrowsChest);
@@ -1925,14 +1917,14 @@ export function exporttocsv() {
 	let csvinfo = [];
 	csvinfo.push(["Item", "Quantities"]);
 	
-	let lsHistory = JSON.parse(localStorage.getItem("History"))
+	let lsHistory = JSON.parse(localStorage.getItem("BarrowsLogger/History"))
 	let keys = Object.keys(items);
 	let currOrder = 1;
 	if (seeConsoleLogs) console.log("Generating CSV...");
 	if (seeConsoleLogs) console.log("Getting values and counts...");
 
-	let count = localStorage.getItem("Count")
-	let value = localStorage.getItem("Value")
+	let count = localStorage.getItem("BarrowsLogger/Count")
+	let value = localStorage.getItem("BarrowsLogger/Value")
 	csvinfo.push(["Total Count", "\"" + count + "\""]);
 	csvinfo.push(["Total Value", "\"" + value + "\""]);
 
@@ -2120,7 +2112,7 @@ export function toggleLootDisplay(id: string) {
 
 
 function updateItems() {
-	localStorage.setItem("items", JSON.stringify(items))
+	localStorage.setItem("BarrowsLogger/items", JSON.stringify(items))
 }
 
 
@@ -2183,7 +2175,7 @@ function orderChecker(order: number, item: string) {
 
 
 function buttonDisabler() {
-		if (localStorage.getItem("autoCapture") !== "true") {
+		if (localStorage.getItem("BarrowsLogger/autoCapture") !== "true") {
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "Currently disabled to due initialization, settings being saved, or autocapture");
 			(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.setProperty("text-decoration", "line-through");
 			(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "");
@@ -2194,7 +2186,7 @@ function buttonDisabler() {
 
 
 function buttonEnabler() {
-	if (localStorage.getItem("autoCapture") !== "true") {
+	if (localStorage.getItem("BarrowsLogger/autoCapture") !== "true") {
 		(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("title", "");
 		(document.getElementById("docapturebuttonwords") as HTMLDivElement).style.removeProperty("text-decoration");
 		(document.getElementById("docapturebutton") as HTMLDivElement).setAttribute("onclick", "TEST.capture(false)");
