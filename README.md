@@ -1,4 +1,4 @@
-s# BarrowsLogger
+# BarrowsLogger
 ### An open-source Alt1 Plugin designed for tracking Barrows rewards.
 #### Report bugs or questions, message me 🙂 -> Discord: RedX1000#3655
 #### RuneApps forum page: https://runeapps.org/forums/viewtopic.php?pid=4751
