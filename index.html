@@ -31,7 +31,7 @@
 					<div class="main_buttons" id="top">
 						<div id="bottom_buttons">
 							<div id="csv_button" class="nisbutton" onclick="TEST.exporttocsv();">Export to CSV</div>
-							<div id="settings_button" class="nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()"><img id="settings_cog" src="images/SettingsCog.png"></div>
+							<div id="settings_button" class="nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()"><img id="settings_cog" draggable="false" src="images/SettingsCog.png"></div>
 						</div>
 						<div id="clear_button" class="nisbutton" data-toggle="modal" data-target="#cleardb" onclick="TEST.autoDisableCheckAuto()">Clear Options Menu</div>
 						<div id="docapturebutton" class="nisbutton" onclick="TEST.capture(false)">
@@ -135,15 +135,15 @@
 		                            <input type="radio" id="multioff" name="multi" class="maintoggles_buttons" value="multioff" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
 		                        </div>
 		                    </div>
-							<label class="title_labels" title="Shows the area to keep any menus away from to prevent a double-capture.&#013;&#013;Double captures like this cannot be rolled back, so try hard to avoid this area">No Menu Highlighter:<br></label>
+							<label class="title_labels" title="Shows the area to keep any menus away from to prevent a double-capture.">No Menu Highlighter:<br></label>
 		                    <div id="menu_buttons">
 		                        <div class="main_divs">
-		                            <label for="menuon" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.&#013;&#013;Double captures like this cannot be rolled back, so try hard to avoid this area">On&ast;</label>
-		                            <input type="radio" id="menuon" name="menu" class="maintoggles_buttons" value="menuon" title="Shows the area to keep any menus away from to prevent a double-capture.&#013;&#013;Double captures like this cannot be rolled back, so try hard to avoid this area">
+		                            <label for="menuon" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.">On&ast;</label>
+		                            <input type="radio" id="menuon" name="menu" class="maintoggles_buttons" value="menuon" title="Shows the area to keep any menus away from to prevent a double-capture.">
 		                        </div>
 		                        <div class="main_divs">
-		                            <label for="menuoff" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.&#013;&#013;Double captures like this cannot be rolled back, so try hard to avoid this area">Off</label>
-		                            <input type="radio" id="menuoff" name="menu" class="maintoggles_buttons" value="menuoff" title="Shows the area to keep any menus away from to prevent a double-capture.&#013;&#013;Double captures like this cannot be rolled back, so try hard to avoid this area">
+		                            <label for="menuoff" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.">Off</label>
+		                            <input type="radio" id="menuoff" name="menu" class="maintoggles_buttons" value="menuoff" title="Shows the area to keep any menus away from to prevent a double-capture.">
 		                        </div>
 		                    </div>
 		                    <label class="title_labels" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.7, lowest value is 0.1 and highest value is 1.0&#013;&#013;HEADS UP!!!! Bringing this value below 0.4 may break BarrowsLogger or miscapture when capturing coins or a few other items.">Hybrid Alg Precision:<br></label>
@@ -381,7 +381,6 @@
 								</select>
 								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_9" name="item_input_9" title="Ninth item to be inserted and quantity">
 							</div>
-
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Tenth item to be inserted and quantity">Tenth Item<br></label>
 								<select name="item_10" class="items insert_options" id="items_tenth">
