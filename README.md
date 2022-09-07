@@ -33,7 +33,7 @@
     * [Special thanks](#special-thanks) <br><br>
 
 ### Description
-This application was created to provide players with a way to easily record their Barrows rewards over the course of their Barrows runs, and to allow users to share their Barrows data with others. <br><br>
+This application was created to provide players with a way to easily record their Barrows rewards over the course of their Barrows runs, and to allow users to share their Barrows rewards data with others. <br><br>
 
 __BarrowsLogger works out of the box, so you don't have to adjust any settings if you don't want to.__ Manually capture or press the lock to autocapture Barrows rewards to begin logging! <br><br>
 
