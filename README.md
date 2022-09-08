@@ -1,11 +1,9 @@
 # BarrowsLogger
 ### An open-source Alt1 Plugin designed for tracking Barrows rewards.
 #### Report bugs or questions, message me 🙂 -> Discord: RedX1000#3655
-#### RuneApps forum page: https://runeapps.org/forums/viewtopic.php?id=1475
+#### RuneApps forum page: https://runeapps.org/forums/viewtopic.php?pid=4878
 
 <!--* *NOTE: This project is currently in maintenance mode as it is feature complete. There are some plans for new features but they are not a priority for now. If something breaks due to RuneScape updates or if there are bugs, message me on Discord.*-->
-
-* *NOTE: Legacy Interface mode does not work at this time.* <br>
 
 * *NOTE: When reporting a crash, please take a screenshot of the reward window and Barrows capture history send it to me. Use Windows Key + Shift + S, Lightshot, or Gyazo to take the screenshot to avoid distortion.*
 <br><br>
