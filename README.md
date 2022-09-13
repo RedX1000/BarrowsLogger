@@ -120,7 +120,6 @@ To install with the direct link
 ### Image Searching Algorithm
 1. ResembleJS: Image recognition library using [`ResembleJS`](https://github.com/rsmbl/Resemble.js) that compares entire images and returns a percentage value. It is slow, but it is very accurate. 
 2. Pixelmatch: Image recognition library using [`Pixelmatch`](https://github.com/mapbox/pixelmatch) that compares images pixel by pixel for and returns a percentage value. It is very fast, but can be less accurate than ResembleJS.
-    * Recommended image collections: OrgList or OrgMinus, but you can use any library with good speed. There is a known issue with TwoPlus and All Items libraries listed below.
     * Pixelmatch may have an issue where some items read incorrectly as it did in OpenLogger. If this happens, try using Hybrid or ResembleJS or send me a DM on Discord if you run into other misreads with this configuration. 
 3. Hybrid: A mix of the two. Pixelmatch runs first then ResembleJS. Great balance of speed and accuracy. Enabled by default.
     * Hybrid precision can be adjusted using Hybrid Alg Precision setting in the settings menu, listed below. <br><br>
