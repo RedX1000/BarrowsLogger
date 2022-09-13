@@ -80,7 +80,7 @@ To install with the direct link
 ![CSV Example](/Readme%20Images/CSV%20History%20demo.png "CSV History Example; Open image to see details") <br><br>
 
 ### History (Rollback)
-* History will open a menu that displays every captured Barrows reward of the currently selected type that can be rolled back and deleted.
+* History will open a menu that displays every captured Barrows reward that can be rolled back and deleted.
 * By default, History will the display the last 25 items you've captured. This can be adjusted in the [Settings](#settings) under History Display Limit. 
 * Rollbacks performed in History will remove the given reward items quantities, its value, and its counter.
 * When you click "Delete", verification buttons "Yes" and "No" will appear in it's place. Upon clicking yes, the given entry will be deleted from `localStorage` and the display will update to reflect this. If the deleted entry is the first in the list, the recently captured rewards display will clear itself. Clicking "No" will revert the button back to "Delete".<br>
@@ -183,6 +183,6 @@ To install with the direct link
 ### Special thanks
 * Skillbert, for creating Alt1 and providing the tools and libraries to create third-party applications.
 * Dala/Daladen, for providing me with an insight and reference into how the Summit Clue Logger worked to help write the original OpenLogger project and general web dev help.
-* Athabastyx, for the technical help and Javascript insight. This is my first JS/TS project and Atha helped a lot with helping me understand new functions, libraries, and how to optimize things better.
+* Athabastyx, for the technical help and Javascript insight. OpenLogger was my first JS/TS project and Atha helped a lot with helping me understand new functions, libraries, and how to optimize things better.
 * All the people I've reached out to and have provided help regarding JS/TS and Alt1 plugin questions through the [Runeapps Discord channel](https://discord.com/invite/G3SbcS8) and DMs.
 * Everyone reaching out to report bugs and make suggestions. <br><br>
