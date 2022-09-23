@@ -5028,9 +5028,9 @@ async function cleardb(choice) {
     ele.append(container);
     await historyClear();
     historyInit();
-    document.getElementById("number_of_chests").textContent = "0";
-    document.getElementById("value_of_chests").textContent = "0";
-    document.getElementById("average_of_chests").textContent = "0";
+    document.getElementById("number_of_rewards").textContent = "0";
+    document.getElementById("value_of_rewards").textContent = "0";
+    document.getElementById("average_of_rewards").textContent = "0";
     let divs = document.getElementsByClassName("loot_display");
     for (let i = 0; i < divs.length; i++) {
         divs[i].textContent = "";
@@ -5168,6 +5168,9 @@ async function findtrailComplete(img, autobool) {
             xRect = loc[0].x - 172;
             yRect = loc[0].y - 13;
         }
+        //FIXME: Recrop images and compile new JSON.
+        // I think I know why it's borked.
+        // Crop it like you did with Tetracompasses.
         let x1 = xdefault;
         let y1 = ydefault;
         let crops = [];
@@ -5770,13 +5773,13 @@ async function addHistoryToLs(value, items, quants, reward) {
 }
 function lootDisplay() {
     //Set Number of clues and Current and Average values
-    document.getElementById("number_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count"))).toLocaleString("en-US");
-    document.getElementById("value_of_chests").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))).toLocaleString("en-US");
+    document.getElementById("number_of_rewards").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count"))).toLocaleString("en-US");
+    document.getElementById("value_of_rewards").textContent = parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))).toLocaleString("en-US");
     if (parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) != 0) {
-        document.getElementById("average_of_chests").textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) / parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count")))).toLocaleString("en-US");
+        document.getElementById("average_of_rewards").textContent = Math.round(parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Value"))) / parseInt(JSON.parse(localStorage.getItem("BarrowsLogger/Count")))).toLocaleString("en-US");
     }
     else {
-        document.getElementById("average_of_chests").textContent = "0";
+        document.getElementById("average_of_rewards").textContent = "0";
     }
     //Set the icons in the tabs
     tabDisplay();
