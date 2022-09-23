@@ -6478,8 +6478,8 @@ function exporttocsv() {
         console.log("Getting values and counts...");
     let count = localStorage.getItem("BarrowsLogger/Count");
     let value = localStorage.getItem("BarrowsLogger/Value");
-    csvinfo.push(["Total Count", "\"" + count + "\""]);
-    csvinfo.push(["Total Value", "\"" + value + "\""]);
+    csvinfo.push(["Total Count", count]);
+    csvinfo.push(["Total Value", value]);
     if (seeConsoleLogs)
         console.log("Getting item quantities...");
     for (let i = 0; i < keys.length; i++) {
@@ -6491,7 +6491,7 @@ function exporttocsv() {
                     quant = "";
                 }
                 else {
-                    quant = "\"" + quant.toLocaleString("en-US") + "\"";
+                    quant = quant.toString();
                 }
                 csvinfo.push([keys[j], quant]);
                 currOrder++;
@@ -6514,7 +6514,7 @@ function exporttocsv() {
                     temp.push("");
                 }
                 else {
-                    temp.push(lsHistory[i][1][(j * 8) + k] + " x " + lsHistory[i][0][(j * 8) + k]);
+                    temp.push(lsHistory[i][1][(j * 8) + k].toString() + " x " + lsHistory[i][0][(j * 8) + k].toString());
                 }
             }
         }
