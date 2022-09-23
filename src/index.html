@@ -17,19 +17,21 @@
 				<div class="button_box">
 					<div class="capture_info" id="top">
 						<div class="capture_box_elements" id="math_box_count">
-							Barrows chests logged: <span id="number_of_chests">0</span>
+							<u>Barrows chests logged</u>: <span id="number_of_rewards">0</span>
 						</div>
 						<div class="capture_box_elements" id="math_box_total">
-							<u>Total value of logged chests</u>
-							<div><span id="value_of_chests">0</span></div>
+							<u>Total value</u>: <span id="value_of_rewards">0</span>
 						</div>
 						<div class="capture_box_elements" id="math_box_average">
-							<u>Average value of logged chests</u>
-							<div><span id="average_of_chests">0</span></div>
+							<u>Average value</u>: <span id="average_of_rewards">0</span>
+						</div>
+						<div id="bottom_buttons">
+							<div id="history_button" class="nisbutton" data-toggle="modal" data-target="#history">History</div>
+							<div id="insert_button" class="nisbutton" data-toggle="modal" data-target="#insert" onclick="clearVerify()">&nbsp;Insert&nbsp;</div>
 						</div>
 					</div>
 					<div class="main_buttons" id="top">
-						<div id="bottom_buttons">
+						<div id="top_buttons">
 							<div id="csv_button" class="nisbutton" onclick="TEST.exporttocsv();">Export to CSV</div>
 							<div id="settings_button" class="nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()"><img id="settings_cog" draggable="false" src="images/SettingsCog.png"></div>
 						</div>
@@ -58,10 +60,6 @@
 							<div id="tenth_item" class="rewards"></div>
 							<div id="eleventh_item" class="rewards"></div>
 							<div id="twelfth_item" class="rewards"></div>
-						</div>
-						<div id="bottom_buttons">
-							<div id="history_button" class="nisbutton" data-toggle="modal" data-target="#history">History</div>
-							<div id="insert_button" class="nisbutton" data-toggle="modal" data-target="#insert" onclick="clearVerify()">&nbsp;Insert&nbsp;</div>
 						</div>
 					</div>
 				</div>
