@@ -469,8 +469,8 @@ header {
 .title {
   position: relative;
   text-align: center;
-  font-size: 22px;
-  padding: 0px 12px;
+  font-size: 18px;
+  padding: 5px 12px 0px 12px;
   white-space: normal;
   margin: 0px;
 }
@@ -486,6 +486,13 @@ header {
   -webkit-user-select: none;
   display:inline;
   grid-template-columns: repeat(2, auto);
+}
+
+#csv_button,
+#settings_button,
+#clear_button,
+#docapturebutton {
+  margin: 0px 0%
 }
 
 #csv_button,
@@ -582,6 +589,7 @@ header {
   top: 5px;
 }
 
+#top_buttons,
 #bottom_buttons{
   width: 100%;
   cursor: pointer;
@@ -617,17 +625,17 @@ header {
 }
 
 .capture_box_elements,
-#number_of_chests,
-#value_of_chests,
-#average_of_chests {
-  font-size: 17px;
+#number_of_rewards,
+#value_of_rewards,
+#average_of_rewards {
+  font-size: 16px;
   font-weight: 600;
   margin: 5px;
   padding: auto;
   text-align: center;
 }
 
-#number_of_chests{
+#number_of_rewards{
   font-size: 19px;
 }
 
@@ -655,9 +663,14 @@ header {
 }
 
 #captured_rewards_grid{
+  width: 100%;
   display:grid;
   grid-template-columns: repeat(6, auto);
   text-align: center;
+  border: 2px ridge #f0b216;
+  background: url(../../images/items/Blank.png) repeat;
+  margin: auto auto 4px auto;
+  padding: 3px;
 }
 
 mainsection {
