@@ -167,8 +167,8 @@ export async function init() {
 	}
 
 	if (localStorage.getItem("BarrowsLogger/hybridPrecision") == null) { // Hybrid precision value
-		if (seeConsoleLogs) console.log("Defaulting hybridPrecision to 0.7...");
-		localStorage.setItem("BarrowsLogger/hybridPrecision", "0.7");
+		if (seeConsoleLogs) console.log("Defaulting hybridPrecision to 0.5...");
+		localStorage.setItem("BarrowsLogger/hybridPrecision", "0.5");
 	}
 
 	if (localStorage.getItem("BarrowsLogger/History") == null) { // History initializer
@@ -441,19 +441,17 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 		let yRect: number
 		if (!legacy) {
 			xdefault = loc[0].x - 10;
-			ydefault = loc[0].y + 30;
+			ydefault = loc[0].y + 29;
 			xRect = loc[0].x - 27
 			yRect = loc[0].y - 13
 		}
 		else {
 			xdefault = loc[0].x - 154;
-			ydefault = loc[0].y + 30;
+			ydefault = loc[0].y + 29;
 			xRect = loc[0].x - 172
 			yRect = loc[0].y - 13
 		}
-		//FIXME: Recrop images and compile new JSON.
-		// I think I know why it's borked.
-		// Crop it like you did with Tetracompasses.
+
 		let x1 = xdefault
 		let y1 = ydefault
 
@@ -464,7 +462,7 @@ async function findtrailComplete(img: ImgRef, autobool: boolean) {
 			let toptemp = new Array<ImageData>(8)
 			for(let j = 0; j < 8; j++){
 				croptemp[j] = (img.toData(x1, y1, 32, 32));
-				toptemp[j] = (img.toData(x1, y1, 32, 8));
+				toptemp[j] = (img.toData(x1, y1 + 1, 32, 8));
 				x1 += 32 + 23;
 			}
 			crops.push(croptemp);

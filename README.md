@@ -130,8 +130,7 @@ To install with the direct link
 3. No Menu Highlighter: Displays a box where the user should prevent menus appearing at all costs while AutoCapture is on. A menu appearing in this area could potentially cause a double capture, but it is rollback-able. More information on how to avoid a multi-capture, [click here](#avoiding-menus-causing-multi-capturing-a-few-tips-on-where-to-avoid-having-menus-appearing-over-the-value).
 4. Hybrid Alg Precision: Allows the user to adjust the precision of the Hybrid image recognition algorithm.
     * The lower the value, the higher the precision. The higher the precision, the faster it runs, but the less accurate it could potentially be, and vice versa. 
-    * Default value is 0.7, minimum value is 0.1, maximum value is 1.0. Setting this value higher or lower than this will be auto-capped.
-    * ___WARNING!!___ Bringing this value below 0.4 may break BarrowsLogger or miscapture when capturing coins or a few other items.
+    * Default value is 0.5, minimum value is 0.1, maximum value is 1.0. Setting this value higher or lower than this will be auto-capped.
 6. History Display Limit: Limits the number of latest Barrows rewards displayed within the History menu. Default value is 25, minimum value is 0. <br><br>
 
 # Additional information
