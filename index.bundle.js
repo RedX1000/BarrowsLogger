@@ -5112,9 +5112,9 @@ async function capture(autobool) {
     }
 }
 async function findtrailComplete(img, autobool) {
-    // If 3 rerolls..., default
+    // If 20 rerolls..., default
     // Adjust this if you want to add more rerolls.
-    if (lagCounter == 5) {
+    if (lagCounter == 20) {
         autoDisableCheckAuto(event);
         if (window.alt1) {
             alt1.overLayClearGroup("overlays");
