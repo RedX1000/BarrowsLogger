@@ -147,10 +147,10 @@
 		                            <input type="radio" id="menuoff" name="menu" class="maintoggles_buttons" value="menuoff" title="Shows the area to keep any menus away from to prevent a double-capture.">
 		                        </div>
 		                    </div>
-		                    <label class="title_labels" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.7, lowest value is 0.1 and highest value is 1.0&#013;&#013;HEADS UP!!!! Bringing this value below 0.4 may break BarrowsLogger or miscapture when capturing coins or a few other items.">Hybrid Alg Precision:<br></label>
+		                    <label class="title_labels" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">Hybrid Alg Precision:<br></label>
 		                    <div id="hybrid_precision_field">
 		                        <div class="main_divs">
-		                            <input type="number" min="0" max="2" step="0.1" value="0.7" id="hybrid_precision" name="precision" class="hybrid_precision_text" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.7, lowest value is 0.1 and highest value is 1.0&#013;&#013;HEADS UP!!!! Bringing this value below 0.4 may break BarrowsLogger or miscapture when capturing coins or a few other items.">
+		                            <input type="number" min="0" max="2" step="0.1" value="0.5" id="hybrid_precision" name="precision" class="hybrid_precision_text" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">
 		                        </div>
 		                    </div>
 							<label class="title_labels" title="Determines how many previous chests will display in the History menu at one time.&#013;&#013;Default value is 25.">History Display Limit:<br></label>
@@ -448,6 +448,12 @@
 					<div class="modal-body" style="user-select: text;">
 						<h2><u>Latest update</u></h2>
 						<h3>
+							<span style="color: rgb(27, 187, 236);">
+								<u>(10/03/2022):</u> <br>
+								Fixed an issue regarding hybrid precision breaking under 0.4.<br>
+								Precision can be placed as low as 0.1, but it may break at 0.1. <br>
+								New default is 0.5. Very fast and fairly accurate. ❤️
+ 							</span> <br><br>
 							<span style="color: rgb(236, 170, 27);">
 								I am hunting for a couple of items! <br>
 								If you can get screenshots of the following items and send them to me, that would be amazing!<br>
