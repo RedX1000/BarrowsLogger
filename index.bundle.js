@@ -6127,32 +6127,28 @@ async function fetchFromGE() {
 function verifyInsert(event) {
     if (seeConsoleLogs)
         console.log("Collecting info from insert...");
-    let items = [];
+    let itemsList = [];
     let quants = [];
     let totalPrice = parseInt(document.getElementById("value_input").value);
     let itemDivs = document.getElementsByClassName("items");
     let quantDivs = document.getElementsByClassName("item_quants");
     removeChildNodes(document.getElementById("value_input"));
     for (let i = 0; i < 4; i++) {
-        let tempitems = [];
         for (let j = 0; j < 8; j++) {
-            console.log(i, j);
             if (itemDivs[(i * 8) + j] == undefined) {
                 break;
             }
             if (itemDivs[(i * 8) + j].options[itemDivs[(i * 8) + j].selectedIndex].value == "Blank") {
                 continue;
             }
-            tempitems.push(itemDivs[(i * 8) + j].options[itemDivs[(i * 8) + j].selectedIndex].value);
+            itemsList.push(itemDivs[(i * 8) + j].options[itemDivs[(i * 8) + j].selectedIndex].value);
+            quants.push(parseInt(quantDivs[(i * 8) + j].value));
         }
-        items.push(tempitems);
-    }
-    for (let i = 0; i < itemDivs.length; i++) {
-        quants.push(parseInt(quantDivs[i].value));
     }
     if (seeConsoleLogs)
-        console.log("items verifying are", items, "quants are", quants);
-    if (items.length == 0) {
+        console.log("items verifying are", itemsList, "quants are", quants);
+    console.log(itemsList.length);
+    if (itemsList.length == 0) {
         if (window.alt1) {
             alt1.overLayClearGroup("overlays");
             alt1.overLaySetGroup("overlays");
@@ -6163,7 +6159,7 @@ function verifyInsert(event) {
         event.stopPropagation();
         return;
     }
-    let curr = (parseInt(localStorage.getItem("BarrowsLogger/Count")) + 1).toString();
+    let curr = (parseInt(localStorage.getItem("TetraLogger/Count")) + 1).toString();
     let ele = document.getElementById("insertVerif_body");
     let container = document.createElement("div");
     container.setAttribute("class", 'historyDisplayContainer');
@@ -6182,12 +6178,10 @@ function verifyInsert(event) {
     value.textContent = "Reward Value: " + totalPrice.toLocaleString("en-US");
     value.setAttribute('class', 'historyValue');
     container.append(value);
-    // Adjust this for larger windows. I want 12 cause barrows.
-    let cap = 12;
     let TPcheck = false;
     for (let j = 0; j < 4; j++) { // Navigating temp
         for (let k = 0; k < 8; k++) {
-            if (items[j][k] == "Blank" || items[j][k] == undefined) {
+            if (itemsList[(j * 8) + k] == "Blank" || itemsList[(j * 8) + k] == undefined) {
                 if (TPcheck) {
                     break;
                 }
@@ -6217,8 +6211,8 @@ function verifyInsert(event) {
                 quantvar.textContent = "";
             }
             else {
-                imgvar = imgMaker(items[j][k]);
-                nodevar = nodeMaker(parseInt(quants[(j * 8) + k]), items[j][k], "history");
+                imgvar = imgMaker(itemsList[(j * 8) + k]);
+                nodevar = nodeMaker(parseInt(quants[(j * 8) + k]), itemsList[(j * 8) + k], "history");
                 quantvar = quantMaker(quants[(j * 8) + k]);
             }
             nodevar.append(imgvar);
@@ -6233,7 +6227,7 @@ function verifyInsert(event) {
     button.setAttribute('class', 'nisbutton historyButtonStyle');
     button.setAttribute('id', 'container' + curr + 'button');
     button.textContent = "Sample";
-    insertVerif = [items, quants, totalPrice, "reward: [C] "];
+    insertVerif = [itemsList, quants, totalPrice, "reward: [C] "];
     buttonbox.append(button);
     container.append(buttonbox);
     ele.append(container);
@@ -6244,27 +6238,36 @@ function insertToDB() {
     if (window.alt1) {
         alt1.overLayClearGroup("overlays");
         alt1.overLaySetGroup("overlays");
-        alt1.overLayTextEx("Submitting custom clue to Database...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 40000, "", true, true);
+        alt1.overLayTextEx("Submitting custom barrows reward to Database...", _alt1_base__WEBPACK_IMPORTED_MODULE_0__.mixColor(255, 144, 0), 20, Math.round(alt1.rsWidth / 2), 200, 40000, "", true, true);
     }
-    let items = insertVerif[0];
+    let itemsList = insertVerif[0];
+    let itemsList2D = [];
+    console.log(itemsList);
     for (let i = 0; i < 4; i++) {
-        for (let j = items[i].length; j < 8; j++) {
-            items[i].push("Blank");
+        let templist = [];
+        for (let j = 0; j < 8; j++) {
+            if (itemsList[(i * 8) + j] == undefined)
+                itemsList.push("Blank");
+            templist.push(itemsList[(i * 8) + j]);
+        }
+        itemsList2D.push(templist);
+    }
+    console.log(itemsList);
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 8; j++) {
         }
     }
-    console.log(items);
+    console.log(itemsList2D);
     let quants = [];
     for (let i = 0; i < insertVerif[1].length; i++) {
         quants.push(insertVerif[1][i].toString());
     }
-    for (let i = quants.length; i < cap; i++) {
-        quants.push("0");
-    }
+    console.log(quants);
     let value = insertVerif[2];
     let tier = insertVerif[3];
     insertInit();
-    submitToLS(items, quants, parseInt(value));
-    addHistoryToLs(parseInt(value), items, quants, tier);
+    submitToLS(itemsList2D, quants, parseInt(value));
+    addHistoryToLs(parseInt(value), itemsList2D, quants, tier);
     lootDisplay();
     if (window.alt1) {
         alt1.overLayClearGroup("overlays");
