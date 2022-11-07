@@ -134,6 +134,10 @@ To install with the direct link
 6. History Display Limit: Limits the number of latest Barrows rewards displayed within the History menu. Default value is 25, minimum value is 0. <br><br>
 
 # Additional information
+* ### Barrows log can be open during casket openings but it cannot be above or more to the left of the reward window, otherwise it <i><b>WILL NOT</b></i> scan.
+    * This <i><b>IS NOT</b></i> an okay placement of the log window <span style="font-size: 9px;">(I know this is a clue reward screenie, but rule still applies 🤫)</span>: <br>![Bad log display](/Readme%20Images/bad%20log%20placement.png "Bad log placement")
+    * This <i><b>IS</b></i> an okay placement of the log window: <br>![Correct lo display](/Readme%20Images/good%20log%20placement.png "Good log placement") <br><br>
+
 * ### When scanning rewards, do not cover these spots on a reward screen.
     * EOC rewards display: <br>![EOC rewards display](/Readme%20Images/rewardsample.png "EOC Rewards")
     * Legacy rewards display: <br>![EOC rewards display](/Readme%20Images/rewardsamplelegacy.png "Legacy Rewards")
@@ -150,7 +154,7 @@ To install with the direct link
     * **Everything else is free game to cover. More details below about preventing multi-capturing over the value** <br><br>
 
 * ### Avoiding menus causing multi-capturing: A few tips on where to avoid having menus appearing over the value
-    * It IS **_NOT_** safe to have a menu pop up if covering ONLY the value itself. BarrowsLogger WILL capture if you cover up the value such that ONLY the value is covered up like this <span style="font-size: 9px;">(I know this is a clue reward screenie, but rule still applies 🤫)</span>:<br>![Menu covering only the value](/Readme%20Images/menu%20screen1.png "Menu covering only value")
+    * It IS **_NOT_** safe to have a menu pop up if covering ONLY the value itself. BarrowsLogger WILL capture if you cover up the value such that ONLY the value is covered up like this <span style="font-size: 9px;">(I know this is also a clue reward screenie, but rule still applies 🤫)</span>:<br>![Menu covering only the value](/Readme%20Images/menu%20screen1.png "Menu covering only value")
 
     * It **_IS_** safe to hover over or right click items as long as the menu resulting from it can cover the "Current Reward Value" text, but try to avoid it. A few examples of safe menus:<br>
     ![Hover-over menu covering both value and 'Current Reward Value'"](/Readme%20Images/menu%20screen2.png "Hover-over menu covering both value and 'Current Reward Value'")<br>
