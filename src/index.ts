@@ -1954,8 +1954,11 @@ export function exporttocsv() {
 	csvinfo.push(["Captured Rewards History", 'Parse tier at " : " and " [C] "','Parse items at " x "'])
 	csvinfo.push(["Rewards Tier & Count", "Reward Value", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12"])
 	console.log(lsHistory)
+
 	if (seeConsoleLogs) console.log("Setting history in csv...")
 	for (let i = 0; i < lsHistory.length; i++) {
+		lsHistory[i][4] = i
+		console.log(lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2])
 		let temp = [lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2]]
 		for (let j = 0; j < 4; j++) {
 			for(let k = 0; k < 8; k++){
