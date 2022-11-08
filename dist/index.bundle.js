@@ -6507,8 +6507,7 @@ function exporttocsv() {
     if (seeConsoleLogs)
         console.log("Setting history in csv...");
     for (let i = 0; i < lsHistory.length; i++) {
-        lsHistory[i][4] = i;
-        console.log(lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2]);
+        lsHistory[i][4] = i + 1;
         let temp = [lsHistory[i][3] + " : " + lsHistory[i][4], lsHistory[i][2]];
         for (let j = 0; j < 4; j++) {
             for (let k = 0; k < 8; k++) {
