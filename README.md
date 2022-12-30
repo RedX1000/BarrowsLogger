@@ -11,6 +11,7 @@
 ### Table of Contents
 * [Description](#description)
 * [How to install](#how-to-install)
+* [Consider sending a donation!](#consider-sending-a-donation)
 * [Instructions on how to use](#instructions-on-how-to-use)
     * [Capture Rewards](#capture-rewards)
     * [AutoCapture](#autocapture)
@@ -19,6 +20,8 @@
     * [Insert](#insert)
     * [Clear Options menu](#clear-options-menu)
     * [Toggleable loot tabs](#toggleable-loot-tabs)
+    * [Information & Updates](#information--updates)
+    * [Home button](#home-button)
 * [Settings](#settings) 
     * [Image Searching Algorithm](#image-searching-algorithm)
     * [Miscellaneous Toggles](#miscellaneous-toggles)
@@ -50,7 +53,11 @@ To install with the direct link
 
 ![BarrowsLogger Tall](/Readme%20Images/BarrowsLogger%20Tall.png "BarrowsLogger Tall") <br><br>
 
+### Consider sending a donation!
+The Logger projects are passion project and I have future plans to use these plugins as a base for future loggers<br>
+Consider sending a small donation in this direction🙂.<br>
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L4L7EERT9)  <br><br>
 
 # Instructions on how to use
 
@@ -113,6 +120,19 @@ To install with the direct link
 * Hidden tabs will be strikethroughed, and the space below it will be hidden.
 * Hovering over it will give a tooltip on whether you can hide or show the loot. <br><br>
 
+### Information & Updates
+* Information & Updates displays the following:
+    * The latest news about the plugin.
+    * BarrowsLogger's repository link.
+    * My discord information.
+    * My Ko-fi donation link.
+* I recommend checking here occasionally if anything gets updated regarding BarrowsLogger.<br><br>
+
+### Home button
+* The Home button takes you to the LoggerSuite homepage.
+* LoggerSuite is the all-in-one plugin homepage for the other loggers including this one.
+* There's an install link on the page, feel free to add it!<br><br>
+
 ## Settings
 * Settings allow for user choice of Algorithm for icon recognition and miscellaneous settings toggles.
 * Hover over the corresponding buttons title to learn more about what it does. <br><br>
@@ -174,7 +194,7 @@ To install with the direct link
 
 * ### BarrowsLogger can be stretched out widthwise to display more of the loot in its display, as the top is flexy, and if you compress the bottom, you can have a minimal box for only seeing scanned items: 
     ![BarrowsLogger Tall Top](/Readme%20Images/BarrowsLogger%20Tall%20Top.png "BarrowsLogger Tall Top") <br>
-    ![BarrowsLogger Wide Top](/Readme%20Images/BarrowsLogger%20Wide%20Top.png "BarrowsLogger Wide") <br>
+    ![BarrowsLogger Wide Top](/Readme%20Images/BarrowsLogger%20Wide%20Top.png "BarrowsLogger Wide Top") <br>
     ![BarrowsLogger Wide](/Readme%20Images/BarrowsLogger%20Wide.png "BarrowsLogger Wide") <br><br>
 
 ### Potential or planned updates
