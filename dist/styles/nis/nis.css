@@ -214,8 +214,8 @@
   filter: brightness(1.2);
 }
 .nissmallbutton {
-  line-height: 26px;
-  height: 26px;
+  line-height: 28px;
+  height: 28px;
   font-size: 12px;
 }
 
@@ -289,8 +289,8 @@
   filter: brightness(1.2);
 }
 .nissmallbutton {
-  line-height: 26px;
-  height: 26px;
+  line-height: 28px;
+  height: 28px;
   font-size: 12px;
 }
 
@@ -479,6 +479,7 @@ header {
   width: 100%;
   cursor: pointer;
   color: #000;
+  margin-bottom: 10px;
   font-family: "trajan-pro-3";
   font-size: 18px;
   line-height: 32px;
@@ -497,27 +498,34 @@ header {
 
 #csv_button,
 #settings_button{
-  position:relative;
-  font-size: 18px;
+  position: relative;
+  font-size: 17px;
 }
 
 #csv_button{
   width: 100%;
-  float: left;
 }
 
 #settings_button{
-  width: 60px;
-  margin-left: auto;
+  width: 50px;
+  float: right;
+  margin: auto 0px auto auto;
+}
+
+#settings_button:hover{
+  filter: brightness(120%);
+}
+
+#settings_button:active{
+  filter: brightness(140%);
 }
 
 #settings_cog{
-  width:85%;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  position:absolute;
+  left: 10px;
+  bottom: -1px;
+  width: 60%;
+  z-index: 1;
 }
 
 .header_box {
@@ -533,6 +541,7 @@ header {
   text-align: center;
   position: center;
   display: grid;
+  grid-gap: 0.1em;
   grid-template-columns: repeat(2, auto);
   padding: 3px 7px;
 }
@@ -543,13 +552,13 @@ header {
 }
 
 .value_box {
-  padding: 3px 3px 0px 3px;
+  padding: 0px 3px;
 }
 
 .main_buttons,
 .capture_info,
 .captured_rewards{
-  width:256px;
+  width:220px;
   text-align: center
 }
 
@@ -564,16 +573,17 @@ header {
 
 #clear_button,
 #docapturebutton {
-  width: 99%;
+  width: 100%;
   cursor: pointer;
   margin: auto;
   text-align: center;
   color: #000;
   font-family: "trajan-pro-3";
   font-size: 18px;
-  line-height: 32px;
+  line-height: 28px;
   user-select: none;
   -webkit-user-select: none;
+  margin-top: 5px;
 }
 
 #toggleunlocktrack.enabled {
@@ -586,7 +596,8 @@ header {
   height: 20px;
   background-image: url(../../images/lockicon.png);
   background-size: 40px 20px;
-  top: 5px;
+  top: 3px;
+  left: 8px;
 }
 
 #top_buttons,
@@ -610,33 +621,49 @@ header {
   font-size: 18px;
   margin: auto;
 }
-/*
+
+#history_button,
+#insert_button{
+  margin: auto;
+  width: 95%;
+  font-size: 18px;
+}
+
 #clear_button {
-  margin: 8px 0px;
-}*/
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#docapturebutton{
+  margin-top: 10px;
+}
 
 .capture_info {
   display:grid;
   text-align: center;
   margin:auto;
-  padding-right: 5px;
   grid-template-columns: repeat(1, auto);
-  width: 270px;
 }
 
 .capture_box_elements,
 #number_of_rewards,
 #value_of_rewards,
 #average_of_rewards {
-  font-size: 16px;
   font-weight: 600;
-  margin: 5px;
   padding: auto;
   text-align: center;
 }
 
-#number_of_rewards{
-  font-size: 19px;
+.capture_box_elements{
+  font-size: 15px;
+  margin: 3px;
+}
+
+#number_of_rewards,
+#value_of_rewards,
+#average_of_rewards {
+  color:#FFC000;
+  font-size: 14px;
 }
 
 .captured_rewards {
@@ -650,11 +677,16 @@ header {
   font-size: 14px;
   font-weight: 700;
   margin:auto;
-  padding:0px 0px 5px 0px;
+  padding:2px 0px 4px 0px;
+  line-height: 20px;
+}
+
+#rewards_value{
+  color:#FFC000;
 }
 
 .rewards {
-  width:100%;
+  width:37px;
   height:37px;
   border-width: 3;
   display: inline-block;
@@ -669,7 +701,7 @@ header {
   text-align: center;
   border: 2px ridge #f0b216;
   background: url(../../images/items/Blank.png) repeat;
-  margin: auto auto 4px auto;
+  margin: auto auto auto auto;
   padding: 3px;
 }
 
@@ -689,9 +721,13 @@ mainsection {
 .equipment,
 .general{
   display: block;
-  min-height: 50%;
+  min-height: 80px;
   padding: 5px 0px 0px 0px;
   background: url(alt1-currentskin/background.png)
+}
+
+.general{
+  padding-bottom: 10px;
 }
 
 .general_title,
@@ -736,7 +772,7 @@ mainsection {
   display: flex;
   flex-flow: wrap;
   justify-content: left;
-  padding: 5px 10px 0 10px;
+  padding: 5px 5px 0 5px;
   word-wrap: normal;
 }
 
@@ -760,7 +796,7 @@ footer {
 #home_button{
   position: absolute;
   display: block;
-  left: -7px;
+  left: -9px;
 }
 
 #home_button :hover {
@@ -777,7 +813,7 @@ footer {
 
 #info_button{
   margin: 8px auto auto;
-  width: 82.35%;
+  width: 80%;
 }
 
 /* #githublink a:link {
@@ -789,20 +825,69 @@ footer {
 } */
 
 .modal-title{
-  font-size: 25px;
+  font-size: 18px;
+  margin: auto;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.modal-header-title{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  margin: auto;
+}
+
+.modal-header{
+  background: url("alt1-currentskin/background.png") #171e24;
+  border-bottom: 0 none;
+  user-select: none;
+}
+
+#hovertip{
+  font-size: 20px;
+  color:rgb(236,182,48);
+  border: solid;
+  text-align: right;
+  border-width: 4px;
+  border-radius: 50%;
+  border-color:rgb(236, 182, 48);
+  background: rgb(10, 31, 41);
+  cursor: help;
+  width: 37px;
+  margin-left: auto;
+  margin-right: 5px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+#hovertip:hover{
+  filter: brightness(120%);
+}
+
+.close{
+  padding: auto;
+  line-height: 0.8;
+}
+
+.close_x{
+  font-size:55px;
+  color:#ffffff;
 }
 
 #h2settings{
-    margin:0;
-    font-family:"trajan-pro-3";
-    color:#f9c037;
-    font-size:20px;
-    padding: 10px 5px 0px 5px;
-    user-select: none;
+  margin: auto;
+  font-family:"trajan-pro-3";
+  color:#f9c037;
+  font-size:20px;
+  padding: 30px 5px 5px 5px;
+  user-select: none;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #settings-body{
-  display: grid;
+  display: block;
   grid-template-columns: repeat(2, auto);
 }
 
@@ -810,7 +895,8 @@ mainalgs,
 mainimgs,
 maintoggles{
   height:100%;
-  padding:20px 10px;
+  width: 96%;
+  padding: 7px 10px;
   margin:0;
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -819,15 +905,19 @@ maintoggles{
   justify-items: center;
 }
 
+maintoggles{
+  width: 105%;
+}
+
 .mainimgs_buttons,
 .mainalgs_buttons,
 .maintoggles_buttons{
-  padding: 0 5px;
+  padding: 0px 5px;
   margin:auto;
 }
 
 .maintoggles_buttons{
-  padding: 0 5px;
+  padding: 0px 5px;
   margin:auto;
 }
 
@@ -836,11 +926,14 @@ maintoggles{
 #multi_buttons,
 #menu_buttons{
   display:grid;
+  margin: auto;
   grid-template-columns: repeat(2, auto);
 }
 
 .main_divs{
-  padding:5px 3px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin: auto;
 }
 
 label{
@@ -849,9 +942,10 @@ label{
 
 .title_labels{ 
   font-family:"trajan-pro-3";
-  color:#f9c037;
+  color:#c5c5c5;
   padding:10px 0px;
-  font-size: 15px;
+  margin: auto;
+  font-size: 14px;
 }
 
 #algorithm_label,
@@ -859,8 +953,9 @@ label{
 #misc_label,
 #menu_label{
     color:#f9c037;
-    margin: 0 0 0 7px;
-    font-size: 15px;
+    margin: 0 10px 0 7px;
+    font-size: 13px;
+    font-family: "trajan-pro-3";
 }
 
 #hybrid_precision,
@@ -903,30 +998,6 @@ label{
   margin-left: 4px;
 }
 
-.modal-header{
-  background: url("alt1-currentskin/background.png") #171e24;
-  border-bottom: 0 none;
-  user-select: none;
-}
-
-#hovertip{
-  font-size: 22px;
-  color:rgb(236,182,48);
-  float: right;
-  margin-right: 20px;
-  border: solid;
-  border-width: 4px;
-  border-radius: 50%;
-  border-color:rgb(236, 182, 48);
-  background: rgb(10, 31, 41);
-  cursor: default;
-}
-
-.close_x{
-  font-size:40px;
-  color:#ffffff;
-}
-
 .modal-body{
   position:relative;
   border: solid;
@@ -944,7 +1015,7 @@ label{
   user-select: none;
 }
 
-#db_confirm_button{
+.db_confirm_button{
   width: 80%;
   cursor: pointer;
   color: #000;
@@ -952,7 +1023,7 @@ label{
   font-size: 18px;
   line-height: 32px;
   user-select: none;
-  margin: 40px auto;
+  margin: 25px auto;
 }
 
 .return_button{
@@ -966,6 +1037,30 @@ label{
   margin: auto auto;
 }
 
+.history_title{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.insert_title{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.modal_title_details{
+  line-height: 14px;
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
+#insert_reward_value{
+  text-align: center;
+}
+
 #insert_remove_title{
   font-size: 16px;
 }
@@ -973,7 +1068,8 @@ label{
 #insert_value{
   display:grid;
   grid-template-columns: repeat(3, auto);
-  padding: 20px 0px;
+  padding: 10px 0px;
+  align-items: center;
 }
 
 #insert_items{
@@ -989,28 +1085,29 @@ label{
   color:#000;
   background-color: #d6d6d6;
   padding-left: 5px;
-  width: 120px;
 }
 
 .insert_text{
   width: 80px;
+  align-items: center;
 }
 
 .insert_options{
-  width: 260px;
+  width: 90%;
   word-wrap: normal;
   font-size: 13px;
   padding-left: 0px;
+  margin-right: 15px;
 }
 
 #value_input{
-  width: 125px;
+  width: 90%;
 }
 
 .insert_items_divs{
   display:grid;
   grid-template-columns: repeat(3, auto);
-  padding: 20px 0px;
+  padding: 15px 0px;
 }
 
 .insert_title_labels,
@@ -1018,50 +1115,45 @@ label{
   font-family:"trajan-pro-3";
   color:#f9c037;
   font-size: 15px;
-  margin: auto 0px;
+  margin: auto auto;
+  width: 95px;
+}
+
+#fetchge_button{
+  width: 125px;
+  font-size: 18px;
 }
 
 .insert_title_labels{
-  width:190px;
+  text-align: center;
 }
 
-.insert_items_labels{
-  width: 125px;
-}
-
-.quant_yellow_text{
-  position:absolute; 
-  left:0; 
-  top:-5px; 
-  font-family:"Runescape Chat Font"; 
-  font-size:16px; 
-  color:rgb(255,255,0); 
-  text-shadow:1px 1px #000000;
-}
-
-.quant_white_text{
-  position:absolute; 
-  left:0; 
-  top:-5px; 
-  font-family:"Runescape Chat Font"; 
-  font-size:16px; 
-  color:rgb(255,255,255); 
-  text-shadow:1px 1px #000000;
-}
-
+.quant_yellow_text,
+.quant_white_text,
 .quant_green_text{
   position:absolute; 
   left:0; 
   top:-5px; 
-  font-family:"Runescape Chat Font"; 
+  font-family:"Runescape Plain 12"; 
   font-size:16px; 
-  color:rgb(0,255,128); 
   text-shadow:1px 1px #000000;
+}
+
+.quant_yellow_text{
+  color:rgb(255,255,0); 
+}
+
+.quant_white_text{
+  color:rgb(255,255,255); 
+}
+
+.quant_green_text{
+  color:rgb(0,255,128); 
 }
 
 .node_tab{
   position: relative; 
-  margin: 3px 7px 0px 1px; 
+  margin: 3px 0px 0px 5px; 
   padding: auto 30px auto auto; 
   width: 37px; 
   height: 37px; 
@@ -1083,13 +1175,15 @@ label{
 
 .node_history{
   position: relative;
-  margin: auto;
+  margin: 2px auto 2px auto;
   padding: auto;
   width: 35px;
-  height: 36px;
+  height: 32px;
   display: flex;
   align-items: center;
   text-align: center;
+  grid-row: 3 / span;
+  grid-column: auto / span 2;
 }
 
 .node_recent{
@@ -1115,9 +1209,9 @@ label{
   margin: 10px 0px;
   padding: 5px 5px;
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(12, auto);
   align-items: center;
-  border: 5px solid #f0b216;
+  border: 4px solid #f0b216;
   border-style: ridge;
 }
 
@@ -1133,7 +1227,7 @@ label{
   user-select: none;
   word-wrap: break-all;
   -webkit-user-select: none;
-  grid-column: 1 / span 3;
+  grid-column: 1 / 13;
   grid-row: 1;
   text-shadow: 1px 1px 2px #000000;
 }
@@ -1150,24 +1244,25 @@ label{
   position: relative;
   color: #f0b216;
   font-family: "trajan-pro-3";
-  font-size: 13px;
+  font-size: 12px;
   line-height: 20px;
   user-select: none;
   word-wrap: break-all;
   -webkit-user-select: none;
-  grid-column: 4 / span 4;
-  grid-row: 1;
+  grid-column: 1 / 13;
+  grid-row: 2;
   text-shadow: 1px 1px 2px #000000;
 }
 
 .buttonboxHistory{
-  width: 130px; 
+  width: 110px; 
   display: flex; 
-  grid-row: 1 / span 3;
-  grid-column: 7 / span 3;
-  margin: auto;
-  align-items:center; 
-  position:relative;
+  grid-row: 1 / span 2; 
+  grid-column: 7 / span 6; 
+  align-items: center; 
+  position: relative;
+  margin-left: auto;
+  margin-right: 3px;
 }
 
 .historyButtonStyle{
@@ -1184,15 +1279,16 @@ label{
 
 .buttonBoxHistoryVerify{
   display: grid;
+  margin-left:auto;
+  margin-right: 3px;
   grid-template-columns: repeat(2, auto);
-  width: 130px;
-  margin: auto;
-  grid-row: 1 / span 3;
-  grid-column: 7 / span 3;
+  width: 110px;
+  grid-row: 1 / span 2; 
+  grid-column: 7 / span 6; 
 }
 
 .buttonVerif{
-  width: 100%;
+  width: 98%;
   cursor: pointer;
   text-align: center;
   color: #000;
@@ -1206,6 +1302,36 @@ label{
 .imgvarMPAuto{
   margin: auto; 
   padding: auto;
+}
+
+.dateBox{
+  grid-row: 1 / span 2; 
+  grid-column: 6 / span 3; 
+  width: 36px;
+  height: 36px;
+  margin: auto 12px 4px auto;
+  z-index: 1; /* https://stackoverflow.com/a/15782135 */
+  position: relative; /* Setting z-index to 1 worked */
+  backface-visibility: hidden; /* https://stackoverflow.com/a/3921870 */
+}
+
+.dateImage{
+  background: url(../../images/calendar-no-glass.png);
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 36px;
+  cursor: help;
+  transition: 0.1s;
+}
+
+.dateImage:hover {
+  background: url(../../images/calendar-glass.png);
+  background-size: 36px 36px;
+  width: 100%;
+  height: 36px;
+  background-repeat: no-repeat;
+  filter: brightness(1.3)
 }
 
 /*font stolen from jagex*/
