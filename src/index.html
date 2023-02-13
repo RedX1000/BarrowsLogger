@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<title>OpenLogger: An open-source clue logger</title>
+
 		<script src="./index.bundle.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
-		<link rel="stylesheet" type="text/css" href="./styles/nis/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="./styles/nis/nis.css"/>
-		<link rel="stylesheet" type="text/css" href="./styles/nis/alt1-currentskin/skinstyle.css"/><!--stylesheet with all nis styles (Will be part of public resources so feel free to copy/paste)-->
-		<link rel="stylesheet" type="text/css" href="./styles/nis/fonts/stylesheet.css"/>
+		<link rel="stylesheet" type="text/css" href="./styles/nis/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./styles/nis/nis.css">
+		<link rel="stylesheet" type="text/css" href="./styles/nis/alt1-currentskin/skinstyle.css"><!--stylesheet with all nis styles (Will be part of public resources so feel free to copy/paste)-->
+		<link rel="stylesheet" type="text/css" href="./styles/nis/fonts/stylesheet.css">
 	</head>
 	<body class="nis" onload="TEST.initOnLoad()">
 		<header>
-			<h1 class="title">BarrowsLogger, an open-source Barrows logger</h1>
-			<div class="header_box">
-				<div class="button_box">
-					<div class="capture_info" id="top">
-						<div class="capture_box_elements" id="math_box_count">
+			<h1 id="title">BarrowsLogger, an open-source Barrows logger</h1> <!-- Keeping nis a class, was so in alt1minimal-->
+			<div id="header_box">
+				<div id="button_box">
+					<div id="capture_info">
+						<div class="capture_box_elements" id="count_box">
 							<u>Barrows chests logged</u>: <span id="number_of_rewards">0</span>
 						</div>
-						<div class="capture_box_elements" id="math_box_total">
+						<div class="capture_box_elements" id="total_box">
 							<u>Total value</u>: <span id="value_of_rewards">0</span>
 						</div>
-						<div class="capture_box_elements" id="math_box_average">
+						<div class="capture_box_elements" id="average_box">
 							<u>Average value</u>: <span id="average_of_rewards">0</span>
 						</div>
 						<div id="bottom_buttons">
@@ -29,20 +31,22 @@
 							<div id="insert_button" class="nissmallbutton nisbutton" data-toggle="modal" data-target="#insert" onclick="clearVerify()">&nbsp;Insert&nbsp;</div>
 						</div>
 					</div>
-					<div class="main_buttons" id="top">
+					<div id="main_buttons">
 						<div id="top_buttons">
 							<div id="csv_button" class="nissmallbutton nisbutton" onclick="TEST.exporttocsv();">Export To CSV</div>
-							<div id="settings_button" class="nissmallbutton nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()"><img id="settings_cog" draggable="false" src="images/SettingsCog.png"></div>
+							<div id="settings_button" class="nissmallbutton nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()">
+								<img id="settings_cog" draggable="false" src="images/SettingsCog.png" alt="Settings">
+							</div>
 						</div>
 						<div id="clear_button" class="nissmallbutton nisbutton" data-toggle="modal" data-target="#cleardb" onclick="TEST.autoDisableCheckAuto()">Clear Options Menu</div>
 						<div id="docapturebutton" class="nissmallbutton nisbutton" onclick="TEST.capture(false)">
-							<div id="toggleunlocktrack" title="Autocapture toggle&#013;Locked = On; Unlocked = Off&#013;While on, capture button and Alt+1 is disabled&#013;This can be changed in the settings" class onclick="TEST.toggleCapture(event)"></div>
+							<div id="toggleunlocktrack" title="Autocapture toggle&#10;Locked = On; Unlocked = Off&#10;While on, capture button and Alt+1 is disabled&#10;This can be changed in the settings" class onclick="TEST.toggleCapture(event)"></div>
 							&nbsp;&nbsp;&nbsp;<span id="docapturebuttonwords">Capture Rewards</span>
 						</div>
 					</div>
 				</div>
-				<div class="value_box">
-					<div class="captured_rewards" id="top">
+				<div id="value_box">
+					<div id="captured_rewards">
 						<div id="captured_rewards_title">
 							Rewards Capture Value: <span id="rewards_value">0</span>
 						</div>
@@ -64,22 +68,22 @@
 				</div>
 			</div>
 		</header>
-		<mainsection>
-			<div class="equipment">
-				<div class="equipment_title"><span id="equipment_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide broadcast rewards">&nbsp;Barrows Equipment&nbsp;</span></div>
+		<div id="mainsection">
+			<div id="equipment">
+				<div id="equipment_title"><span id="equipment_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide broadcast rewards">&nbsp;Barrows Equipment&nbsp;</span></div>
 				<div class="bottom_border"></div>
 				<div class="loot_display" id="equipment_loot"></div>
 			</div>
-			<div class="general">
-				<div class="general_title"><span id="general_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide general rewards">&nbsp;General Rewards&nbsp;</span></div>
+			<div id="general">
+				<div id="general_title"><span id="general_rewards" onclick="TEST.toggleLootDisplay(this.id)" title="Click here to hide general rewards">&nbsp;General Rewards&nbsp;</span></div>
 				<div class="bottom_border"></div>
 				<div class="loot_display" id="general_loot"></div>
 			</div>
-		</mainsection>
+		</div>
 		<footer>
-			<div class="footer_bar"></div>
+			<div id="footer_bar"></div>
 			<a title="LoggerSuite home" draggable="false" id="home_button" href="https://redx1000.github.io/LoggerSuite/">
-				<img id="home_button_img" draggable="false" src="./images/House Teleport icon.png">
+				<img id="home_button_img" draggable="false" src="./images/House_Teleport_icon.png" alt="Go to LoggerSuite">
 			</a>
 			<div id="info_button" class="nisbutton" data-toggle="modal" data-target="#info" onclick="">&nbsp;Information & Updates&nbsp;</div>
 		</footer>
@@ -92,87 +96,87 @@
 		                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 						<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Settings Menu</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.&#013;&#013;An &ast; next to an option signifies a default option">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.&#10;&#10;An &ast; next to an option signifies a default option">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 		            </div>
-		            <div class="modal-body" id="settings-body">
-		                <h2 id="h2settings">Image searching algorithm</h2>
-		                <mainalgs>
+		            <div class="modal-body" id="settings_body">
+		                <div class="title_of_section">Image searching algorithm</div>
+		                <div id="algs_settings">
 		                    <label class="title_labels" title="Slower but more accurate algorithm utilizing ResembleJS library.">ResembleJS Algorithm:<br></label>
-		                    <div class="main_divs">
-		                        <label for="resemblejs" id="algorithm_label" title="Slower but more accurate algorithm utilizing ResembleJS library.">ResembleJS</label>
-		                        <input type="radio" id="resemblejs" name="algorithm" class="mainsection_buttons" value="resemblejs" title="Slower but more accurate algorithm utilizing ResembleJS library.">
+		                    <div class="settings_radio_divs">
+		                        <label for="resemblejs" class="algs_label" title="Slower but more accurate algorithm utilizing ResembleJS library.">ResembleJS</label>
+		                        <input type="radio" id="resemblejs" name="algorithm" class="algs_settings_buttons" value="resemblejs" title="Slower but more accurate algorithm utilizing ResembleJS library.">
 		                    </div>
-		                    <label class="title_labels" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#013;&#013;There are known items that don't work in TwoPlus and All for this collection.">Pixelmatch Algorithm:<br></label>
-		                    <div class="main_divs">
-		                        <label for="pixelmatch" id="algorithm_label" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#013;&#013;There are known items that don't work in TwoPlus and All for this collection.">Pixelmatch</label>
-		                        <input type="radio" id="pixelmatch" name="algorithm" class="mainsection_buttons" value="pixelmatch" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#013;&#013;There are known items that don't work in TwoPlus and All for this collection.">
+		                    <label class="title_labels" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#10;&#10;There are known items that don't work in TwoPlus and All for this collection.">Pixelmatch Algorithm:<br></label>
+		                    <div class="settings_radio_divs">
+		                        <label for="pixelmatch" class="algs_label" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#10;&#10;There are known items that don't work in TwoPlus and All for this collection.">Pixelmatch</label>
+		                        <input type="radio" id="pixelmatch" name="algorithm" class="algs_settings_buttons" value="pixelmatch" title="Significantly faster but less accurate algorithm, finding items pixel by pixel.&#10;&#10;There are known items that don't work in TwoPlus and All for this collection.">
 		                    </div>
-		                    <label class="title_labels" title="A mix between both ResembleJS and Pixelmatch algorithms.&#013;&#013;Good balance of speed and accuracy&#013;Adjust precision in the settings below">Hybrid Algorithm <u>(RECOMMENDED)</u>:<br></label>
-		                    <div class="main_divs">
-		                        <label for="hybrid" id="algorithm_label" title="A mix between both ResembleJS and Pixelmatch algorithms.&#013;&#013;Good balance of speed and accuracy&#013;Adjust precision in the settings below">Hybrid&ast;</label>
-		                        <input type="radio" id="hybrid" name="algorithm" class="mainsection_buttons" value="hybrid" title="A mix between both ResembleJS and Pixelmatch algorithms.&#013;&#013;Good balance of speed and accuracy&#013;Adjust precision in the settings below">
+		                    <label class="title_labels" title="A mix between both ResembleJS and Pixelmatch algorithms.&#10;&#10;Good balance of speed and accuracy&#10;Adjust precision in the settings below">Hybrid Algorithm <u>(RECOMMENDED)</u>:<br></label>
+		                    <div class="settings_radio_divs">
+		                        <label for="hybrid" class="algs_label" title="A mix between both ResembleJS and Pixelmatch algorithms.&#10;&#10;Good balance of speed and accuracy&#10;Adjust precision in the settings below">Hybrid&ast;</label>
+		                        <input type="radio" id="hybrid" name="algorithm" class="algs_settings_buttons" value="hybrid" title="A mix between both ResembleJS and Pixelmatch algorithms.&#10;&#10;Good balance of speed and accuracy&#10;Adjust precision in the settings below">
 		                    </div>
-		                </mainalgs>
-		                <h2 id="h2settings">Miscellaneous toggles</h2>
-		                <maintoggles>
-		                    <label class="title_labels" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#013;If the last item fails to capture, attempt a rollback and try again.">Lag detection:<br></label>
+		                </div>
+		                <div class="title_of_section">Miscellaneous toggles</div>
+		                <div id="misc_settings">
+		                    <label class="title_labels" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Lag detection:<br></label>
 		                    <div id="lag_buttons">
-		                        <div class="main_divs">
-		                            <label for="lagon" id="img_label" title="Determines whether lag is taken into account when caapturing. Clue will attempt to recapture&#013;If the last item fails to capture, attempt a rollback and try again.">On&ast;</label>
-		                            <input type="radio" id="lagon" name="lag" class="maintoggles_buttons" value="lagon" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#013;If the last item fails to capture, attempt a rollback and try again.">
+		                        <div class="settings_radio_divs">
+		                            <label for="lagon" class="misc_label" title="Determines whether lag is taken into account when caapturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">On&ast;</label>
+		                            <input type="radio" id="lagon" name="lag" class="misc_settings_buttons" value="lagon" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
 		                        </div>
-		                        <div class="main_divs">
-		                            <label for="lagoff" id="img_label" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#013;If the last item fails to capture, attempt a rollback and try again.">Off&nbsp;</label>
-		                            <input type="radio" id="lagoff" name="lag" class="maintoggles_buttons" value="lagoff" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#013;If the last item fails to capture, attempt a rollback and try again.">
+		                        <div class="settings_radio_divs">
+		                            <label for="lagoff" class="misc_label" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Off&nbsp;</label>
+		                            <input type="radio" id="lagoff" name="lag" class="misc_settings_buttons" value="lagoff" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
 		                        </div>
 		                    </div>
 		                    <label class="title_labels" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">Multi button prevention:<br></label>
 		                    <div id="multi_buttons">
-		                        <div class="main_divs">
-		                            <label for="multion" id="img_label" title="">On&ast;</label>
-		                            <input type="radio" id="multion" name="multi" class="maintoggles_buttons" value="multion" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
+		                        <div class="settings_radio_divs">
+		                            <label for="multion" class="misc_label" title="">On&ast;</label>
+		                            <input type="radio" id="multion" name="multi" class="misc_settings_buttons" value="multion" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
 		                        </div>
-		                        <div class="main_divs">
-		                            <label for="multioff" id="img_label" title="">Off&nbsp;</label>
-		                            <input type="radio" id="multioff" name="multi" class="maintoggles_buttons" value="multioff" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
+		                        <div class="settings_radio_divs">
+		                            <label for="multioff" class="misc_label" title="">Off&nbsp;</label>
+		                            <input type="radio" id="multioff" name="multi" class="misc_settings_buttons" value="multioff" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
 		                        </div>
 		                    </div>
 							<label class="title_labels" title="Shows the area to keep any menus away from to prevent a double-capture.">No Menu Highlighter:<br></label>
 		                    <div id="menu_buttons">
-		                        <div class="main_divs">
-		                            <label for="menuon" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.">On&ast;</label>
-		                            <input type="radio" id="menuon" name="menu" class="maintoggles_buttons" value="menuon" title="Shows the area to keep any menus away from to prevent a double-capture.">
+		                        <div class="settings_radio_divs">
+		                            <label for="menuon" class="misc_label" title="Shows the area to keep any menus away from to prevent a double-capture.">On&nbsp;</label>
+		                            <input type="radio" id="menuon" name="menu" class="misc_settings_buttons" value="menuon" title="Shows the area to keep any menus away from to prevent a double-capture.">
 		                        </div>
-		                        <div class="main_divs">
-		                            <label for="menuoff" id="img_label" title="Shows the area to keep any menus away from to prevent a double-capture.">Off&nbsp;</label>
-		                            <input type="radio" id="menuoff" name="menu" class="maintoggles_buttons" value="menuoff" title="Shows the area to keep any menus away from to prevent a double-capture.">
+		                        <div class="settings_radio_divs">
+		                            <label for="menuoff" class="misc_label" title="Shows the area to keep any menus away from to prevent a double-capture.">Off&ast;</label>
+		                            <input type="radio" id="menuoff" name="menu" class="misc_settings_buttons" value="menuoff" title="Shows the area to keep any menus away from to prevent a double-capture.">
 		                        </div>
 		                    </div>
-		                    <label class="title_labels" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">Hybrid Alg Precision:<br></label>
+		                    <label class="title_labels" title="Determines the level of precision for the Hybrid Algorithm.&#10;&#10;Lower: More precise & faster, Higher: Less precise & slower.&#10;&#10;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">Hybrid Alg Precision:<br></label>
 		                    <div id="hybrid_precision_field">
-		                        <div class="main_divs">
-		                            <input type="number" min="0" max="2" step="0.1" value="0.5" id="hybrid_precision" name="precision" class="hybrid_precision_text" title="Determines the level of precision for the Hybrid Algorithm.&#013;&#013;Lower: More precise & faster, Higher: Less precise & slower.&#013;&#013;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">
+		                        <div class="settings_radio_divs">
+		                            <input type="number" min="0" max="2" step="0.1" value="0.5" id="hybrid_precision" name="precision" title="Determines the level of precision for the Hybrid Algorithm.&#10;&#10;Lower: More precise & faster, Higher: Less precise & slower.&#10;&#10;Default is 0.5, lowest value is 0.1 and highest value is 1.0.">
 		                        </div>
 		                    </div>
-							<label class="title_labels" title="Determines how many previous chests will display in the History menu at one time.&#013;&#013;Default value is 25.">History Display Limit:<br></label>
+							<label class="title_labels" title="Determines how many previous chests will display in the History menu at one time.&#10;&#10;Default value is 25.">History Display Limit:<br></label>
 		                    <div id="history_display_field">
-		                        <div class="main_divs">
-		                            <input type="number" min="0" step="1" value="25" id="history_display_limit" name="historylimit" class="history_display_text" title="Determines how many previous chests will display in the History menu at one time.&#013;&#013;Default value is 25.">
+		                        <div class="settings_radio_divs">
+		                            <input type="number" min="0" step="1" value="25" id="history_display_limit" name="historylimit" title="Determines how many previous chests will display in the History menu at one time.&#10;&#10;Default value is 25.">
 		                        </div>
 		                    </div>
 		                    <label class="title_labels" title="Determines whether chests are automatically captured or not. The lock on the capture button toggles this.">Autocapture:<br></label>
 		                    <div id="autocapture_buttons">
-		                        <div class="main_divs">
-		                            <label for="autocaptureon" id="img_label" title="Determines whether chests are automatically captured or not. The lock on the capture button toggles this.">Click the lock on<br>"Capture Rewards"</label>
+		                        <div class="settings_radio_divs">
+		                            <label class="misc_label" title="Determines whether chests are automatically captured or not. The lock on the capture button toggles this.">Click the lock on<br>"Capture Rewards"</label>
 		                        </div>
 		                    </div>
-		                </maintoggles>
+		                </div>
 		            </div>
 		            <div class="modal-footer">
-		                <div id="choice_buttons">
-		                    <div id="confirm_button" class="nisbutton" data-dismiss="modal" onclick="getSaveDetails();">Confirm</div>
-		                    <div id="cancel_button" class="nisbuttonblue" data-dismiss="modal" onclick="TEST.settingsInit()">Cancel</div>
+		                <div class="choice_buttons">
+		                    <div class="confirm_button nisbutton" data-dismiss="modal" onclick="getSaveDetails();">Confirm</div>
+		                    <div class="cancel_button nisbuttonblue" data-dismiss="modal" onclick="TEST.settingsInit()">Cancel</div>
 		                </div>
 		                <!-- <button type="button" class="btn btn-default" >Close</button>
 		                    <button type="button" class="btn btn-primary" id="dont-show-again">Don't Show Again</button> -->
@@ -190,12 +194,12 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 				  		<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Clear Options Menu</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 						<br><div class="modal_title_details"> *There are verification screens for each option except "Refresh page". It is strongly recommended to pause Autocapture before deleting anything</div>
 					</div>
 					<div class="modal-body">
-						<div id="clear_db_buttons">
+						<div class="clear_db_buttons">
 							<div class="db_confirm_button nisbutton" onclick="javascript:window.location.reload()" title="Refreshes the page. Does not clear the DB, but may help push an update.">Refresh page</div>
 							<div class="db_confirm_button nisbutton" data-toggle="modal" data-target="#resetSettingsVerif" title="Reset settings back to default.">Reset settings</div>
 							<div class="db_confirm_button nisbutton" data-toggle="modal" data-target="#resetAllVerif" title="Clear all of the items in the database only.">Clear all items</div>
@@ -217,11 +221,11 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 						<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Completely Reset BarrowsLogger?</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 					</div>
 					<div class="modal-body">
-						<div id="clear_db_buttons">
+						<div class="clear_db_buttons">
 							<div class="db_confirm_button nisbutton" data-dismiss="modal" onclick="TEST.cleardb(1)" title="Nuclear option, completely resets plugin, but can be used to troubleshoot">Reset everything</div>
 							<div class="db_confirm_button nisbuttonblue" data-dismiss="modal" data-toggle="modal" data-target="#cleardb" onclick="" title="Do nothing. Go. Get out of here. Leave.">Cancel</div>
 						</div>
@@ -240,11 +244,11 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 				  		<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Clear All Items From Database?</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 					</div>
 					<div class="modal-body">
-						<div id="clear_db_buttons">
+						<div class="clear_db_buttons">
 							<div class="db_confirm_button nisbutton" data-dismiss="modal" onclick="TEST.cleardb(2)" title="Nuclear option, completely resets plugin, but can be used to troubleshoot">Clear all items</div>
 							<div class="db_confirm_button nisbuttonblue" data-dismiss="modal" data-toggle="modal" data-target="#cleardb" onclick="" title="Do nothing. Go. Get out of here. Leave.">Cancel</div>
 						</div>
@@ -263,11 +267,11 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 				  		<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Reset settings?</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 					</div>
 					<div class="modal-body">
-						<div id="clear_db_buttons">
+						<div class="clear_db_buttons">
 							<div class="db_confirm_button nisbutton" data-dismiss="modal" onclick="TEST.cleardb(3)" title="Reset settings back to default.">Reset settings</div>
 							<div class="db_confirm_button nisbuttonblue" data-dismiss="modal" data-toggle="modal" data-target="#cleardb" onclick="" title="Do nothing. Go. Get out of here. Leave.">Cancel</div>
 						</div>
@@ -286,7 +290,7 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 				  		<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">History of Barrows Rewards</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 							<div class="modal_title_details">Displaying the last <span id="history_quantity" style="color:#FFC000"></span> captured chests</div>
 						</div>
 					</div>
@@ -308,107 +312,107 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 						<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Insert custom Barrows reward</h1>
-							<span id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</span>
+							<span class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</span>
 						</div>
-						<h3 class="modal_title_details">*To remove items and value from <span style="font-family: Consolas;">localStorage</span>, make numbers negative. Custom chests are also logged in History.</h3>
+						<br><div class="modal_title_details">*To remove items and value from <span style="font-family: Consolas;">localStorage</span>, make numbers negative. Custom chests are also logged in History.</div>
 					</div>
 					<div class="modal-body">
 						<div id="insert_value">
-							<label class="insert_title_labels" title="Reward value to be inserted"><span class="current_tier_button" id="insert_tier_caps"></span>Barrows<br>Reward<br>Value</label>
-							<input type="number" step="1" value="0" id="value_input" name="insert_value" class="insert_text" title="Reward value to be inserted">
+							<label id="insert_value_label" title="Reward value to be inserted"><span class="current_tier_button" id="insert_tier_caps"></span>Barrows<br>Reward<br>Value</label>
+							<input type="number" step="1" value="0" id="value_input" name="insert_value" title="Reward value to be inserted">
 							<div id="fetchge_button" class="nisbutton" onclick="TEST.fetchFromGE()">Fetch GE</div>
 						</div>
 						<div id="insert_items">
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="First item to be inserted and quantity">1st Item<br></label>
-								<select name="item_1" class="items insert_options" id="items_first">
-									<option value="Blank" class="insert_options">~Nothing~</option>
+								<select name="item_1" class="items" id="items_first">
+									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_1" name="item_input_1" title="First item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_1" name="item_input_1" title="First item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Second item to be inserted and quantity">2nd Item<br></label>
-								<select name="item_2" class="items insert_options" id="items_second">
+								<select name="item_2" class="items" id="items_second">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_2" name="item_input_2" title="Second item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_2" name="item_input_2" title="Second item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Third item to be inserted and quantity">3rd Item<br></label>
-								<select name="item_3" class="items insert_options" id="items_third">
+								<select name="item_3" class="items" id="items_third">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_3" name="item_input_3" title="Third item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_3" name="item_input_3" title="Third item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Fourth item to be inserted and quantity">4th Item<br></label>
-								<select name="item_4" class="items insert_options" id="items_fourth">
+								<select name="item_4" class="items" id="items_fourth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_4" name="item_input_4" title="Fourth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_4" name="item_input_4" title="Fourth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Fifth item to be inserted and quantity">5th Item<br></label>
-								<select name="item_5" class="items insert_options" id="items_fifth">
+								<select name="item_5" class="items" id="items_fifth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_5" name="item_input_5" title="Fifth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_5" name="item_input_5" title="Fifth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Sixth item to be inserted and quantity">6th Item<br></label>
-								<select name="item_6" class="items insert_options" id="items_sixth">
+								<select name="item_6" class="items" id="items_sixth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_6" name="item_input_6" title="Sixth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_6" name="item_input_6" title="Sixth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Seventh item to be inserted and quantity">7th Item<br></label>
-								<select name="item_7" class="items insert_options" id="items_seventh">
+								<select name="item_7" class="items" id="items_seventh">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_7" name="item_input_7" title="Seventh item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_7" name="item_input_7" title="Seventh item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Eigth item to be inserted and quantity">8th Item<br></label>
-								<select name="item_8" class="items insert_options" id="items_eigth">
+								<select name="item_8" class="items" id="items_eigth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_8" name="item_input_8" title="Eigth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_8" name="item_input_8" title="Eigth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Ninth item to be inserted and quantity">9th Item<br></label>
-								<select name="item_9" class="items insert_options" id="items_ninth">
+								<select name="item_9" class="items" id="items_ninth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_9" name="item_input_9" title="Ninth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_9" name="item_input_9" title="Ninth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Tenth item to be inserted and quantity">10th Item<br></label>
-								<select name="item_10" class="items insert_options" id="items_tenth">
+								<select name="item_10" class="items" id="items_tenth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_10" name="item_input_10" title="Tenth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_10" name="item_input_10" title="Tenth item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Eleventh item to be inserted and quantity">11th Item<br></label>
-								<select name="item_11" class="items insert_options" id="items_eleventh">
+								<select name="item_11" class="items" id="items_eleventh">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_11" name="item_input_11" title="Eleventh item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_11" name="item_input_11" title="Eleventh item to be inserted and quantity">
 							</div>
 							<div class="insert_items_divs">
 								<label class="insert_items_labels" title="Twelfth item to be inserted and quantity">12th Item<br></label>
-								<select name="item_12" class="items insert_options" id="items_twelfth">
+								<select name="item_12" class="items" id="items_twelfth">
 									<option value="Blank">~Nothing~</option>
 								</select>
-								<input type="number" step="1" value="0" class= "item_quants insert_text" id="item_input_12" name="item_input_12" title="Twelfth item to be inserted and quantity">
+								<input type="number" step="1" value="0" class="insert_text" id="item_input_12" name="item_input_12" title="Twelfth item to be inserted and quantity">
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<div id="choice_buttons">
-							<div id="confirm_button" class="nisbutton" data-dismiss="modal" data-toggle="modal" data-target="#insertVerif" onclick="clearVerify(), TEST.verifyInsert(event)">Confirm</div>
-							<div id="cancel_button" class="nisbuttonblue" data-dismiss="modal" onclick="">Cancel</div>
+						<div class="choice_buttons">
+							<div class="confirm_button nisbutton" data-dismiss="modal" data-toggle="modal" data-target="#insertVerif" onclick="clearVerify(), TEST.verifyInsert(event)">Confirm</div>
+							<div class="cancel_button nisbuttonblue" data-dismiss="modal" onclick="">Cancel</div>
 						</div>
 					</div>
 			  	</div>
@@ -424,15 +428,15 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 						<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Enter custom reward into Database?</h1>
-							<div id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 					</div>
 					<div class="modal-body" id="insertVerif_body">
 					</div>
 					<div class="modal-footer">
-						<div id="clear_db_buttons">
-							<div id="confirm_button" class="nisbutton" data-dismiss="modal" onclick="TEST.insertToDB(), clearVerify()" title="">Confirm</div>
-							<div id="cancel_button" class="nisbuttonblue" data-dismiss="modal" data-toggle="modal" data-target="#insert" onclick="" title="">Cancel</div>
+						<div class="clear_db_buttons">
+							<div class="confirm_button nisbutton" data-dismiss="modal" onclick="TEST.insertToDB(), clearVerify()" title="">Confirm</div>
+							<div class="cancel_button nisbuttonblue" data-dismiss="modal" data-toggle="modal" data-target="#insert" onclick="" title="">Cancel</div>
 						</div>
 					</div>
 			  	</div>
@@ -448,12 +452,16 @@
 				  		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="close_x">&times;</span><span class="sr-only">Close</span></button>
 						<div class="modal-header-title">
 							<h1 class="modal-title" id="important-msg-label">Information and Updates</h1>
-							<span id="hovertip" title="Hover over the options to learn more!&#013;&#013;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</span>
+							<div class="hovertip" title="Hover over the options to learn more!&#10;&#10;Explore the Github link in the footer for more details.">&hairsp;&hairsp;&nbsp;?&nbsp;&hairsp;&hairsp;</div>
 						</div>
 					</div>
 					<div class="modal-body" style="user-select: text;">
 						<h2><u>Latest update</u></h2>
-						<h3>
+						<div style="font-size: 15px; font-weight: 600;">
+							<span style="color: rgb(224, 228, 18);">
+								<u>(2023/02/13)</u> <br>
+								For the developers, I've applied an MIT license on this project to more clearly state my stance on this project.<br>
+							</span><br>
 							<span style="color: rgb(113, 100, 224);">
 								<u>(2023/01/07)</u> <br>
 								Whoops, removed large image test from live BarrowsLogger.<br>
@@ -471,7 +479,7 @@
 								</ul>
 							</span><br>
 							<span style="color: rgb(23, 99, 197);">
-								<u><b>(2022&sol;11&sol;04):</b></u><br>
+								<u><b>(2022/11/04):</b></u><br>
 								Barrows Icon has been added to the list of scannable items.<br>
 								Every item should be scannable now!<br>
 							</span><br>
@@ -488,10 +496,10 @@
 								If taken in the bank, please include a few reference items in the same screenshot so 
 								I can properly crop the image.
 							</span>
-						</h3><br style='line-height: 1px; content: " "; display: block; margin: 40px 0;'>
+						</div><br style='line-height: 1px; content: " "; display: block; margin: 40px 0;'>
 						
 						<h2><u>Github & Discord</u></h2>
-						<h3>
+						<div style="font-size: 15px; font-weight: 600;">
 							This is BarrowsLogger Github page!<br>
 							<a id="githublink" style="cursor: pointer" onclick="openGithub()">
 								Click here for the BarrowsLogger Github page
@@ -505,8 +513,8 @@
 								<li>Special thanks.</li>
 								<li>Other projects I may be working on.</li>
 							</ul>
-						</h3>
-						<h3>
+						</div>
+						<div style="font-size: 15px; font-weight: 600;">
 							This is my Discord profile! @ <span style="user-select: all;">RedX1000#3655</span><br>
 							Feel free to reach out to me for any of the following reasons:<br>
 							<ul>
@@ -515,18 +523,18 @@
 								<li>Suggestions & Compliments.</li>
 								<li>Literally anything else within reason.</li>
 							</ul>
-						</h3><br style='line-height: 1px; content: " "; display: block; margin: 35px 0;'>
+						</div><br style='line-height: 1px; content: " "; display: block; margin: 35px 0;'>
 
 						<h2><u>Donation link</u></h2>
-						<h3>
+						<div style="font-size: 15px; font-weight: 600;">
 							BarrowsLogger is a passion project and I have future plans to use this plugin as a base for other loggers.<br>
 							Consider sending a small donation in this direction 🙂.<br>
 							<br style='line-height: 1px; content: " "; display: block; margin: 10px 0;'>
 							<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#e0a62a', 'L4L7EERT9');kofiwidget2.draw();</script> 
-						</h3>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<div id="clear_db_buttons">
+						<div class="clear_db_buttons">
 							<div class="nisbuttonblue return_button" data-dismiss="modal" data-toggle="modal" onclick="" title="">Return</div>
 						</div>
 					</div>
