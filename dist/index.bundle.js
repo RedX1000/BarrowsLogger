@@ -6729,48 +6729,6 @@ function orderChecker(order, item) {
     else if (item == "Bonus XP star (small)") {
         order = 990;
     }
-    else if (item == "Bonus XP star (medium)") {
-        order = 991;
-    }
-    else if (item == "Bonus XP star (large)") {
-        order = 992;
-    }
-    else if (item == "Bonus XP star (huge)") {
-        order = 993;
-    }
-    else if (item == "Re-roll token (easy)") {
-        order = 994;
-    }
-    else if (item == "Re-roll token (medium)") {
-        order = 995;
-    }
-    else if (item == "Re-roll token (hard)") {
-        order = 996;
-    }
-    else if (item == "Re-roll token (elite)") {
-        order = 997;
-    }
-    else if (item == "Re-roll token (master)") {
-        order = 998;
-    }
-    else if (item == "Sealed clue scroll (master)") {
-        order = 999;
-    }
-    else if (item == "Reward casket (easy)") {
-        order = 1000;
-    }
-    else if (item == "Reward casket (medium)") {
-        order = 1001;
-    }
-    else if (item == "Reward casket (hard)") {
-        order = 1002;
-    }
-    else if (item == "Reward casket (elite)") {
-        order = 1003;
-    }
-    else if (item == "Golden compass") {
-        order = 1004;
-    }
     return order;
 }
 function buttonDisabler() {

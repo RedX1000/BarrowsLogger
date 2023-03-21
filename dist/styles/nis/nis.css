@@ -486,20 +486,6 @@ header {
   height: 100%;
 }
 
-#top_buttons{
-  width: 100%;
-  cursor: pointer;
-  color: #000;
-  margin-bottom: 10px;
-  font-family: "trajan-pro-3";
-  font-size: 18px;
-  line-height: 32px;
-  user-select: none;
-  -webkit-user-select: none;
-  display:inline;
-  grid-template-columns: repeat(2, auto);
-}
-
 #button_box,
 #value_box {
   text-align: center;
@@ -550,6 +536,30 @@ header {
   margin: 3px;
 }
 
+#main_buttons {
+  display: grid;
+  position: relative;
+  text-align: center;
+  padding: 5px 0px 0px 0px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+
+#top_buttons{
+  width: 100%;
+  cursor: pointer;
+  color: #000;
+  margin-bottom: 10px;
+  font-family: "trajan-pro-3";
+  font-size: 18px;
+  line-height: 32px;
+  user-select: none;
+  -webkit-user-select: none;
+  display:inline;
+  grid-template-columns: repeat(2, auto);
+}
+
 #top_buttons,
 #bottom_buttons{
   width: 100%;
@@ -570,15 +580,6 @@ header {
   margin: auto;
   width: 95%;
   font-size: 18px;
-}
-
-#main_buttons {
-  display: grid;
-  position: relative;
-  text-align: center;
-  padding: 5px 0px 0px 0px;
-  line-height: 32px;
-  font-weight: 600;
 }
 
 #csv_button,
@@ -846,6 +847,7 @@ footer {
   font-size:55px;
   color:#ffffff;
 }
+
 .modal-header-title{
   display: grid;
   grid-template-columns: repeat(2, auto);
