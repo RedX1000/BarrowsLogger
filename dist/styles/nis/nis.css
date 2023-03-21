@@ -545,34 +545,17 @@ header {
   font-weight: 600;
 }
 
-
-#top_buttons{
+.buttons{
   width: 100%;
   cursor: pointer;
   color: #000;
-  margin-bottom: 10px;
   font-family: "trajan-pro-3";
   font-size: 18px;
   line-height: 32px;
   user-select: none;
   -webkit-user-select: none;
-  display:inline;
   grid-template-columns: repeat(2, auto);
-}
-
-#top_buttons,
-#bottom_buttons{
-  width: 100%;
-  cursor: pointer;
-  color: #000;
-  font-family: "trajan-pro-3";
-  font-size: 18px;
-  line-height: 32px;
-  user-select: none;
-  margin: auto;
-  -webkit-user-select: none;
   display:grid;
-  grid-template-columns: repeat(2, auto);
 }
 
 #history_button,
@@ -1105,6 +1088,14 @@ label{
   padding-left: 5px;
 }
 
+.insert_options{
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  background-color: #d6d6d6;
+  padding-left: 5px;
+}
+
 .items{
   width: 90%;
   word-wrap: normal;
@@ -1166,14 +1157,6 @@ label{
 
 .quant_green_text{
   color:rgb(0,255,128); 
-}
-
-.insert_quant{
-  font-size: 13px;
-  font-weight: 700;
-  color: #000;
-  background-color: #d6d6d6;
-  padding-left: 5px;
 }
 
 .node_tab{
