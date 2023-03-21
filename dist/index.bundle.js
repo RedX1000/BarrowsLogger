@@ -6069,7 +6069,7 @@ async function insertInit() {
             let option = document.createElement("option");
             option.value = list[j][0].toString();
             option.textContent = list[j][1].toString();
-            option.setAttribute("class", "insert_quant");
+            option.setAttribute("class", "insert_options");
             itemBoxes[i].append(option);
         }
     }
