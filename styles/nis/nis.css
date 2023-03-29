@@ -486,20 +486,6 @@ header {
   height: 100%;
 }
 
-#top_buttons{
-  width: 100%;
-  cursor: pointer;
-  color: #000;
-  margin-bottom: 10px;
-  font-family: "trajan-pro-3";
-  font-size: 18px;
-  line-height: 32px;
-  user-select: none;
-  -webkit-user-select: none;
-  display:inline;
-  grid-template-columns: repeat(2, auto);
-}
-
 #button_box,
 #value_box {
   text-align: center;
@@ -550,28 +536,6 @@ header {
   margin: 3px;
 }
 
-#top_buttons,
-#bottom_buttons{
-  width: 100%;
-  cursor: pointer;
-  color: #000;
-  font-family: "trajan-pro-3";
-  font-size: 18px;
-  line-height: 32px;
-  user-select: none;
-  margin: auto;
-  -webkit-user-select: none;
-  display:grid;
-  grid-template-columns: repeat(2, auto);
-}
-
-#history_button,
-#insert_button{
-  margin: auto;
-  width: 95%;
-  font-size: 18px;
-}
-
 #main_buttons {
   display: grid;
   position: relative;
@@ -579,6 +543,26 @@ header {
   padding: 5px 0px 0px 0px;
   line-height: 32px;
   font-weight: 600;
+}
+
+.buttons{
+  width: 100%;
+  cursor: pointer;
+  color: #000;
+  font-family: "trajan-pro-3";
+  font-size: 18px;
+  line-height: 32px;
+  user-select: none;
+  -webkit-user-select: none;
+  grid-template-columns: repeat(2, auto);
+  display:grid;
+}
+
+#history_button,
+#insert_button{
+  margin: auto;
+  width: 95%;
+  font-size: 18px;
 }
 
 #csv_button,
@@ -846,6 +830,7 @@ footer {
   font-size:55px;
   color:#ffffff;
 }
+
 .modal-header-title{
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -1103,6 +1088,14 @@ label{
   padding-left: 5px;
 }
 
+.insert_options{
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  background-color: #d6d6d6;
+  padding-left: 5px;
+}
+
 .items{
   width: 90%;
   word-wrap: normal;
@@ -1164,14 +1157,6 @@ label{
 
 .quant_green_text{
   color:rgb(0,255,128); 
-}
-
-.insert_quant{
-  font-size: 13px;
-  font-weight: 700;
-  color: #000;
-  background-color: #d6d6d6;
-  padding-left: 5px;
 }
 
 .node_tab{

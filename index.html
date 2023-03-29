@@ -26,13 +26,13 @@
 						<div class="capture_box_elements" id="average_box">
 							<u>Average value</u>: <span id="average_of_rewards">0</span>
 						</div>
-						<div id="bottom_buttons">
+						<div class="buttons">
 							<div id="history_button" class="nissmallbutton nisbutton" data-toggle="modal" data-target="#history">History</div>
 							<div id="insert_button" class="nissmallbutton nisbutton" data-toggle="modal" data-target="#insert" onclick="clearVerify()">&nbsp;Insert&nbsp;</div>
 						</div>
 					</div>
 					<div id="main_buttons">
-						<div id="top_buttons">
+						<div class="buttons">
 							<div id="csv_button" class="nissmallbutton nisbutton" onclick="TEST.exporttocsv();">Export To CSV</div>
 							<div id="settings_button" class="nissmallbutton nisbutton" title="Settings" data-toggle="modal" data-target="#settings" onclick="TEST.autoDisableCheckAuto()">
 								<img id="settings_cog" draggable="false" src="images/SettingsCog.png" alt="Settings">
@@ -120,26 +120,26 @@
 		                </div>
 		                <div class="title_of_section">Miscellaneous toggles</div>
 		                <div id="misc_settings">
-		                    <label class="title_labels" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Lag detection:<br></label>
+		                    <label class="title_labels" title="Determines whether lag is taken into account when capturing. Reward will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Lag detection:<br></label>
 		                    <div id="lag_buttons">
 		                        <div class="settings_radio_divs">
-		                            <label for="lagon" class="misc_label" title="Determines whether lag is taken into account when caapturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">On&ast;</label>
-		                            <input type="radio" id="lagon" name="lag" class="misc_settings_buttons" value="lagon" title="Determines whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
+		                            <label for="lagon" class="misc_label" title="Determines whether lag is taken into account when caapturing. Reward will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">On&ast;</label>
+		                            <input type="radio" id="lagon" name="lag" class="misc_settings_buttons" value="lagon" title="Determines whether lag is taken into account when capturing. Reward will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
 		                        </div>
 		                        <div class="settings_radio_divs">
-		                            <label for="lagoff" class="misc_label" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Off&nbsp;</label>
-		                            <input type="radio" id="lagoff" name="lag" class="misc_settings_buttons" value="lagoff" title="Determine whether lag is taken into account when capturing. Clue will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
+		                            <label for="lagoff" class="misc_label" title="Determine whether lag is taken into account when capturing. Reward will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">Off&nbsp;</label>
+		                            <input type="radio" id="lagoff" name="lag" class="misc_settings_buttons" value="lagoff" title="Determine whether lag is taken into account when capturing. Reward will attempt to recapture&#10;If the last item fails to capture, attempt a rollback and try again.">
 		                        </div>
 		                    </div>
-		                    <label class="title_labels" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">Multi button prevention:<br></label>
+		                    <label class="title_labels" title="Prevents the user from accidentally capturing a reward while its being logged to prevent double-logging.">Multi button prevention:<br></label>
 		                    <div id="multi_buttons">
 		                        <div class="settings_radio_divs">
 		                            <label for="multion" class="misc_label" title="">On&ast;</label>
-		                            <input type="radio" id="multion" name="multi" class="misc_settings_buttons" value="multion" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
+		                            <input type="radio" id="multion" name="multi" class="misc_settings_buttons" value="multion" title="Prevents the user from accidentally capturing a reward while its being logged to prevent double-logging.">
 		                        </div>
 		                        <div class="settings_radio_divs">
 		                            <label for="multioff" class="misc_label" title="">Off&nbsp;</label>
-		                            <input type="radio" id="multioff" name="multi" class="misc_settings_buttons" value="multioff" title="Prevents the user from accidentally capturing a clue while its being logged to prevent double-logging.">
+		                            <input type="radio" id="multioff" name="multi" class="misc_settings_buttons" value="multioff" title="Prevents the user from accidentally capturing a reward while its being logged to prevent double-logging.">
 		                        </div>
 		                    </div>
 							<label class="title_labels" title="Shows the area to keep any menus away from to prevent a double-capture.">No Menu Highlighter:<br></label>
@@ -461,6 +461,7 @@
 							<span style="color: rgb(224, 228, 18);">
 								<u>(2023/02/13)</u> <br>
 								For the developers, I've applied an MIT license on this project to more clearly state my stance on this project.<br>
+								For the developers, I've made my HTML more compliant, especially with classes and IDs. I've also reorganized my CSS sheet.<br>
 							</span><br>
 							<span style="color: rgb(113, 100, 224);">
 								<u>(2023/01/07)</u> <br>
