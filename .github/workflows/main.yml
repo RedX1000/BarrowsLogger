@@ -25,20 +25,19 @@ jobs:
   steps:
    # Checkout and clone git repo
    - name: Checkout
-     uses: actions/checkout@v4 //Important Part
-
+     uses: actions/checkout@v4
    # Setup NodeJS v18 LTS
    - name: Set up Node
-     uses: actions/setup-node@v4 //Important Part
+     uses: actions/setup-node@v4
      with:
       node-version: 20 //Important Part
       cache: "npm"
   # Configure GitHub Pages for deployment
    - name: Setup GitHub Pages
-     uses: actions/configure-pages@v4 //Important Part
+     uses: actions/configure-pages@v4
   # Upload the distributables to GitHub Pages after finalization.
    - name: Upload artifact
-     uses: actions/upload-pages-artifact@v3 //Important Part
+     uses: actions/upload-pages-artifact@v3
      with:
       # Upload dist repository
       branch: gh-pages # The branch the action should deploy to.
