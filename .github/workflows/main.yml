@@ -1,37 +1,48 @@
-name: Build and Deploy
-on: 
-  push:
-    branches:
-      - master
+name: Deploy BarrowsLogger to GitHub Pages
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-    
+on:
+ # Runs on pushes targeting the default branch
+ push:
+  branches: ["master"]
+
+ # Allows you to run this workflow manually from the Actions tab
+ workflow_dispatch:
+
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+ contents: read
+ pages: write
+ id-token: write
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
-  cancel-in-progress: true   
+ group: "pages"
+ cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-        
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with: 
-          node-version: 20
+ # Single deploy job since we're just deploying
+ deploy:
+  environment:
+   name: github-pages
+   url: ${{ steps.deployment.outputs.page_url }}
+  runs-on: ubuntu-latest
+  steps:
+   # Checkout and clone git repo
+   - name: Checkout
+     uses: actions/checkout@v4 //Important Part
 
-      - name: Install and Build 🔧
-        run: |
-          npm ci
-          npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+   # Setup NodeJS v18 LTS
+   - name: Set up Node
+     uses: actions/setup-node@v4 //Important Part
+     with:
+      node-version: 20 //Important Part
+      cache: "npm"
+  # Configure GitHub Pages for deployment
+   - name: Setup GitHub Pages
+     uses: actions/configure-pages@v4 //Important Part
+  # Upload the distributables to GitHub Pages after finalization.
+   - name: Upload artifact
+     uses: actions/upload-pages-artifact@v3 //Important Part
+     with:
+      # Upload dist repository
+      path: "./dist"
