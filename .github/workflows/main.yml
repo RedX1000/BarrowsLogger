@@ -46,4 +46,4 @@ jobs:
      with:
       # Upload dist repository
       branch: gh-pages # The branch the action should deploy to.
-      path: "./dist"
+      path: "dist"
