@@ -1,37 +1,40 @@
+# This project has been archived in favor of porting to the Plugin API
+# Due to the new Road to Restoration UI, this plugin function.
+
 # BarrowsLogger
 ### An open-source Alt1 Plugin designed for tracking Barrows rewards.
-#### Report bugs or questions, message me 🙂 -> Discord: RedX1000#3655
+#### Any questions? Message me 🙂 -> Discord: redx1000
 #### RuneApps forum page: https://runeapps.org/forums/viewtopic.php?pid=4878
 
-<!--* *NOTE: This project is currently in maintenance mode as it is feature complete. There are some plans for new features but they are not a priority for now. If something breaks due to RuneScape updates or if there are bugs, message me on Discord.*-->
-
-* *NOTE: When reporting a crash, please take a screenshot of the reward window and Barrows capture history send it to me. Use Windows Key + Shift + S, Lightshot, or Gyazo to take the screenshot to avoid distortion.*
 <br><br>
 
 ### Table of Contents
-* [Description](#description)
-* [How to install](#how-to-install)
-* [Consider sending a donation!](#consider-sending-a-donation)
-* [Instructions on how to use](#instructions-on-how-to-use)
-    * [Capture Rewards](#capture-rewards)
-    * [AutoCapture](#autocapture)
-    * [Export to CSV](#export-to-csv)
-    * [History (Rollback)](#history-rollback)
-    * [Insert](#insert)
-    * [Clear Options menu](#clear-options-menu)
-    * [Toggleable loot tabs](#toggleable-loot-tabs)
-    * [Information & Updates](#information--updates)
-    * [Home button](#home-button)
-* [Settings](#settings) 
-    * [Image Searching Algorithm](#image-searching-algorithm)
-    * [Miscellaneous Toggles](#miscellaneous-toggles)
-* [Additional Information](#additional-information)
-    * [Things to avoid accidentally covering when scanning](#when-scanning-rewards-do-not-cover-these-spots-on-a-reward-screen)
-    * [Avoiding menus causing multi-capturing](#avoiding-menus-causing-multi-capturing-a-few-tips-on-where-to-avoid-having-menus-appearing-over-the-value)
-    * [Accessing `localStorage`](#this-plugin-stores-data-using-localstorage-within-alt1-therefore-it-can-remember-all-of-the-loot-you-have-gotten-between-sessions-unless-it-is-cleared-to-access-it)
-    * [BarrowsLogger is flexy!](#barrowslogger-can-be-stretched-out-widthwise-to-display-more-of-the-loot-in-its-display-as-the-top-is-flexy)
-    * [Potential or planned updates](#potential-or-planned-updates)
-    * [Special thanks](#special-thanks) <br><br>
+- [This project has been archived in favor of porting to the Plugin API](#this-project-has-been-archived-in-favor-of-porting-to-the-plugin-api)
+- [Due to the new Road to Restoration UI, this plugin function.](#due-to-the-new-road-to-restoration-ui-this-plugin-function)
+- [BarrowsLogger](#barrowslogger)
+    - [An open-source Alt1 Plugin designed for tracking Barrows rewards.](#an-open-source-alt1-plugin-designed-for-tracking-barrows-rewards)
+      - [Any questions? Message me 🙂 -\> Discord: redx1000](#any-questions-message-me----discord-redx1000)
+      - [RuneApps forum page: https://runeapps.org/forums/viewtopic.php?pid=4878](#runeapps-forum-page-httpsruneappsorgforumsviewtopicphppid4878)
+    - [Table of Contents](#table-of-contents)
+    - [Description](#description)
+    - [How to install](#how-to-install)
+    - [Consider sending a donation!](#consider-sending-a-donation)
+- [Instructions on how to use](#instructions-on-how-to-use)
+    - [Capture Rewards](#capture-rewards)
+    - [Autocapture](#autocapture)
+    - [Export to CSV](#export-to-csv)
+    - [History (Rollback)](#history-rollback)
+    - [Insert](#insert)
+    - [Clear Options Menu](#clear-options-menu)
+    - [Toggleable loot tabs](#toggleable-loot-tabs)
+    - [Information \& Updates](#information--updates)
+    - [Home button](#home-button)
+  - [Settings](#settings)
+    - [Image Searching Algorithm](#image-searching-algorithm)
+    - [Miscellaneous Toggles](#miscellaneous-toggles)
+- [Additional information](#additional-information)
+    - [Potential or planned updates](#potential-or-planned-updates)
+    - [Special thanks](#special-thanks)
 
 ### Description
 This application was created to provide players with a way to easily record their Barrows rewards over the course of their Barrows runs, and to allow users to share their Barrows rewards data with others. <br><br>
